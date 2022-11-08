@@ -9,7 +9,7 @@ namespace Mediateq_AP_SIO2.divers
     class ExceptionSIO : Exception
     {
         private int niveauExc;
-        private string libelleExc;
+        private string libelleExc;//
 
         public ExceptionSIO(int pNiveau, string pLibelle, string pMessage):base(pMessage)
         {

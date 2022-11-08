@@ -64,7 +64,7 @@ namespace Mediateq_AP_SIO2
 
             return dataReader;
         }
-
+        //
         // Exécution d'une requete d'écriture (Insert ou Update) ; ne retourne rien
         public static void execSQLWrite(string requete)
         {
@@ -74,7 +74,7 @@ namespace Mediateq_AP_SIO2
             command.CommandText = requete;
             command.Connection = connexion;
 
-            command.ExecuteNonQuery();
+            command.ExecuteNonQuery(); 
         }
     }
 }
