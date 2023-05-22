@@ -116,16 +116,6 @@ namespace Mediateq_AP_SIO2
             this.abonneLabelSearch = new System.Windows.Forms.Label();
             this.abonneTxtBox = new System.Windows.Forms.TextBox();
             this.dataGridAbonne = new System.Windows.Forms.DataGridView();
-            this.abonneId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonnePrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneAdresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneNais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneTypeAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneFinAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneDGVSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabCommandes = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.commandeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +126,16 @@ namespace Mediateq_AP_SIO2
             this.commandeNomDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commandeStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commandeModifier = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.abonneId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonnePrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneAdresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneNais = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneTypeAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneFinAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneDGVSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabOngletsApplication.SuspendLayout();
             this.tabParutions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParutions)).BeginInit();
@@ -1105,79 +1105,6 @@ namespace Mediateq_AP_SIO2
             this.dataGridAbonne.TabIndex = 0;
             this.dataGridAbonne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAbonne_CellContentClick);
             // 
-            // abonneId
-            // 
-            this.abonneId.HeaderText = "Id";
-            this.abonneId.MinimumWidth = 6;
-            this.abonneId.Name = "abonneId";
-            this.abonneId.Width = 47;
-            // 
-            // abonneNom
-            // 
-            this.abonneNom.HeaderText = "Nom";
-            this.abonneNom.MinimumWidth = 6;
-            this.abonneNom.Name = "abonneNom";
-            this.abonneNom.Width = 65;
-            // 
-            // abonnePrenom
-            // 
-            this.abonnePrenom.HeaderText = "Prenom";
-            this.abonnePrenom.MinimumWidth = 6;
-            this.abonnePrenom.Name = "abonnePrenom";
-            this.abonnePrenom.Width = 83;
-            // 
-            // abonneAdresse
-            // 
-            this.abonneAdresse.HeaderText = "Adresse";
-            this.abonneAdresse.MinimumWidth = 6;
-            this.abonneAdresse.Name = "abonneAdresse";
-            this.abonneAdresse.Width = 87;
-            // 
-            // abonneTel
-            // 
-            this.abonneTel.HeaderText = "Téléphone";
-            this.abonneTel.MinimumWidth = 6;
-            this.abonneTel.Name = "abonneTel";
-            this.abonneTel.Width = 102;
-            // 
-            // abonneMail
-            // 
-            this.abonneMail.HeaderText = "Adresse Mail";
-            this.abonneMail.MinimumWidth = 6;
-            this.abonneMail.Name = "abonneMail";
-            this.abonneMail.Width = 106;
-            // 
-            // abonneNais
-            // 
-            this.abonneNais.HeaderText = "Naissance";
-            this.abonneNais.MinimumWidth = 6;
-            this.abonneNais.Name = "abonneNais";
-            this.abonneNais.Width = 101;
-            // 
-            // abonneTypeAbo
-            // 
-            this.abonneTypeAbo.HeaderText = "Type d\'Abonnement";
-            this.abonneTypeAbo.MinimumWidth = 6;
-            this.abonneTypeAbo.Name = "abonneTypeAbo";
-            this.abonneTypeAbo.Width = 145;
-            // 
-            // abonneFinAbo
-            // 
-            this.abonneFinAbo.HeaderText = "Fin d\'Abbonement";
-            this.abonneFinAbo.MinimumWidth = 6;
-            this.abonneFinAbo.Name = "abonneFinAbo";
-            this.abonneFinAbo.Width = 133;
-            // 
-            // abonneDGVSupprimer
-            // 
-            this.abonneDGVSupprimer.HeaderText = "Supprimer";
-            this.abonneDGVSupprimer.MinimumWidth = 6;
-            this.abonneDGVSupprimer.Name = "abonneDGVSupprimer";
-            this.abonneDGVSupprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.abonneDGVSupprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.abonneDGVSupprimer.Text = "Supprimer";
-            this.abonneDGVSupprimer.Width = 98;
-            // 
             // tabCommandes
             // 
             this.tabCommandes.Controls.Add(this.dataGridView1);
@@ -1266,6 +1193,79 @@ namespace Mediateq_AP_SIO2
             this.commandeModifier.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.commandeModifier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.commandeModifier.Width = 125;
+            // 
+            // abonneId
+            // 
+            this.abonneId.HeaderText = "Id";
+            this.abonneId.MinimumWidth = 6;
+            this.abonneId.Name = "abonneId";
+            this.abonneId.Width = 47;
+            // 
+            // abonneNom
+            // 
+            this.abonneNom.HeaderText = "Nom";
+            this.abonneNom.MinimumWidth = 6;
+            this.abonneNom.Name = "abonneNom";
+            this.abonneNom.Width = 65;
+            // 
+            // abonnePrenom
+            // 
+            this.abonnePrenom.HeaderText = "Prenom";
+            this.abonnePrenom.MinimumWidth = 6;
+            this.abonnePrenom.Name = "abonnePrenom";
+            this.abonnePrenom.Width = 83;
+            // 
+            // abonneAdresse
+            // 
+            this.abonneAdresse.HeaderText = "Adresse";
+            this.abonneAdresse.MinimumWidth = 6;
+            this.abonneAdresse.Name = "abonneAdresse";
+            this.abonneAdresse.Width = 87;
+            // 
+            // abonneTel
+            // 
+            this.abonneTel.HeaderText = "Téléphone";
+            this.abonneTel.MinimumWidth = 6;
+            this.abonneTel.Name = "abonneTel";
+            this.abonneTel.Width = 102;
+            // 
+            // abonneMail
+            // 
+            this.abonneMail.HeaderText = "Adresse Mail";
+            this.abonneMail.MinimumWidth = 6;
+            this.abonneMail.Name = "abonneMail";
+            this.abonneMail.Width = 115;
+            // 
+            // abonneNais
+            // 
+            this.abonneNais.HeaderText = "Naissance";
+            this.abonneNais.MinimumWidth = 6;
+            this.abonneNais.Name = "abonneNais";
+            this.abonneNais.Width = 101;
+            // 
+            // abonneTypeAbo
+            // 
+            this.abonneTypeAbo.HeaderText = "Type d\'Abonnement";
+            this.abonneTypeAbo.MinimumWidth = 6;
+            this.abonneTypeAbo.Name = "abonneTypeAbo";
+            this.abonneTypeAbo.Width = 145;
+            // 
+            // abonneFinAbo
+            // 
+            this.abonneFinAbo.HeaderText = "Fin d\'Abonement";
+            this.abonneFinAbo.MinimumWidth = 6;
+            this.abonneFinAbo.Name = "abonneFinAbo";
+            this.abonneFinAbo.Width = 126;
+            // 
+            // abonneDGVSupprimer
+            // 
+            this.abonneDGVSupprimer.HeaderText = "Supprimer";
+            this.abonneDGVSupprimer.MinimumWidth = 6;
+            this.abonneDGVSupprimer.Name = "abonneDGVSupprimer";
+            this.abonneDGVSupprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.abonneDGVSupprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.abonneDGVSupprimer.Text = "Supprimer";
+            this.abonneDGVSupprimer.Width = 98;
             // 
             // FrmMediateq
             // 
@@ -1396,16 +1396,6 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonnePrenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneAdresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneMail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTypeAbo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneFinAbo;
-        private System.Windows.Forms.DataGridViewButtonColumn abonneDGVSupprimer;
         private System.Windows.Forms.CheckBox abonneExpireCheck;
         private System.Windows.Forms.TabPage tabCommandes;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -1417,6 +1407,16 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeNomDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeStatus;
         private System.Windows.Forms.DataGridViewButtonColumn commandeModifier;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonnePrenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneAdresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTypeAbo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneFinAbo;
+        private System.Windows.Forms.DataGridViewButtonColumn abonneDGVSupprimer;
     }
 }
 
