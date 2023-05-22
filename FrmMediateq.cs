@@ -17,18 +17,25 @@ namespace Mediateq_AP_SIO2
         static List<Livre> lesLivres;
         static List<DVD> lesDVDs;
 
+        public Utilisateur user { get; set; }
+
         #endregion
 
 
         #region Procédures évènementielles
 
-        public FrmMediateq()
+        public FrmMediateq(Utilisateur utilisateur)
         {
             InitializeComponent();
+            user = utilisateur;
         }
 
         private void FrmMediateq_Load(object sender, EventArgs e)
         {
+            if (user.IDService != 0)
+            {
+                tabOngletsApplication.TabPages.Remove(ADD_DVD);
+            }
             try
             {
                 // Création de la connexion avec la base de données
@@ -274,5 +281,10 @@ namespace Mediateq_AP_SIO2
         }
 
         #endregion
+
+        private void FrmMediateq_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
     }
 }
