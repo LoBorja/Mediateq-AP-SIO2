@@ -41,14 +41,14 @@ namespace Mediateq_AP_SIO2
             // 
             this.usernameTxtBox.Location = new System.Drawing.Point(45, 143);
             this.usernameTxtBox.Name = "usernameTxtBox";
-            this.usernameTxtBox.Size = new System.Drawing.Size(248, 25);
+            this.usernameTxtBox.Size = new System.Drawing.Size(248, 29);
             this.usernameTxtBox.TabIndex = 0;
             // 
             // passwordTxtBox
             // 
             this.passwordTxtBox.Location = new System.Drawing.Point(45, 226);
             this.passwordTxtBox.Name = "passwordTxtBox";
-            this.passwordTxtBox.Size = new System.Drawing.Size(248, 25);
+            this.passwordTxtBox.Size = new System.Drawing.Size(248, 29);
             this.passwordTxtBox.TabIndex = 1;
             this.passwordTxtBox.UseSystemPasswordChar = true;
             // 
@@ -69,7 +69,7 @@ namespace Mediateq_AP_SIO2
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(42, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 17);
+            this.label1.Size = new System.Drawing.Size(87, 23);
             this.label1.TabIndex = 6;
             this.label1.Text = "Utilisateur";
             // 
@@ -78,7 +78,7 @@ namespace Mediateq_AP_SIO2
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(42, 206);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 17);
+            this.label2.Size = new System.Drawing.Size(112, 23);
             this.label2.TabIndex = 7;
             this.label2.Text = "Mot de passe";
             // 
@@ -89,13 +89,14 @@ namespace Mediateq_AP_SIO2
             this.loginLabel.ForeColor = System.Drawing.Color.Black;
             this.loginLabel.Location = new System.Drawing.Point(121, 52);
             this.loginLabel.Name = "loginLabel";
-            this.loginLabel.Size = new System.Drawing.Size(88, 32);
+            this.loginLabel.Size = new System.Drawing.Size(110, 41);
             this.loginLabel.TabIndex = 8;
             this.loginLabel.Text = "LOGIN";
             // 
             // authForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AcceptButton = this.loginButton;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(337, 639);

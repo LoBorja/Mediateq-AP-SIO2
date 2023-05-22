@@ -97,7 +97,9 @@
     </Compile>
     <Compile Include="bdd\DAOFactory.cs" />
     <Compile Include="divers\ExceptionSIO.cs" />
+    <Compile Include="metier\Commande.cs" />
     <Compile Include="metier\Categorie.cs" />
+    <Compile Include="metier\Abonne.cs" />
     <Compile Include="metier\Utilisateur.cs" />
     <Compile Include="metier\Document.cs" />
     <Compile Include="metier\Descripteur.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="metier\Parution.cs" />
     <Compile Include="metier\Revue.cs" />
     <Compile Include="modele\DAOAuth.cs" />
+    <Compile Include="modele\DAOAbonne.cs" />
     <Compile Include="modele\DAODocuments.cs" />
     <Compile Include="modele\DAOPresse.cs" />
     <Compile Include="Program.cs" />

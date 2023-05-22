@@ -16,6 +16,7 @@ namespace Mediateq_AP_SIO2
         static List<Revue> lesRevues;
         static List<Livre> lesLivres;
         static List<DVD> lesDVDs;
+        static List<Abonne> lesAbonnes;
 
         public Utilisateur user { get; set; }
 
@@ -34,7 +35,7 @@ namespace Mediateq_AP_SIO2
         {
             if (user.IDService != 0)
             {
-                tabOngletsApplication.TabPages.Remove(ADD_DVD);
+                tabOngletsApplication.TabPages.Remove(abonneGestion);
             }
             try
             {
@@ -68,20 +69,20 @@ namespace Mediateq_AP_SIO2
 
         private void cbxTitres_SelectedIndexChanged(object sender, EventArgs e)
         {
-                List<Parution> lesParutions;
+            List<Parution> lesParutions;
 
-                Revue titreSelectionne = (Revue)cbxTitres.SelectedItem;
-                lesParutions = DAOPresse.getParutionByTitre(titreSelectionne);
+            Revue titreSelectionne = (Revue)cbxTitres.SelectedItem;
+            lesParutions = DAOPresse.getParutionByTitre(titreSelectionne);
 
-                // ré-initialisation du dataGridView
-                dgvParutions.Rows.Clear();
+            // ré-initialisation du dataGridView
+            dgvParutions.Rows.Clear();
 
-                // Parcours de la collection des titres et alimentation du datagridview
-                foreach (Parution parution in lesParutions)
-                {
-                    dgvParutions.Rows.Add(parution.Numero, parution.DateParution, parution.Photo);
-                }
-            
+            // Parcours de la collection des titres et alimentation du datagridview
+            foreach (Parution parution in lesParutions)
+            {
+                dgvParutions.Rows.Add(parution.Numero, parution.DateParution, parution.Photo);
+            }
+
         }
         #endregion
 
@@ -107,7 +108,7 @@ namespace Mediateq_AP_SIO2
             // Parcours de la collection des titres et alimentation du datagridview
             foreach (Revue revue in lesRevues)
             {
-                if (revue.IdDescripteur==domaineSelectionne.Id)
+                if (revue.IdDescripteur == domaineSelectionne.Id)
                 {
                     dgvTitres.Rows.Add(revue.Id, revue.Titre, revue.Empruntable, revue.DateFinAbonnement, revue.DelaiMiseADispo);
                 }
@@ -128,7 +129,7 @@ namespace Mediateq_AP_SIO2
             lesDescripteurs = DAODocuments.getAllDescripteurs();
             lesLivres = DAODocuments.getAllLivres();
         }
-   
+
         private void btnRechercher_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
@@ -144,7 +145,7 @@ namespace Mediateq_AP_SIO2
             bool trouve = false;
             foreach (Livre livre in lesLivres)
             {
-                if (livre.IdDoc==txbNumDoc.Text)
+                if (livre.IdDoc == txbNumDoc.Text)
                 {
                     lblNumero.Text = livre.IdDoc;
                     lblTitre.Text = livre.Titre;
@@ -176,7 +177,7 @@ namespace Mediateq_AP_SIO2
                 //on teste si le titre du livre contient ce qui a été saisi
                 if (titreMinuscules.Contains(saisieMinuscules))
                 {
-                    dgvLivres.Rows.Add(livre.IdDoc,livre.Titre,livre.Auteur,livre.ISBN1,livre.LaCollection);
+                    dgvLivres.Rows.Add(livre.IdDoc, livre.Titre, livre.Auteur, livre.ISBN1, livre.LaCollection);
                 }
             }
         }
@@ -242,7 +243,7 @@ namespace Mediateq_AP_SIO2
                 //on teste si le titre du livre contient ce qui a été saisi
                 if (titreMinuscules.Contains(saisieMinuscules))
                 {
-                    DGV_DVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString() );
+                    DGV_DVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString());
                 }
             }
         }
@@ -269,7 +270,7 @@ namespace Mediateq_AP_SIO2
             String synopsis = ADD_DVD_Synop.Text;
             String realisateur = ADD_DVD_Reali.Text;
             int duree = int.Parse(ADD_DVD_Duree.Text);
-            String choixPublic = ADD_PUBLIC.Text.Substring(0,5);
+            String choixPublic = ADD_PUBLIC.Text.Substring(0, 5);
 
             DVD newDVD = new DVD(numero, titre, synopsis, realisateur, duree, null);
 
@@ -278,6 +279,101 @@ namespace Mediateq_AP_SIO2
             ADD_DVD_Synop.Text = "";
             ADD_DVD_Reali.Text = "";
             ADD_DVD_Duree.Text = "";
+        }
+
+        #endregion
+
+        #region Commande
+
+
+
+        #endregion
+
+        #region Abonnee
+
+        private void tabAbonne_Enter(object sender, EventArgs e)
+        {
+            // Chargement des objets en mémoire
+            lesAbonnes = DAOAbonne.getAllAbonne();
+
+            abonneRemplirDataGrid();
+        }
+
+        private void txbAbonne_TextChanged(object sender, EventArgs e)
+        {
+            dataGridAbonne.Rows.Clear();
+
+            foreach (Abonne abonne in lesAbonnes)
+            {
+                string saisieMinuscules;
+                saisieMinuscules = abonneTxtBox.Text.ToLower();
+                string titreMinuscules;
+                titreMinuscules = abonne.Nom.ToLower();
+
+                if (titreMinuscules.Contains(saisieMinuscules))
+                {
+                    TimeSpan differenceTemps = DateTime.Today - abonne.FinAbonnement;
+
+                    if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays >= 30)
+                    {
+                        dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(), "Supprimer");
+                    }
+                }
+            }
+        }
+
+        private void dataGridAbonne_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow ligne = dataGridAbonne.Rows[e.RowIndex];
+
+                Abonne unAbonne = rechercherAbonneParId(ligne.Cells[0].Value.ToString());
+
+                if (dataGridAbonne.Columns[e.ColumnIndex].Name == "abonneDGVSupprimer")
+                {
+                    if (MessageBox.Show("Voulez vous supprimer l'abboné id " + unAbonne.Id + " " + unAbonne.Nom + " " + unAbonne.Prenom + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        DAOAbonne.supprimerAbonne(unAbonne);
+
+                        dataGridAbonne.Rows.Remove(ligne);
+
+                        lesAbonnes.Remove(unAbonne);
+                    }
+                }
+            }
+        }
+
+        private void abonneExpireCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            abonneRemplirDataGrid();
+        }
+
+        private void abonneRemplirDataGrid()
+        {
+            dataGridAbonne.Rows.Clear();
+
+            foreach (Abonne abonne in lesAbonnes)
+            {
+                TimeSpan differenceTemps = DateTime.Today - abonne.FinAbonnement;
+
+                if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays >= 30)
+                {
+                    dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(), "Supprimer");
+                }
+            }
+        }
+
+        private Abonne rechercherAbonneParId(string idAbonne)
+        {
+            Abonne unAbonne = null;
+
+            foreach(Abonne a in lesAbonnes)
+            {
+                if (a.Id == idAbonne) unAbonne = a;
+            }
+
+            return unAbonne;
         }
 
         #endregion
