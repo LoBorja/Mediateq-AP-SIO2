@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using Mediateq_AP_SIO2.divers;
 using Mediateq_AP_SIO2.metier;
 
@@ -408,6 +409,7 @@ namespace Mediateq_AP_SIO2
             abonneModifie.FinAbonnement = dtpFinAbonnement.Value;
             abonneModifie.MailU = txtAbonneMail.Text;
 
+
             DAOAbonne.modifierAbonne(abonneModifie);
 
             abonneRemplirDataGrid();
@@ -422,6 +424,30 @@ namespace Mediateq_AP_SIO2
             btnAbonneUpdate.Enabled = false;
             btnAbonneNew.Enabled = true;
             resetChamps();
+        }
+
+        private void btnAbonneParId_Click(object sender, EventArgs e)
+        {
+            Abonne unAbonne = rechercherAbonneParId(txtAbonneParId.Text);
+
+            if(unAbonne == null)
+            {
+                MessageBox.Show("Saisie incorrecte pour le numéro d'abonné");
+                return;
+            }
+
+            txtAbonneId.Text = unAbonne.Id;
+            txtAbonneNom.Text = unAbonne.Nom;
+            txtAbonnePrenom.Text = unAbonne.Prenom;
+            dtpAbonneNaissance.Value = unAbonne.DateNaissance;
+            txtAbonneAdresse.Text = unAbonne.Adresse;
+            txtAbonneTel.Text = unAbonne.NumTel;
+            txtTypeAbonnement.Text = unAbonne.TypeAbonnement;
+            dtpFinAbonnement.Value = unAbonne.FinAbonnement;
+            txtAbonneMail.Text = unAbonne.MailU;
+
+            btnAbonneUpdate.Enabled = true;
+            btnAbonneNew.Enabled = false;
         }
 
         private void resetChamps()
