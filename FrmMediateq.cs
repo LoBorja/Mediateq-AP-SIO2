@@ -38,6 +38,29 @@ namespace Mediateq_AP_SIO2
             {
                 tabOngletsApplication.TabPages.Remove(abonneGestion);
             }
+            else
+            {
+                optionsLivre.Visible = true;
+                optionsDVD.Visible = true;
+
+                commanderLivre.Visible = true;
+                commanderDVD.Visible = true;
+
+                dvdSupprimer.Visible = true;
+
+                txtLivreISBN.ReadOnly = false;
+                txtLivreCollection.ReadOnly = false;
+                txtLivreAuteur.ReadOnly = false;
+                txtLivrePublic.ReadOnly = false;
+                txtLivreTitre.ReadOnly = false;
+
+                txtDVDTitre.ReadOnly = false;
+                txtDVDSynopsis.ReadOnly = false;
+                txtDVDRealisateur.ReadOnly = false;
+                txtDVDDuree.ReadOnly = false;
+                txtDVDPublic.ReadOnly = false;
+            }
+
             try
             {
                 // Création de la connexion avec la base de données
@@ -129,17 +152,23 @@ namespace Mediateq_AP_SIO2
             lesCategories = DAODocuments.getAllCategories();
             lesDescripteurs = DAODocuments.getAllDescripteurs();
             lesLivres = DAODocuments.getAllLivres();
+
+            dgvLivres.Rows.Clear();
+
+            foreach (Livre livre in lesLivres)
+            {
+                dgvLivres.Rows.Add(livre.IdDoc, livre.Titre, livre.Auteur, livre.ISBN1, livre.LaCollection);
+            }
         }
 
         private void btnRechercher_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
-            lblNumero.Text = "";
-            lblTitre.Text = "";
-            lblAuteur.Text = "";
-            lblCollection.Text = "";
-            lblISBN.Text = "";
-            lblImage.Text = "";
+            txtLivreNum.Text = "";
+            txtLivreTitre.Text = "";
+            txtLivreAuteur.Text = "";
+            txtLivreCollection.Text = "";
+            txtLivreISBN.Text = "";
 
             // On recherche le livre correspondant au numéro de document saisi.
             // S'il n'existe pas: on affiche un popup message d'erreur
@@ -148,12 +177,11 @@ namespace Mediateq_AP_SIO2
             {
                 if (livre.IdDoc == txbNumDoc.Text)
                 {
-                    lblNumero.Text = livre.IdDoc;
-                    lblTitre.Text = livre.Titre;
-                    lblAuteur.Text = livre.Auteur;
-                    lblCollection.Text = livre.LaCollection;
-                    lblISBN.Text = livre.ISBN1;
-                    lblImage.Text = livre.Image;
+                    txtLivreNum.Text = livre.IdDoc;
+                    txtLivreTitre.Text = livre.Titre;
+                    txtLivreAuteur.Text = livre.Auteur;
+                    txtLivreCollection.Text = livre.LaCollection;
+                    txtLivreISBN.Text = livre.ISBN1;
                     trouve = true;
                 }
             }
@@ -195,17 +223,22 @@ namespace Mediateq_AP_SIO2
             lesCategories = DAODocuments.getAllCategories();
             lesDescripteurs = DAODocuments.getAllDescripteurs();
             lesDVDs = DAODocuments.getAllDVD();
+
+            DGV_DVD.Rows.Clear();
+
+            foreach (DVD dvd in lesDVDs){
+                DGV_DVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString());
+            }
         }
 
         private void DVD_NUM_BUTTON_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
-            NUM_DVD_LAB.Text = "";
-            TITRE_DVD_LABEL.Text = "";
-            REA_DVD_LAB.Text = "";
-            TIME_DVD_LAB.Text = "";
-            SYP_DVD_LAB.Text = "";
-            IMG_DVD_LAB.Text = "";
+            txtDVDNum.Text = "";
+            txtDVDTitre.Text = "";
+            txtDVDRealisateur.Text = "";
+            txtDVDDuree.Text = "";
+            txtDVDSynopsis.Text = "";
 
             // On recherche le livre correspondant au numéro de document saisi.
             // S'il n'existe pas: on affiche un popup message d'erreur
@@ -214,12 +247,11 @@ namespace Mediateq_AP_SIO2
             {
                 if (dvd.IdDoc == TXT_Search_NUM_DVD.Text)
                 {
-                    NUM_DVD_LAB.Text = dvd.IdDoc;
-                    TITRE_DVD_LABEL.Text = dvd.Titre;
-                    REA_DVD_LAB.Text = dvd.Realisateur;
-                    TIME_DVD_LAB.Text = dvd.Duree.ToString();
-                    SYP_DVD_LAB.Text = dvd.Synopsis;
-                    IMG_DVD_LAB.Text = dvd.Image;
+                    txtDVDNum.Text = dvd.IdDoc;
+                    txtDVDTitre.Text = dvd.Titre;
+                    txtDVDRealisateur.Text = dvd.Realisateur;
+                    txtDVDDuree.Text = dvd.Duree.ToString();
+                    txtDVDSynopsis.Text = dvd.Synopsis;
                     trouve = true;
                 }
             }
@@ -249,9 +281,72 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        private void btnDVDNew_Click(object sender, EventArgs e)
+        {
+            String numero = DAODocuments.DocumentNumero();
+            String titre = txtDVDTitre.Text;
+            String synopsis = txtDVDSynopsis.Text;
+            String realisateur = txtDVDRealisateur.Text;
+            int duree = int.Parse(txtDVDDuree.Text);
+            String choixPublic = "00001";
+
+            DVD newDVD = new DVD(numero, titre, synopsis, realisateur, duree, null);
+
+            DAODocuments.AjouterDVD(newDVD, choixPublic);
+
+            lesDVDs.Add(newDVD);
+
+            resetChampsDVD();
+        }
+
+        private void DGV_DVD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow ligne = DGV_DVD.Rows[e.RowIndex];
+
+                DVD unDvd = rechercherDVDparId(ligne.Cells[0].Value.ToString());
+
+                if (DGV_DVD.Columns[e.ColumnIndex].Name == "dvdSupprimer")
+                {
+                    if (MessageBox.Show("Voulez vous supprimer le dvd numéro °" + unDvd.IdDoc + " " + unDvd.Titre + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        DAODocuments.SupprimerDVD(unDvd);
+
+                        DGV_DVD.Rows.Remove(ligne);
+
+                        lesDVDs.Remove(unDvd);
+                    }
+                }
+            }
+        }
+
+        private void resetChampsDVD()
+        {
+            txtDVDTitre.Text = "";
+            txtDVDSynopsis.Text = "";
+            txtDVDRealisateur.Text = "";
+            txtDVDDuree.Text = "";
+            txtDVDPublic.Text = "";
+        }
+
+        private DVD rechercherDVDparId(string unId)
+        {
+            DVD unDvd = null;
+            foreach(DVD dvd in lesDVDs)
+            {
+                if(dvd.IdDoc == unId)
+                {
+                    unDvd = dvd;
+                }
+            }
+
+            return unDvd;
+        }
+
         #endregion
 
-        #region AJOUT_DVD
+        /*#region AJOUT_DVD
         //-----------------------------------------------------------
         // ONGLET "Ajout dvd"
         //-----------------------------------------------------------
@@ -282,7 +377,7 @@ namespace Mediateq_AP_SIO2
             ADD_DVD_Duree.Text = "";
         }
 
-        #endregion
+        #endregion*/
 
         #region Commande
 

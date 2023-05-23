@@ -154,6 +154,74 @@ namespace Mediateq_AP_SIO2
             }
             return categorie;
         }
+
+        /*public static void AjouterLivre(Livre pLivre)
+        {
+            try
+            {
+                string req = "INSERT INTO document (id ,titre, idpublic) VALUES ('" + pLivre.IdDoc + "' , '" + pLivre.Titre + "' , '" + pLivre.LaCategorie.Id + "' ); ";
+                string reqLivre = "INSERT INTO livre VALUES ('" + pLivre.IdDoc + "' , '" + pLivre.ISBN1 + "' , '" + pLivre.LaCollection + "' , '" + pLivre.Auteur.Id + "' ); ";
+
+                DAOFactory.connecter();
+
+                DAOFactory.execSQLWrite(req);
+
+                DAOFactory.execSQLWrite(reqLivre);
+
+                DAOFactory.deconnecter();
+            }
+
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }*/
+
+        public static void SupprimerLivre(Livre unLivre)
+        {
+            try
+            {
+                string reqLivre = "DELETE FROM livre WHERE id = '" + unLivre.IdDoc + "'; ";
+                string req = "DELETE FROM document WHERE id = '" + unLivre.IdDoc + "'; ";
+
+
+                DAOFactory.connecter();
+
+                DAOFactory.execSQLWrite(reqLivre);
+
+                DAOFactory.execSQLWrite(req);
+
+                DAOFactory.deconnecter();
+            }
+
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        /*public static void ModifierLivre(Livre unLivre, String uneCateg)
+        {
+            try
+            {
+                string req = "UPDATE document SET document.titre = '" + unLivre.Titre + "', document.idPublic = '" + uneCateg + "' WHERE id = '" + unLivre.IdDoc + "'; ";
+                string reqLivre = "UPDATE livre SET livre.ISBN = '" + unLivre.ISBN1 + "' , livre.id_auteur = '" + unLivre.Auteur.Id + "' , livre.collection  = '" + unLivre.LaCollection + "' WHERE id = '" + unLivre.IdDoc + "' ; ";
+
+                DAOFactory.connecter();
+
+                DAOFactory.execSQLWrite(req);
+
+                DAOFactory.execSQLWrite(reqLivre);
+
+                DAOFactory.deconnecter();
+            }
+
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }*/
+
         //
         public static List<DVD> getAllDVD()
         {
@@ -237,5 +305,49 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        public static void SupprimerDVD(DVD unDVD)
+        {
+            try
+            {
+                string reqLivre = "DELETE FROM dvd WHERE idDocument = '" + unDVD.IdDoc + "'; ";
+                string req = "DELETE FROM document WHERE id = '" + unDVD.IdDoc + "'; ";
+
+
+                DAOFactory.connecter();
+
+                DAOFactory.execSQLWrite(reqLivre);
+
+                DAOFactory.execSQLWrite(req);
+
+                DAOFactory.deconnecter();
+            }
+
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
+
+        public static void ModifierDVD(DVD unDVD, string uneCateg)
+        {
+            try
+            {
+                string req = "UPDATE document SET document.titre = '" + unDVD.Titre + "', document.idPublic = '" + uneCateg + "' WHERE id = '" + unDVD.IdDoc + "'; ";
+                string reqLivre = "UPDATE dvd SET dvd.Synopsis = '" + unDVD.Synopsis + "' , dvd.réalisateur = '" + unDVD.Realisateur + "' , dvd.duree = '" + unDVD.Duree + "' WHERE id = '" + unDVD.IdDoc + "' ; ";
+
+                DAOFactory.connecter();
+
+                DAOFactory.execSQLWrite(req);
+
+                DAOFactory.execSQLWrite(reqLivre);
+
+                DAOFactory.deconnecter();
+            }
+
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+        }
     }
 }
