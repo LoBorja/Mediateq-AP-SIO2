@@ -296,12 +296,16 @@ namespace Mediateq_AP_SIO2
             // Chargement des objets en mémoire
             lesAbonnes = DAOAbonne.getAllAbonne();
 
+            btnAbonneUpdate.Enabled = false;
+
             abonneRemplirDataGrid();
         }
 
         private void txbAbonne_TextChanged(object sender, EventArgs e)
         {
             dataGridAbonne.Rows.Clear();
+
+            int i = 0;
 
             foreach (Abonne abonne in lesAbonnes)
             {
@@ -312,11 +316,15 @@ namespace Mediateq_AP_SIO2
 
                 if (titreMinuscules.Contains(saisieMinuscules))
                 {
-                    TimeSpan differenceTemps = DateTime.Today - abonne.FinAbonnement;
+                    TimeSpan differenceTemps = abonne.FinAbonnement - DateTime.Today;
 
                     if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays >= 30)
                     {
-                        dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(), "Supprimer");
+                        dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(),"Modifier", "Supprimer");
+
+                        abonneColoriserFin(i,differenceTemps);
+
+                        i++;
                     }
                 }
             }
@@ -341,6 +349,21 @@ namespace Mediateq_AP_SIO2
                         lesAbonnes.Remove(unAbonne);
                     }
                 }
+                else if (dataGridAbonne.Columns[e.ColumnIndex].Name == "abonneModifier")
+                {
+                    txtAbonneId.Text = unAbonne.Id;
+                    txtAbonneNom.Text = unAbonne.Nom;
+                    txtAbonnePrenom.Text = unAbonne.Prenom;
+                    dtpAbonneNaissance.Value = unAbonne.DateNaissance;
+                    txtAbonneAdresse.Text = unAbonne.Adresse;
+                    txtAbonneTel.Text = unAbonne.NumTel;
+                    txtTypeAbonnement.Text = unAbonne.TypeAbonnement;
+                    dtpFinAbonnement.Value = unAbonne.FinAbonnement;
+                    txtAbonneMail.Text = unAbonne.MailU;
+
+                    btnAbonneUpdate.Enabled = true;
+                    btnAbonneNew.Enabled = false;
+                }
             }
         }
 
@@ -349,18 +372,104 @@ namespace Mediateq_AP_SIO2
             abonneRemplirDataGrid();
         }
 
+        private void btnAbonneNew_Click(object sender, EventArgs e)
+        {
+            string id = DAOAbonne.abonneNumero();
+            string nom = txtAbonneNom.Text;
+            string prenom = txtAbonnePrenom.Text;
+            DateTime naissance = dtpAbonneNaissance.Value;
+            string adresse = txtAbonneAdresse.Text;
+            string numTel = txtAbonneTel.Text;
+            string typeAbonnement = txtTypeAbonnement.Text;
+            DateTime finAbonnement = dtpFinAbonnement.Value;
+            string mail = txtAbonneMail.Text;
+
+            Abonne nouvelAbonne = new Abonne(id,nom,prenom,naissance,adresse,numTel,typeAbonnement,finAbonnement,mail);
+
+            DAOAbonne.ajouterAbonne(nouvelAbonne);
+
+            lesAbonnes.Add(nouvelAbonne);
+
+            abonneRemplirDataGrid();
+
+            resetChamps();
+        }
+
+        private void btnAbonneUpdate_Click(object sender, EventArgs e)
+        {
+            Abonne abonneModifie = rechercherAbonneParId(txtAbonneId.Text);
+
+            abonneModifie.Nom = txtAbonneNom.Text;
+            abonneModifie.Prenom = txtAbonnePrenom.Text;
+            abonneModifie.DateNaissance = dtpAbonneNaissance.Value;
+            abonneModifie.Adresse = txtAbonneAdresse.Text;
+            abonneModifie.NumTel = txtAbonneTel.Text;
+            abonneModifie.TypeAbonnement = txtTypeAbonnement.Text;
+            abonneModifie.FinAbonnement = dtpFinAbonnement.Value;
+            abonneModifie.MailU = txtAbonneMail.Text;
+
+            DAOAbonne.modifierAbonne(abonneModifie);
+
+            abonneRemplirDataGrid();
+
+            btnAbonneUpdate.Enabled = false;
+            btnAbonneNew.Enabled = true;
+            resetChamps();
+        }
+
+        private void btnAbonneReset_Click(object sender, EventArgs e)
+        {
+            btnAbonneUpdate.Enabled = false;
+            btnAbonneNew.Enabled = true;
+            resetChamps();
+        }
+
+        private void resetChamps()
+        {
+            txtAbonneId.Text = "Nouveau";
+            txtAbonneNom.Text = "";
+            txtAbonnePrenom.Text = "";
+            dtpAbonneNaissance.Value = DateTime.Today;
+            txtAbonneAdresse.Text = "";
+            txtAbonneTel.Text = "";
+            txtTypeAbonnement.Text = "";
+            dtpFinAbonnement.Value = DateTime.Today;
+            txtAbonneMail.Text = "";
+        }
+
         private void abonneRemplirDataGrid()
         {
             dataGridAbonne.Rows.Clear();
 
+            int i = 0;
+
             foreach (Abonne abonne in lesAbonnes)
             {
-                TimeSpan differenceTemps = DateTime.Today - abonne.FinAbonnement;
+                TimeSpan differenceTemps = abonne.FinAbonnement - DateTime.Today;
 
-                if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays >= 30)
+                if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays <= 30)
                 {
-                    dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(), "Supprimer");
+                    dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(),"Modifier", "Supprimer");
+                    abonneColoriserFin(i, differenceTemps);
+
+                    i++;
                 }
+            }
+        }
+
+        private void abonneColoriserFin(int indice, TimeSpan diffTemps)
+        {
+            if(diffTemps.TotalDays < 0)
+            {
+                dataGridAbonne.Rows[indice].Cells[8].Style.BackColor = System.Drawing.Color.Red;
+            } 
+            else if (diffTemps.TotalDays < 30)
+            {
+                dataGridAbonne.Rows[indice].Cells[8].Style.BackColor = System.Drawing.Color.Orange;
+            }
+            else
+            {
+                dataGridAbonne.Rows[indice].Cells[8].Style.BackColor = System.Drawing.Color.LightGreen;
             }
         }
 

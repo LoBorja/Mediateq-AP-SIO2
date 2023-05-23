@@ -111,11 +111,6 @@ namespace Mediateq_AP_SIO2
             this.ADD_DVD_Reali = new System.Windows.Forms.TextBox();
             this.ADD_DVD_Synop = new System.Windows.Forms.TextBox();
             this.ADD_DVD_Titre = new System.Windows.Forms.TextBox();
-            this.abonneGestion = new System.Windows.Forms.TabPage();
-            this.abonneExpireCheck = new System.Windows.Forms.CheckBox();
-            this.abonneLabelSearch = new System.Windows.Forms.Label();
-            this.abonneTxtBox = new System.Windows.Forms.TextBox();
-            this.dataGridAbonne = new System.Windows.Forms.DataGridView();
             this.tabCommandes = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.commandeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,6 +121,33 @@ namespace Mediateq_AP_SIO2
             this.commandeNomDocument = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commandeStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commandeModifier = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.abonneGestion = new System.Windows.Forms.TabPage();
+            this.abonneExpireCheck = new System.Windows.Forms.CheckBox();
+            this.abonneLabelSearch = new System.Windows.Forms.Label();
+            this.abonneTxtBox = new System.Windows.Forms.TextBox();
+            this.dataGridAbonne = new System.Windows.Forms.DataGridView();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtAbonneId = new System.Windows.Forms.TextBox();
+            this.txtAbonneNom = new System.Windows.Forms.TextBox();
+            this.txtAbonnePrenom = new System.Windows.Forms.TextBox();
+            this.txtAbonneAdresse = new System.Windows.Forms.TextBox();
+            this.txtAbonneTel = new System.Windows.Forms.TextBox();
+            this.txtAbonneMail = new System.Windows.Forms.TextBox();
+            this.dtpAbonneNaissance = new System.Windows.Forms.DateTimePicker();
+            this.dtpFinAbonnement = new System.Windows.Forms.DateTimePicker();
+            this.txtTypeAbonnement = new System.Windows.Forms.TextBox();
+            this.btnAbonneNew = new System.Windows.Forms.Button();
+            this.btnAbonneUpdate = new System.Windows.Forms.Button();
+            this.btnAbonneReset = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.abonneId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonnePrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,6 +157,7 @@ namespace Mediateq_AP_SIO2
             this.abonneNais = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneTypeAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneFinAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneModifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.abonneDGVSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabOngletsApplication.SuspendLayout();
             this.tabParutions.SuspendLayout();
@@ -150,10 +173,11 @@ namespace Mediateq_AP_SIO2
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DVD)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.ADD_DVD.SuspendLayout();
-            this.abonneGestion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).BeginInit();
             this.tabCommandes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.abonneGestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabOngletsApplication
@@ -1036,75 +1060,6 @@ namespace Mediateq_AP_SIO2
             this.ADD_DVD_Titre.Size = new System.Drawing.Size(268, 22);
             this.ADD_DVD_Titre.TabIndex = 0;
             // 
-            // abonneGestion
-            // 
-            this.abonneGestion.Controls.Add(this.abonneExpireCheck);
-            this.abonneGestion.Controls.Add(this.abonneLabelSearch);
-            this.abonneGestion.Controls.Add(this.abonneTxtBox);
-            this.abonneGestion.Controls.Add(this.dataGridAbonne);
-            this.abonneGestion.Location = new System.Drawing.Point(4, 25);
-            this.abonneGestion.Name = "abonneGestion";
-            this.abonneGestion.Padding = new System.Windows.Forms.Padding(3);
-            this.abonneGestion.Size = new System.Drawing.Size(1059, 647);
-            this.abonneGestion.TabIndex = 5;
-            this.abonneGestion.Text = "Abonnés";
-            this.abonneGestion.UseVisualStyleBackColor = true;
-            this.abonneGestion.Enter += new System.EventHandler(this.tabAbonne_Enter);
-            // 
-            // abonneExpireCheck
-            // 
-            this.abonneExpireCheck.AutoSize = true;
-            this.abonneExpireCheck.Location = new System.Drawing.Point(597, 296);
-            this.abonneExpireCheck.Name = "abonneExpireCheck";
-            this.abonneExpireCheck.Size = new System.Drawing.Size(376, 20);
-            this.abonneExpireCheck.TabIndex = 3;
-            this.abonneExpireCheck.Text = "Montrer seulement les abonnements proche de l\'expiration";
-            this.abonneExpireCheck.UseVisualStyleBackColor = true;
-            this.abonneExpireCheck.CheckedChanged += new System.EventHandler(this.abonneExpireCheck_CheckedChanged);
-            // 
-            // abonneLabelSearch
-            // 
-            this.abonneLabelSearch.AutoSize = true;
-            this.abonneLabelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.abonneLabelSearch.Location = new System.Drawing.Point(46, 296);
-            this.abonneLabelSearch.Name = "abonneLabelSearch";
-            this.abonneLabelSearch.Size = new System.Drawing.Size(153, 16);
-            this.abonneLabelSearch.TabIndex = 2;
-            this.abonneLabelSearch.Text = "Recherche par Nom :";
-            // 
-            // abonneTxtBox
-            // 
-            this.abonneTxtBox.Location = new System.Drawing.Point(217, 293);
-            this.abonneTxtBox.Name = "abonneTxtBox";
-            this.abonneTxtBox.Size = new System.Drawing.Size(278, 22);
-            this.abonneTxtBox.TabIndex = 1;
-            this.abonneTxtBox.TextChanged += new System.EventHandler(this.txbAbonne_TextChanged);
-            // 
-            // dataGridAbonne
-            // 
-            this.dataGridAbonne.AllowUserToAddRows = false;
-            this.dataGridAbonne.AllowUserToDeleteRows = false;
-            this.dataGridAbonne.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridAbonne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridAbonne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.abonneId,
-            this.abonneNom,
-            this.abonnePrenom,
-            this.abonneAdresse,
-            this.abonneTel,
-            this.abonneMail,
-            this.abonneNais,
-            this.abonneTypeAbo,
-            this.abonneFinAbo,
-            this.abonneDGVSupprimer});
-            this.dataGridAbonne.Location = new System.Drawing.Point(22, 340);
-            this.dataGridAbonne.Name = "dataGridAbonne";
-            this.dataGridAbonne.RowHeadersWidth = 51;
-            this.dataGridAbonne.RowTemplate.Height = 24;
-            this.dataGridAbonne.Size = new System.Drawing.Size(1029, 254);
-            this.dataGridAbonne.TabIndex = 0;
-            this.dataGridAbonne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAbonne_CellContentClick);
-            // 
             // tabCommandes
             // 
             this.tabCommandes.Controls.Add(this.dataGridView1);
@@ -1131,6 +1086,7 @@ namespace Mediateq_AP_SIO2
             this.commandeModifier});
             this.dataGridView1.Location = new System.Drawing.Point(44, 65);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(975, 525);
@@ -1194,11 +1150,301 @@ namespace Mediateq_AP_SIO2
             this.commandeModifier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.commandeModifier.Width = 125;
             // 
+            // abonneGestion
+            // 
+            this.abonneGestion.Controls.Add(this.groupBox3);
+            this.abonneGestion.Controls.Add(this.abonneExpireCheck);
+            this.abonneGestion.Controls.Add(this.abonneLabelSearch);
+            this.abonneGestion.Controls.Add(this.abonneTxtBox);
+            this.abonneGestion.Controls.Add(this.dataGridAbonne);
+            this.abonneGestion.Location = new System.Drawing.Point(4, 25);
+            this.abonneGestion.Name = "abonneGestion";
+            this.abonneGestion.Padding = new System.Windows.Forms.Padding(3);
+            this.abonneGestion.Size = new System.Drawing.Size(1059, 647);
+            this.abonneGestion.TabIndex = 5;
+            this.abonneGestion.Text = "Abonnés";
+            this.abonneGestion.UseVisualStyleBackColor = true;
+            this.abonneGestion.Enter += new System.EventHandler(this.tabAbonne_Enter);
+            // 
+            // abonneExpireCheck
+            // 
+            this.abonneExpireCheck.AutoSize = true;
+            this.abonneExpireCheck.Location = new System.Drawing.Point(597, 296);
+            this.abonneExpireCheck.Name = "abonneExpireCheck";
+            this.abonneExpireCheck.Size = new System.Drawing.Size(376, 20);
+            this.abonneExpireCheck.TabIndex = 3;
+            this.abonneExpireCheck.Text = "Montrer seulement les abonnements proche de l\'expiration";
+            this.abonneExpireCheck.UseVisualStyleBackColor = true;
+            this.abonneExpireCheck.CheckedChanged += new System.EventHandler(this.abonneExpireCheck_CheckedChanged);
+            // 
+            // abonneLabelSearch
+            // 
+            this.abonneLabelSearch.AutoSize = true;
+            this.abonneLabelSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.abonneLabelSearch.Location = new System.Drawing.Point(46, 296);
+            this.abonneLabelSearch.Name = "abonneLabelSearch";
+            this.abonneLabelSearch.Size = new System.Drawing.Size(153, 16);
+            this.abonneLabelSearch.TabIndex = 2;
+            this.abonneLabelSearch.Text = "Recherche par Nom :";
+            // 
+            // abonneTxtBox
+            // 
+            this.abonneTxtBox.Location = new System.Drawing.Point(217, 293);
+            this.abonneTxtBox.Name = "abonneTxtBox";
+            this.abonneTxtBox.Size = new System.Drawing.Size(278, 22);
+            this.abonneTxtBox.TabIndex = 1;
+            this.abonneTxtBox.TextChanged += new System.EventHandler(this.txbAbonne_TextChanged);
+            // 
+            // dataGridAbonne
+            // 
+            this.dataGridAbonne.AllowUserToAddRows = false;
+            this.dataGridAbonne.AllowUserToDeleteRows = false;
+            this.dataGridAbonne.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridAbonne.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridAbonne.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.abonneId,
+            this.abonneNom,
+            this.abonnePrenom,
+            this.abonneAdresse,
+            this.abonneTel,
+            this.abonneMail,
+            this.abonneNais,
+            this.abonneTypeAbo,
+            this.abonneFinAbo,
+            this.abonneModifier,
+            this.abonneDGVSupprimer});
+            this.dataGridAbonne.Location = new System.Drawing.Point(22, 340);
+            this.dataGridAbonne.Name = "dataGridAbonne";
+            this.dataGridAbonne.ReadOnly = true;
+            this.dataGridAbonne.RowHeadersWidth = 51;
+            this.dataGridAbonne.RowTemplate.Height = 24;
+            this.dataGridAbonne.Size = new System.Drawing.Size(1029, 254);
+            this.dataGridAbonne.TabIndex = 0;
+            this.dataGridAbonne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAbonne_CellContentClick);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label33);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.label31);
+            this.groupBox3.Controls.Add(this.label30);
+            this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.label28);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.btnAbonneReset);
+            this.groupBox3.Controls.Add(this.btnAbonneUpdate);
+            this.groupBox3.Controls.Add(this.btnAbonneNew);
+            this.groupBox3.Controls.Add(this.txtTypeAbonnement);
+            this.groupBox3.Controls.Add(this.dtpFinAbonnement);
+            this.groupBox3.Controls.Add(this.dtpAbonneNaissance);
+            this.groupBox3.Controls.Add(this.txtAbonneMail);
+            this.groupBox3.Controls.Add(this.txtAbonneTel);
+            this.groupBox3.Controls.Add(this.txtAbonneAdresse);
+            this.groupBox3.Controls.Add(this.txtAbonnePrenom);
+            this.groupBox3.Controls.Add(this.txtAbonneNom);
+            this.groupBox3.Controls.Add(this.txtAbonneId);
+            this.groupBox3.Location = new System.Drawing.Point(38, 19);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(981, 248);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Abonné ";
+            // 
+            // txtAbonneId
+            // 
+            this.txtAbonneId.Location = new System.Drawing.Point(89, 37);
+            this.txtAbonneId.Name = "txtAbonneId";
+            this.txtAbonneId.ReadOnly = true;
+            this.txtAbonneId.Size = new System.Drawing.Size(100, 22);
+            this.txtAbonneId.TabIndex = 0;
+            this.txtAbonneId.Text = "Nouveau";
+            // 
+            // txtAbonneNom
+            // 
+            this.txtAbonneNom.Location = new System.Drawing.Point(89, 78);
+            this.txtAbonneNom.Name = "txtAbonneNom";
+            this.txtAbonneNom.Size = new System.Drawing.Size(100, 22);
+            this.txtAbonneNom.TabIndex = 1;
+            // 
+            // txtAbonnePrenom
+            // 
+            this.txtAbonnePrenom.Location = new System.Drawing.Point(89, 120);
+            this.txtAbonnePrenom.Name = "txtAbonnePrenom";
+            this.txtAbonnePrenom.Size = new System.Drawing.Size(100, 22);
+            this.txtAbonnePrenom.TabIndex = 2;
+            // 
+            // txtAbonneAdresse
+            // 
+            this.txtAbonneAdresse.Location = new System.Drawing.Point(89, 164);
+            this.txtAbonneAdresse.Name = "txtAbonneAdresse";
+            this.txtAbonneAdresse.Size = new System.Drawing.Size(186, 22);
+            this.txtAbonneAdresse.TabIndex = 3;
+            // 
+            // txtAbonneTel
+            // 
+            this.txtAbonneTel.Location = new System.Drawing.Point(470, 34);
+            this.txtAbonneTel.Name = "txtAbonneTel";
+            this.txtAbonneTel.Size = new System.Drawing.Size(124, 22);
+            this.txtAbonneTel.TabIndex = 4;
+            // 
+            // txtAbonneMail
+            // 
+            this.txtAbonneMail.Location = new System.Drawing.Point(470, 78);
+            this.txtAbonneMail.Name = "txtAbonneMail";
+            this.txtAbonneMail.Size = new System.Drawing.Size(124, 22);
+            this.txtAbonneMail.TabIndex = 5;
+            // 
+            // dtpAbonneNaissance
+            // 
+            this.dtpAbonneNaissance.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpAbonneNaissance.Location = new System.Drawing.Point(470, 117);
+            this.dtpAbonneNaissance.Name = "dtpAbonneNaissance";
+            this.dtpAbonneNaissance.Size = new System.Drawing.Size(124, 22);
+            this.dtpAbonneNaissance.TabIndex = 7;
+            this.dtpAbonneNaissance.Value = new System.DateTime(2023, 5, 23, 0, 0, 0, 0);
+            // 
+            // dtpFinAbonnement
+            // 
+            this.dtpFinAbonnement.Location = new System.Drawing.Point(470, 201);
+            this.dtpFinAbonnement.Name = "dtpFinAbonnement";
+            this.dtpFinAbonnement.Size = new System.Drawing.Size(200, 22);
+            this.dtpFinAbonnement.TabIndex = 8;
+            // 
+            // txtTypeAbonnement
+            // 
+            this.txtTypeAbonnement.Location = new System.Drawing.Point(470, 161);
+            this.txtTypeAbonnement.Name = "txtTypeAbonnement";
+            this.txtTypeAbonnement.Size = new System.Drawing.Size(100, 22);
+            this.txtTypeAbonnement.TabIndex = 9;
+            // 
+            // btnAbonneNew
+            // 
+            this.btnAbonneNew.Location = new System.Drawing.Point(750, 25);
+            this.btnAbonneNew.Name = "btnAbonneNew";
+            this.btnAbonneNew.Size = new System.Drawing.Size(115, 46);
+            this.btnAbonneNew.TabIndex = 10;
+            this.btnAbonneNew.Text = "Insérer Nouveau Abonné";
+            this.btnAbonneNew.UseVisualStyleBackColor = true;
+            this.btnAbonneNew.Click += new System.EventHandler(this.btnAbonneNew_Click);
+            // 
+            // btnAbonneUpdate
+            // 
+            this.btnAbonneUpdate.Location = new System.Drawing.Point(750, 94);
+            this.btnAbonneUpdate.Name = "btnAbonneUpdate";
+            this.btnAbonneUpdate.Size = new System.Drawing.Size(115, 48);
+            this.btnAbonneUpdate.TabIndex = 11;
+            this.btnAbonneUpdate.Text = "Mettre à Jour Abonné";
+            this.btnAbonneUpdate.UseVisualStyleBackColor = true;
+            this.btnAbonneUpdate.Click += new System.EventHandler(this.btnAbonneUpdate_Click);
+            // 
+            // btnAbonneReset
+            // 
+            this.btnAbonneReset.Location = new System.Drawing.Point(750, 164);
+            this.btnAbonneReset.Name = "btnAbonneReset";
+            this.btnAbonneReset.Size = new System.Drawing.Size(115, 49);
+            this.btnAbonneReset.TabIndex = 12;
+            this.btnAbonneReset.Text = "Rénitialiser";
+            this.btnAbonneReset.UseVisualStyleBackColor = true;
+            this.btnAbonneReset.Click += new System.EventHandler(this.btnAbonneReset_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(18, 37);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 16);
+            this.label25.TabIndex = 13;
+            this.label25.Text = "Id";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(18, 78);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(39, 16);
+            this.label26.TabIndex = 14;
+            this.label26.Text = "Nom";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(18, 123);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(60, 16);
+            this.label27.TabIndex = 15;
+            this.label27.Text = "Prenom";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(18, 164);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(65, 16);
+            this.label28.TabIndex = 16;
+            this.label28.Text = "Adresse";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(307, 37);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(124, 16);
+            this.label29.TabIndex = 17;
+            this.label29.Text = "N° de Téléphone";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(307, 81);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(98, 16);
+            this.label30.TabIndex = 18;
+            this.label30.Text = "Adresse Mail";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(307, 122);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(140, 16);
+            this.label31.TabIndex = 19;
+            this.label31.Text = "Date de Naissance";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(307, 164);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(146, 16);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "Type d\'Abonnement";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(307, 201);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(131, 16);
+            this.label33.TabIndex = 21;
+            this.label33.Text = "Fin d\'Abonnement";
+            // 
             // abonneId
             // 
             this.abonneId.HeaderText = "Id";
             this.abonneId.MinimumWidth = 6;
             this.abonneId.Name = "abonneId";
+            this.abonneId.ReadOnly = true;
             this.abonneId.Width = 47;
             // 
             // abonneNom
@@ -1206,6 +1452,7 @@ namespace Mediateq_AP_SIO2
             this.abonneNom.HeaderText = "Nom";
             this.abonneNom.MinimumWidth = 6;
             this.abonneNom.Name = "abonneNom";
+            this.abonneNom.ReadOnly = true;
             this.abonneNom.Width = 65;
             // 
             // abonnePrenom
@@ -1213,6 +1460,7 @@ namespace Mediateq_AP_SIO2
             this.abonnePrenom.HeaderText = "Prenom";
             this.abonnePrenom.MinimumWidth = 6;
             this.abonnePrenom.Name = "abonnePrenom";
+            this.abonnePrenom.ReadOnly = true;
             this.abonnePrenom.Width = 83;
             // 
             // abonneAdresse
@@ -1220,6 +1468,7 @@ namespace Mediateq_AP_SIO2
             this.abonneAdresse.HeaderText = "Adresse";
             this.abonneAdresse.MinimumWidth = 6;
             this.abonneAdresse.Name = "abonneAdresse";
+            this.abonneAdresse.ReadOnly = true;
             this.abonneAdresse.Width = 87;
             // 
             // abonneTel
@@ -1227,6 +1476,7 @@ namespace Mediateq_AP_SIO2
             this.abonneTel.HeaderText = "Téléphone";
             this.abonneTel.MinimumWidth = 6;
             this.abonneTel.Name = "abonneTel";
+            this.abonneTel.ReadOnly = true;
             this.abonneTel.Width = 102;
             // 
             // abonneMail
@@ -1234,6 +1484,7 @@ namespace Mediateq_AP_SIO2
             this.abonneMail.HeaderText = "Adresse Mail";
             this.abonneMail.MinimumWidth = 6;
             this.abonneMail.Name = "abonneMail";
+            this.abonneMail.ReadOnly = true;
             this.abonneMail.Width = 115;
             // 
             // abonneNais
@@ -1241,6 +1492,7 @@ namespace Mediateq_AP_SIO2
             this.abonneNais.HeaderText = "Naissance";
             this.abonneNais.MinimumWidth = 6;
             this.abonneNais.Name = "abonneNais";
+            this.abonneNais.ReadOnly = true;
             this.abonneNais.Width = 101;
             // 
             // abonneTypeAbo
@@ -1248,20 +1500,34 @@ namespace Mediateq_AP_SIO2
             this.abonneTypeAbo.HeaderText = "Type d\'Abonnement";
             this.abonneTypeAbo.MinimumWidth = 6;
             this.abonneTypeAbo.Name = "abonneTypeAbo";
+            this.abonneTypeAbo.ReadOnly = true;
             this.abonneTypeAbo.Width = 145;
             // 
             // abonneFinAbo
             // 
-            this.abonneFinAbo.HeaderText = "Fin d\'Abonement";
+            this.abonneFinAbo.HeaderText = "Fin d\'Abonnement";
             this.abonneFinAbo.MinimumWidth = 6;
             this.abonneFinAbo.Name = "abonneFinAbo";
-            this.abonneFinAbo.Width = 126;
+            this.abonneFinAbo.ReadOnly = true;
+            this.abonneFinAbo.Width = 132;
+            // 
+            // abonneModifier
+            // 
+            this.abonneModifier.HeaderText = "Modifier";
+            this.abonneModifier.MinimumWidth = 6;
+            this.abonneModifier.Name = "abonneModifier";
+            this.abonneModifier.ReadOnly = true;
+            this.abonneModifier.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.abonneModifier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.abonneModifier.Text = "Modifier";
+            this.abonneModifier.Width = 84;
             // 
             // abonneDGVSupprimer
             // 
             this.abonneDGVSupprimer.HeaderText = "Supprimer";
             this.abonneDGVSupprimer.MinimumWidth = 6;
             this.abonneDGVSupprimer.Name = "abonneDGVSupprimer";
+            this.abonneDGVSupprimer.ReadOnly = true;
             this.abonneDGVSupprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.abonneDGVSupprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.abonneDGVSupprimer.Text = "Supprimer";
@@ -1299,11 +1565,13 @@ namespace Mediateq_AP_SIO2
             this.groupBox1.PerformLayout();
             this.ADD_DVD.ResumeLayout(false);
             this.ADD_DVD.PerformLayout();
+            this.tabCommandes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.abonneGestion.ResumeLayout(false);
             this.abonneGestion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).EndInit();
-            this.tabCommandes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1407,6 +1675,28 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeNomDocument;
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeStatus;
         private System.Windows.Forms.DataGridViewButtonColumn commandeModifier;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnAbonneReset;
+        private System.Windows.Forms.Button btnAbonneUpdate;
+        private System.Windows.Forms.Button btnAbonneNew;
+        private System.Windows.Forms.TextBox txtTypeAbonnement;
+        private System.Windows.Forms.DateTimePicker dtpFinAbonnement;
+        private System.Windows.Forms.DateTimePicker dtpAbonneNaissance;
+        private System.Windows.Forms.TextBox txtAbonneMail;
+        private System.Windows.Forms.TextBox txtAbonneTel;
+        private System.Windows.Forms.TextBox txtAbonneAdresse;
+        private System.Windows.Forms.TextBox txtAbonnePrenom;
+        private System.Windows.Forms.TextBox txtAbonneNom;
+        private System.Windows.Forms.TextBox txtAbonneId;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonneId;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonneNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonnePrenom;
@@ -1416,6 +1706,7 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.DataGridViewTextBoxColumn abonneNais;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonneTypeAbo;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonneFinAbo;
+        private System.Windows.Forms.DataGridViewButtonColumn abonneModifier;
         private System.Windows.Forms.DataGridViewButtonColumn abonneDGVSupprimer;
     }
 }

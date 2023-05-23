@@ -15,7 +15,7 @@ namespace Mediateq_AP_SIO2
 
             try
             {
-                string req = "Select id + 1 FROM abonne WHERE id=(SELECT max(id) FROM abonne)";
+                string req = "Select id + 1 FROM abonné WHERE id=(SELECT max(id) FROM abonné)";
 
                 DAOFactory.connecter();
 
@@ -75,8 +75,8 @@ namespace Mediateq_AP_SIO2
                 string mdp = abonne.Nom;
 
                 string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mdpU, mailU) " +
-                    "VALUES ('" + abonne.Id + "', '" + abonne.Nom + "', '" + abonne.Prenom + "', '" + abonne.DateNaissance.ToString() + "', '" + abonne.Adresse + "', '" + 
-                    abonne.NumTel + "', '" + abonne.TypeAbonnement + "', '" + abonne.FinAbonnement.ToString() + "', '" + mdp + "', '" + abonne.MailU + "'); ";
+                    "VALUES ('" + abonne.Id + "', '" + abonne.Nom + "', '" + abonne.Prenom + "', '" + abonne.DateNaissance.ToString("yyyy-MM-dd") + "', '" + abonne.Adresse + "', '" + 
+                    abonne.NumTel + "', '" + abonne.TypeAbonnement + "', '" + abonne.FinAbonnement.ToString("yyyy-MM-dd") + "', '" + mdp + "', '" + abonne.MailU + "'); ";
 
                 DAOFactory.connecter();
 
@@ -114,8 +114,8 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "UPDATE abonné ab SET ab.nom = '" + abonne.Nom + "', ab.prenom = '" + abonne.Prenom + "', ab.dateNaissance = '" + abonne.DateNaissance.ToString() + "', ab.adresse = '" + abonne.Adresse + "', ab.numTel = '" + 
-                abonne.NumTel + "', ab.typeAbonnement = '" + abonne.TypeAbonnement + "', ab.finAbonnement = '" + abonne.FinAbonnement.ToString() + "', ab.mailU = '" + abonne.MailU + "' WHERE id = '" + abonne.Id + "'; ";
+                string req = "UPDATE abonné ab SET ab.nom = '" + abonne.Nom + "', ab.prenom = '" + abonne.Prenom + "', ab.dateNaissance = '" + abonne.DateNaissance.ToString("yyyy-MM-dd") + "', ab.adresse = '" + abonne.Adresse + "', ab.numTel = '" + 
+                abonne.NumTel + "', ab.typeAbonnement = '" + abonne.TypeAbonnement + "', ab.finAbonnement = '" + abonne.FinAbonnement.ToString("yyyy-MM-dd") + "', ab.mailU = '" + abonne.MailU + "' WHERE id = '" + abonne.Id + "'; ";
 
                 DAOFactory.connecter();
 
