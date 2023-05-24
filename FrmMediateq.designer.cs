@@ -53,11 +53,6 @@ namespace Mediateq_AP_SIO2
             this.btnLivreOrder = new System.Windows.Forms.Button();
             this.grpRechercheTitre = new System.Windows.Forms.GroupBox();
             this.dgvLivres = new System.Windows.Forms.DataGridView();
-            this.idDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lacollection = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.txbTitre = new System.Windows.Forms.TextBox();
             this.grpRechercheCode = new System.Windows.Forms.GroupBox();
@@ -164,6 +159,15 @@ namespace Mediateq_AP_SIO2
             this.abonneFinAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneModifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.abonneDGVSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.cbxDVDPublic = new System.Windows.Forms.ComboBox();
+            this.cbxLivrePublic = new System.Windows.Forms.ComboBox();
+            this.numericUDDVD = new System.Windows.Forms.NumericUpDown();
+            this.idDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lacollection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.livreSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabOngletsApplication.SuspendLayout();
             this.tabParutions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParutions)).BeginInit();
@@ -186,6 +190,7 @@ namespace Mediateq_AP_SIO2
             this.abonneGestion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUDDVD)).BeginInit();
             this.SuspendLayout();
             // 
             // tabOngletsApplication
@@ -448,48 +453,15 @@ namespace Mediateq_AP_SIO2
             this.titre,
             this.auteur,
             this.isbn,
-            this.lacollection});
+            this.lacollection,
+            this.livreSupprimer});
             this.dgvLivres.Location = new System.Drawing.Point(33, 95);
             this.dgvLivres.Margin = new System.Windows.Forms.Padding(4);
             this.dgvLivres.Name = "dgvLivres";
             this.dgvLivres.RowHeadersWidth = 51;
             this.dgvLivres.Size = new System.Drawing.Size(992, 223);
             this.dgvLivres.TabIndex = 4;
-            // 
-            // idDoc
-            // 
-            this.idDoc.HeaderText = "NUMERO";
-            this.idDoc.MinimumWidth = 6;
-            this.idDoc.Name = "idDoc";
-            this.idDoc.Width = 60;
-            // 
-            // titre
-            // 
-            this.titre.HeaderText = "TITRE DU LIVRE";
-            this.titre.MinimumWidth = 6;
-            this.titre.Name = "titre";
-            this.titre.Width = 200;
-            // 
-            // auteur
-            // 
-            this.auteur.HeaderText = "AUTEUR(E)";
-            this.auteur.MinimumWidth = 6;
-            this.auteur.Name = "auteur";
-            this.auteur.Width = 125;
-            // 
-            // isbn
-            // 
-            this.isbn.HeaderText = "Code ISBN";
-            this.isbn.MinimumWidth = 6;
-            this.isbn.Name = "isbn";
-            this.isbn.Width = 90;
-            // 
-            // lacollection
-            // 
-            this.lacollection.HeaderText = "COLLECTION";
-            this.lacollection.MinimumWidth = 6;
-            this.lacollection.Name = "lacollection";
-            this.lacollection.Width = 200;
+            this.dgvLivres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivre_CellContentClick);
             // 
             // label6
             // 
@@ -513,6 +485,7 @@ namespace Mediateq_AP_SIO2
             // 
             // grpRechercheCode
             // 
+            this.grpRechercheCode.Controls.Add(this.cbxLivrePublic);
             this.grpRechercheCode.Controls.Add(this.txtLivreAuteur);
             this.grpRechercheCode.Controls.Add(this.optionsLivre);
             this.grpRechercheCode.Controls.Add(this.txtLivreISBN);
@@ -541,6 +514,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreAuteur
             // 
             this.txtLivreAuteur.Location = new System.Drawing.Point(582, 139);
+            this.txtLivreAuteur.MaxLength = 20;
             this.txtLivreAuteur.Name = "txtLivreAuteur";
             this.txtLivreAuteur.ReadOnly = true;
             this.txtLivreAuteur.Size = new System.Drawing.Size(175, 22);
@@ -567,6 +541,7 @@ namespace Mediateq_AP_SIO2
             this.btnLivreReset.TabIndex = 34;
             this.btnLivreReset.Text = "Renitialiser Saisie";
             this.btnLivreReset.UseVisualStyleBackColor = true;
+            this.btnLivreReset.Click += new System.EventHandler(this.btnLivreReset_Click);
             // 
             // btnLivreNew
             // 
@@ -576,6 +551,7 @@ namespace Mediateq_AP_SIO2
             this.btnLivreNew.TabIndex = 32;
             this.btnLivreNew.Text = "Inserer Nouveau Livre";
             this.btnLivreNew.UseVisualStyleBackColor = true;
+            this.btnLivreNew.Click += new System.EventHandler(this.btnLivreNew_Click);
             // 
             // btnLivreUpdate
             // 
@@ -585,10 +561,12 @@ namespace Mediateq_AP_SIO2
             this.btnLivreUpdate.TabIndex = 33;
             this.btnLivreUpdate.Text = "Mettre à jour Livre";
             this.btnLivreUpdate.UseVisualStyleBackColor = true;
+            this.btnLivreUpdate.Click += new System.EventHandler(this.btnLivreUpdate_Click);
             // 
             // txtLivreISBN
             // 
             this.txtLivreISBN.Location = new System.Drawing.Point(195, 141);
+            this.txtLivreISBN.MaxLength = 13;
             this.txtLivreISBN.Name = "txtLivreISBN";
             this.txtLivreISBN.ReadOnly = true;
             this.txtLivreISBN.Size = new System.Drawing.Size(140, 22);
@@ -597,6 +575,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreCollection
             // 
             this.txtLivreCollection.Location = new System.Drawing.Point(195, 179);
+            this.txtLivreCollection.MaxLength = 50;
             this.txtLivreCollection.Name = "txtLivreCollection";
             this.txtLivreCollection.ReadOnly = true;
             this.txtLivreCollection.Size = new System.Drawing.Size(187, 22);
@@ -605,6 +584,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreTitre
             // 
             this.txtLivreTitre.Location = new System.Drawing.Point(582, 97);
+            this.txtLivreTitre.MaxLength = 50;
             this.txtLivreTitre.Name = "txtLivreTitre";
             this.txtLivreTitre.ReadOnly = true;
             this.txtLivreTitre.Size = new System.Drawing.Size(175, 22);
@@ -858,6 +838,8 @@ namespace Mediateq_AP_SIO2
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.numericUDDVD);
+            this.groupBox1.Controls.Add(this.cbxDVDPublic);
             this.groupBox1.Controls.Add(this.optionsDVD);
             this.groupBox1.Controls.Add(this.txtDVDPublic);
             this.groupBox1.Controls.Add(this.txtDVDRealisateur);
@@ -914,6 +896,7 @@ namespace Mediateq_AP_SIO2
             this.btnDVDReset.TabIndex = 30;
             this.btnDVDReset.Text = "Rénitialiser Saisie";
             this.btnDVDReset.UseVisualStyleBackColor = true;
+            this.btnDVDReset.Click += new System.EventHandler(this.btnDVDReset_Click);
             // 
             // btnDVDUpdate
             // 
@@ -923,6 +906,7 @@ namespace Mediateq_AP_SIO2
             this.btnDVDUpdate.TabIndex = 29;
             this.btnDVDUpdate.Text = "Mettre à jour DVD";
             this.btnDVDUpdate.UseVisualStyleBackColor = true;
+            this.btnDVDUpdate.Click += new System.EventHandler(this.btnDVDUpdate_Click);
             // 
             // txtDVDPublic
             // 
@@ -935,6 +919,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDRealisateur
             // 
             this.txtDVDRealisateur.Location = new System.Drawing.Point(591, 133);
+            this.txtDVDRealisateur.MaxLength = 20;
             this.txtDVDRealisateur.Name = "txtDVDRealisateur";
             this.txtDVDRealisateur.ReadOnly = true;
             this.txtDVDRealisateur.Size = new System.Drawing.Size(171, 22);
@@ -943,6 +928,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDTitre
             // 
             this.txtDVDTitre.Location = new System.Drawing.Point(591, 98);
+            this.txtDVDTitre.MaxLength = 50;
             this.txtDVDTitre.Name = "txtDVDTitre";
             this.txtDVDTitre.ReadOnly = true;
             this.txtDVDTitre.Size = new System.Drawing.Size(171, 22);
@@ -951,6 +937,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDSynopsis
             // 
             this.txtDVDSynopsis.Location = new System.Drawing.Point(180, 136);
+            this.txtDVDSynopsis.MaxLength = 100;
             this.txtDVDSynopsis.Name = "txtDVDSynopsis";
             this.txtDVDSynopsis.ReadOnly = true;
             this.txtDVDSynopsis.Size = new System.Drawing.Size(205, 22);
@@ -971,6 +958,7 @@ namespace Mediateq_AP_SIO2
             this.txtDVDNum.ReadOnly = true;
             this.txtDVDNum.Size = new System.Drawing.Size(100, 22);
             this.txtDVDNum.TabIndex = 21;
+            this.txtDVDNum.Text = "---";
             // 
             // label38
             // 
@@ -1582,6 +1570,84 @@ namespace Mediateq_AP_SIO2
             this.abonneDGVSupprimer.Text = "Supprimer";
             this.abonneDGVSupprimer.Width = 98;
             // 
+            // cbxDVDPublic
+            // 
+            this.cbxDVDPublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDVDPublic.FormattingEnabled = true;
+            this.cbxDVDPublic.Location = new System.Drawing.Point(591, 170);
+            this.cbxDVDPublic.Name = "cbxDVDPublic";
+            this.cbxDVDPublic.Size = new System.Drawing.Size(121, 24);
+            this.cbxDVDPublic.TabIndex = 32;
+            this.cbxDVDPublic.Visible = false;
+            // 
+            // cbxLivrePublic
+            // 
+            this.cbxLivrePublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLivrePublic.FormattingEnabled = true;
+            this.cbxLivrePublic.Location = new System.Drawing.Point(582, 179);
+            this.cbxLivrePublic.Name = "cbxLivrePublic";
+            this.cbxLivrePublic.Size = new System.Drawing.Size(121, 24);
+            this.cbxLivrePublic.TabIndex = 38;
+            this.cbxLivrePublic.Visible = false;
+            // 
+            // numericUDDVD
+            // 
+            this.numericUDDVD.Location = new System.Drawing.Point(180, 174);
+            this.numericUDDVD.Maximum = new decimal(new int[] {
+            8000,
+            0,
+            0,
+            0});
+            this.numericUDDVD.Name = "numericUDDVD";
+            this.numericUDDVD.Size = new System.Drawing.Size(120, 22);
+            this.numericUDDVD.TabIndex = 33;
+            this.numericUDDVD.Visible = false;
+            // 
+            // idDoc
+            // 
+            this.idDoc.HeaderText = "NUMERO";
+            this.idDoc.MinimumWidth = 6;
+            this.idDoc.Name = "idDoc";
+            this.idDoc.Width = 60;
+            // 
+            // titre
+            // 
+            this.titre.HeaderText = "TITRE DU LIVRE";
+            this.titre.MinimumWidth = 6;
+            this.titre.Name = "titre";
+            this.titre.Width = 200;
+            // 
+            // auteur
+            // 
+            this.auteur.HeaderText = "AUTEUR(E)";
+            this.auteur.MinimumWidth = 6;
+            this.auteur.Name = "auteur";
+            this.auteur.Width = 125;
+            // 
+            // isbn
+            // 
+            this.isbn.HeaderText = "Code ISBN";
+            this.isbn.MinimumWidth = 6;
+            this.isbn.Name = "isbn";
+            this.isbn.Width = 90;
+            // 
+            // lacollection
+            // 
+            this.lacollection.HeaderText = "COLLECTION";
+            this.lacollection.MinimumWidth = 6;
+            this.lacollection.Name = "lacollection";
+            this.lacollection.Width = 200;
+            // 
+            // livreSupprimer
+            // 
+            this.livreSupprimer.HeaderText = "Supprimer";
+            this.livreSupprimer.MinimumWidth = 6;
+            this.livreSupprimer.Name = "livreSupprimer";
+            this.livreSupprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.livreSupprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.livreSupprimer.Visible = false;
+            this.livreSupprimer.Width = 125;
+            // 
             // FrmMediateq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1623,6 +1689,7 @@ namespace Mediateq_AP_SIO2
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUDDVD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1663,11 +1730,6 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.GroupBox grpRechercheTitre;
         private System.Windows.Forms.GroupBox grpRechercheCode;
         private System.Windows.Forms.DataGridView dgvLivres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn auteur;
-        private System.Windows.Forms.DataGridViewTextBoxColumn isbn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lacollection;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox TXT_Search_Titre_DVD;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1764,6 +1826,15 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.DataGridViewTextBoxColumn REALISATEUR_DVD;
         private System.Windows.Forms.DataGridViewTextBoxColumn DUREE_DVD;
         private System.Windows.Forms.DataGridViewButtonColumn dvdSupprimer;
+        private System.Windows.Forms.ComboBox cbxLivrePublic;
+        private System.Windows.Forms.ComboBox cbxDVDPublic;
+        private System.Windows.Forms.NumericUpDown numericUDDVD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn auteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn isbn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lacollection;
+        private System.Windows.Forms.DataGridViewButtonColumn livreSupprimer;
     }
 }
 
