@@ -169,7 +169,7 @@ namespace Mediateq_AP_SIO2
             cbxLivrePublic.DisplayMember = "libelle";
             cbxLivrePublic.ValueMember = null;
 
-            btnLivreUpdate.Enabled = false;
+            resetChampsLivre();
         }
 
         private void btnRechercher_Click(object sender, EventArgs e)
@@ -338,7 +338,7 @@ namespace Mediateq_AP_SIO2
 
             double leMontant = nombreExemplaires * prix;
 
-            Commande nouvelleCommande = new Commande();
+            //Commande nouvelleCommande = new Commande();
 
 
         }
@@ -377,7 +377,7 @@ namespace Mediateq_AP_SIO2
             cbxDVDPublic.DisplayMember = "libelle";
             cbxDVDPublic.ValueMember = null;
 
-            btnDVDUpdate.Enabled = false;
+            resetChampsDVD();
         }
 
         private void DVD_NUM_BUTTON_Click(object sender, EventArgs e)
