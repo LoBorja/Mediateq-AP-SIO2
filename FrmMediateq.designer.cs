@@ -50,12 +50,23 @@ namespace Mediateq_AP_SIO2
             this.cbxDomaines = new System.Windows.Forms.ComboBox();
             this.tabLivres = new System.Windows.Forms.TabPage();
             this.commanderLivre = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.livreCommandeNbSelect = new System.Windows.Forms.NumericUpDown();
+            this.livreCommandePrixSelect = new System.Windows.Forms.NumericUpDown();
             this.btnLivreOrder = new System.Windows.Forms.Button();
             this.grpRechercheTitre = new System.Windows.Forms.GroupBox();
             this.dgvLivres = new System.Windows.Forms.DataGridView();
+            this.idDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lacollection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.livreSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label6 = new System.Windows.Forms.Label();
             this.txbTitre = new System.Windows.Forms.TextBox();
             this.grpRechercheCode = new System.Windows.Forms.GroupBox();
+            this.cbxLivrePublic = new System.Windows.Forms.ComboBox();
             this.txtLivreAuteur = new System.Windows.Forms.TextBox();
             this.optionsLivre = new System.Windows.Forms.GroupBox();
             this.btnLivreReset = new System.Windows.Forms.Button();
@@ -77,6 +88,10 @@ namespace Mediateq_AP_SIO2
             this.label9 = new System.Windows.Forms.Label();
             this.tabDVD = new System.Windows.Forms.TabPage();
             this.commanderDVD = new System.Windows.Forms.GroupBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -89,6 +104,8 @@ namespace Mediateq_AP_SIO2
             this.dvdSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TXT_Search_Titre_DVD = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUDDVD = new System.Windows.Forms.NumericUpDown();
+            this.cbxDVDPublic = new System.Windows.Forms.ComboBox();
             this.optionsDVD = new System.Windows.Forms.GroupBox();
             this.btnDVDNew = new System.Windows.Forms.Button();
             this.btnDVDReset = new System.Windows.Forms.Button();
@@ -109,7 +126,7 @@ namespace Mediateq_AP_SIO2
             this.DVD_NUM_BUTTON = new System.Windows.Forms.Button();
             this.TXT_Search_NUM_DVD = new System.Windows.Forms.TextBox();
             this.tabCommandes = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridCommandes = new System.Windows.Forms.DataGridView();
             this.commandeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commandeNbEx = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.commandeDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -159,15 +176,6 @@ namespace Mediateq_AP_SIO2
             this.abonneFinAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneModifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.abonneDGVSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.cbxDVDPublic = new System.Windows.Forms.ComboBox();
-            this.cbxLivrePublic = new System.Windows.Forms.ComboBox();
-            this.numericUDDVD = new System.Windows.Forms.NumericUpDown();
-            this.idDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.auteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.isbn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lacollection = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.livreSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabOngletsApplication.SuspendLayout();
             this.tabParutions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParutions)).BeginInit();
@@ -175,22 +183,26 @@ namespace Mediateq_AP_SIO2
             ((System.ComponentModel.ISupportInitialize)(this.dgvTitres)).BeginInit();
             this.tabLivres.SuspendLayout();
             this.commanderLivre.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.livreCommandeNbSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livreCommandePrixSelect)).BeginInit();
             this.grpRechercheTitre.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivres)).BeginInit();
             this.grpRechercheCode.SuspendLayout();
             this.optionsLivre.SuspendLayout();
             this.tabDVD.SuspendLayout();
             this.commanderDVD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DVD)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUDDVD)).BeginInit();
             this.optionsDVD.SuspendLayout();
             this.tabCommandes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCommandes)).BeginInit();
             this.abonneGestion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUDDVD)).BeginInit();
             this.SuspendLayout();
             // 
             // tabOngletsApplication
@@ -411,6 +423,10 @@ namespace Mediateq_AP_SIO2
             // 
             // commanderLivre
             // 
+            this.commanderLivre.Controls.Add(this.label15);
+            this.commanderLivre.Controls.Add(this.label8);
+            this.commanderLivre.Controls.Add(this.livreCommandeNbSelect);
+            this.commanderLivre.Controls.Add(this.livreCommandePrixSelect);
             this.commanderLivre.Controls.Add(this.btnLivreOrder);
             this.commanderLivre.Location = new System.Drawing.Point(983, 23);
             this.commanderLivre.Name = "commanderLivre";
@@ -420,14 +436,54 @@ namespace Mediateq_AP_SIO2
             this.commanderLivre.Text = "Commander";
             this.commanderLivre.Visible = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(15, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(164, 16);
+            this.label15.TabIndex = 39;
+            this.label15.Text = "Nombre d\'exemplaires";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 31);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(148, 16);
+            this.label8.TabIndex = 38;
+            this.label8.Text = "Prix à l\'unité en Euro";
+            // 
+            // livreCommandeNbSelect
+            // 
+            this.livreCommandeNbSelect.Location = new System.Drawing.Point(15, 139);
+            this.livreCommandeNbSelect.Name = "livreCommandeNbSelect";
+            this.livreCommandeNbSelect.Size = new System.Drawing.Size(157, 22);
+            this.livreCommandeNbSelect.TabIndex = 37;
+            // 
+            // livreCommandePrixSelect
+            // 
+            this.livreCommandePrixSelect.Location = new System.Drawing.Point(15, 63);
+            this.livreCommandePrixSelect.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.livreCommandePrixSelect.Name = "livreCommandePrixSelect";
+            this.livreCommandePrixSelect.Size = new System.Drawing.Size(157, 22);
+            this.livreCommandePrixSelect.TabIndex = 36;
+            // 
             // btnLivreOrder
             // 
-            this.btnLivreOrder.Location = new System.Drawing.Point(15, 28);
+            this.btnLivreOrder.Location = new System.Drawing.Point(15, 198);
             this.btnLivreOrder.Name = "btnLivreOrder";
             this.btnLivreOrder.Size = new System.Drawing.Size(157, 41);
             this.btnLivreOrder.TabIndex = 35;
             this.btnLivreOrder.Text = "Commander ce Livre";
             this.btnLivreOrder.UseVisualStyleBackColor = true;
+            this.btnLivreOrder.Click += new System.EventHandler(this.btnLivreOrder_Click);
             // 
             // grpRechercheTitre
             // 
@@ -462,6 +518,51 @@ namespace Mediateq_AP_SIO2
             this.dgvLivres.Size = new System.Drawing.Size(992, 223);
             this.dgvLivres.TabIndex = 4;
             this.dgvLivres.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLivre_CellContentClick);
+            // 
+            // idDoc
+            // 
+            this.idDoc.HeaderText = "NUMERO";
+            this.idDoc.MinimumWidth = 6;
+            this.idDoc.Name = "idDoc";
+            this.idDoc.Width = 60;
+            // 
+            // titre
+            // 
+            this.titre.HeaderText = "TITRE DU LIVRE";
+            this.titre.MinimumWidth = 6;
+            this.titre.Name = "titre";
+            this.titre.Width = 200;
+            // 
+            // auteur
+            // 
+            this.auteur.HeaderText = "AUTEUR(E)";
+            this.auteur.MinimumWidth = 6;
+            this.auteur.Name = "auteur";
+            this.auteur.Width = 125;
+            // 
+            // isbn
+            // 
+            this.isbn.HeaderText = "Code ISBN";
+            this.isbn.MinimumWidth = 6;
+            this.isbn.Name = "isbn";
+            this.isbn.Width = 90;
+            // 
+            // lacollection
+            // 
+            this.lacollection.HeaderText = "COLLECTION";
+            this.lacollection.MinimumWidth = 6;
+            this.lacollection.Name = "lacollection";
+            this.lacollection.Width = 200;
+            // 
+            // livreSupprimer
+            // 
+            this.livreSupprimer.HeaderText = "Supprimer";
+            this.livreSupprimer.MinimumWidth = 6;
+            this.livreSupprimer.Name = "livreSupprimer";
+            this.livreSupprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.livreSupprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.livreSupprimer.Visible = false;
+            this.livreSupprimer.Width = 125;
             // 
             // label6
             // 
@@ -510,6 +611,16 @@ namespace Mediateq_AP_SIO2
             this.grpRechercheCode.TabIndex = 17;
             this.grpRechercheCode.TabStop = false;
             this.grpRechercheCode.Text = "RECHERCHE PAR CODE DOCUMENT";
+            // 
+            // cbxLivrePublic
+            // 
+            this.cbxLivrePublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxLivrePublic.FormattingEnabled = true;
+            this.cbxLivrePublic.Location = new System.Drawing.Point(582, 179);
+            this.cbxLivrePublic.Name = "cbxLivrePublic";
+            this.cbxLivrePublic.Size = new System.Drawing.Size(121, 24);
+            this.cbxLivrePublic.TabIndex = 38;
+            this.cbxLivrePublic.Visible = false;
             // 
             // txtLivreAuteur
             // 
@@ -719,6 +830,10 @@ namespace Mediateq_AP_SIO2
             // 
             // commanderDVD
             // 
+            this.commanderDVD.Controls.Add(this.label17);
+            this.commanderDVD.Controls.Add(this.label16);
+            this.commanderDVD.Controls.Add(this.numericUpDown3);
+            this.commanderDVD.Controls.Add(this.numericUpDown4);
             this.commanderDVD.Controls.Add(this.button4);
             this.commanderDVD.Location = new System.Drawing.Point(959, 26);
             this.commanderDVD.Name = "commanderDVD";
@@ -728,9 +843,48 @@ namespace Mediateq_AP_SIO2
             this.commanderDVD.Text = "Commander";
             this.commanderDVD.Visible = false;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(14, 114);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(164, 16);
+            this.label17.TabIndex = 41;
+            this.label17.Text = "Nombre d\'exemplaires";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(14, 36);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(148, 16);
+            this.label16.TabIndex = 40;
+            this.label16.Text = "Prix à l\'unité en Euro";
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(16, 147);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(157, 22);
+            this.numericUpDown3.TabIndex = 39;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(16, 71);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(157, 22);
+            this.numericUpDown4.TabIndex = 38;
+            // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(20, 33);
+            this.button4.Location = new System.Drawing.Point(16, 208);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(146, 41);
             this.button4.TabIndex = 35;
@@ -864,6 +1018,29 @@ namespace Mediateq_AP_SIO2
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "RECHERCHE PAR NUMERO DOCUMENT";
+            // 
+            // numericUDDVD
+            // 
+            this.numericUDDVD.Location = new System.Drawing.Point(180, 174);
+            this.numericUDDVD.Maximum = new decimal(new int[] {
+            8000,
+            0,
+            0,
+            0});
+            this.numericUDDVD.Name = "numericUDDVD";
+            this.numericUDDVD.Size = new System.Drawing.Size(120, 22);
+            this.numericUDDVD.TabIndex = 33;
+            this.numericUDDVD.Visible = false;
+            // 
+            // cbxDVDPublic
+            // 
+            this.cbxDVDPublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxDVDPublic.FormattingEnabled = true;
+            this.cbxDVDPublic.Location = new System.Drawing.Point(591, 170);
+            this.cbxDVDPublic.Name = "cbxDVDPublic";
+            this.cbxDVDPublic.Size = new System.Drawing.Size(121, 24);
+            this.cbxDVDPublic.TabIndex = 32;
+            this.cbxDVDPublic.Visible = false;
             // 
             // optionsDVD
             // 
@@ -1054,20 +1231,21 @@ namespace Mediateq_AP_SIO2
             // 
             // tabCommandes
             // 
-            this.tabCommandes.Controls.Add(this.dataGridView1);
+            this.tabCommandes.Controls.Add(this.dataGridCommandes);
             this.tabCommandes.Location = new System.Drawing.Point(4, 25);
             this.tabCommandes.Name = "tabCommandes";
             this.tabCommandes.Size = new System.Drawing.Size(1190, 647);
             this.tabCommandes.TabIndex = 6;
             this.tabCommandes.Text = "Commandes";
             this.tabCommandes.UseVisualStyleBackColor = true;
+            this.tabCommandes.Enter += new System.EventHandler(this.tabCommandes_Enter);
             // 
-            // dataGridView1
+            // dataGridCommandes
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridCommandes.AllowUserToAddRows = false;
+            this.dataGridCommandes.AllowUserToDeleteRows = false;
+            this.dataGridCommandes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridCommandes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.commandeId,
             this.commandeNbEx,
             this.commandeDate,
@@ -1076,13 +1254,13 @@ namespace Mediateq_AP_SIO2
             this.commandeNomDocument,
             this.commandeStatus,
             this.commandeModifier});
-            this.dataGridView1.Location = new System.Drawing.Point(44, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(975, 525);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridCommandes.Location = new System.Drawing.Point(44, 124);
+            this.dataGridCommandes.Name = "dataGridCommandes";
+            this.dataGridCommandes.ReadOnly = true;
+            this.dataGridCommandes.RowHeadersWidth = 51;
+            this.dataGridCommandes.RowTemplate.Height = 24;
+            this.dataGridCommandes.Size = new System.Drawing.Size(975, 466);
+            this.dataGridCommandes.TabIndex = 0;
             // 
             // commandeId
             // 
@@ -1570,84 +1748,6 @@ namespace Mediateq_AP_SIO2
             this.abonneDGVSupprimer.Text = "Supprimer";
             this.abonneDGVSupprimer.Width = 98;
             // 
-            // cbxDVDPublic
-            // 
-            this.cbxDVDPublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxDVDPublic.FormattingEnabled = true;
-            this.cbxDVDPublic.Location = new System.Drawing.Point(591, 170);
-            this.cbxDVDPublic.Name = "cbxDVDPublic";
-            this.cbxDVDPublic.Size = new System.Drawing.Size(121, 24);
-            this.cbxDVDPublic.TabIndex = 32;
-            this.cbxDVDPublic.Visible = false;
-            // 
-            // cbxLivrePublic
-            // 
-            this.cbxLivrePublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxLivrePublic.FormattingEnabled = true;
-            this.cbxLivrePublic.Location = new System.Drawing.Point(582, 179);
-            this.cbxLivrePublic.Name = "cbxLivrePublic";
-            this.cbxLivrePublic.Size = new System.Drawing.Size(121, 24);
-            this.cbxLivrePublic.TabIndex = 38;
-            this.cbxLivrePublic.Visible = false;
-            // 
-            // numericUDDVD
-            // 
-            this.numericUDDVD.Location = new System.Drawing.Point(180, 174);
-            this.numericUDDVD.Maximum = new decimal(new int[] {
-            8000,
-            0,
-            0,
-            0});
-            this.numericUDDVD.Name = "numericUDDVD";
-            this.numericUDDVD.Size = new System.Drawing.Size(120, 22);
-            this.numericUDDVD.TabIndex = 33;
-            this.numericUDDVD.Visible = false;
-            // 
-            // idDoc
-            // 
-            this.idDoc.HeaderText = "NUMERO";
-            this.idDoc.MinimumWidth = 6;
-            this.idDoc.Name = "idDoc";
-            this.idDoc.Width = 60;
-            // 
-            // titre
-            // 
-            this.titre.HeaderText = "TITRE DU LIVRE";
-            this.titre.MinimumWidth = 6;
-            this.titre.Name = "titre";
-            this.titre.Width = 200;
-            // 
-            // auteur
-            // 
-            this.auteur.HeaderText = "AUTEUR(E)";
-            this.auteur.MinimumWidth = 6;
-            this.auteur.Name = "auteur";
-            this.auteur.Width = 125;
-            // 
-            // isbn
-            // 
-            this.isbn.HeaderText = "Code ISBN";
-            this.isbn.MinimumWidth = 6;
-            this.isbn.Name = "isbn";
-            this.isbn.Width = 90;
-            // 
-            // lacollection
-            // 
-            this.lacollection.HeaderText = "COLLECTION";
-            this.lacollection.MinimumWidth = 6;
-            this.lacollection.Name = "lacollection";
-            this.lacollection.Width = 200;
-            // 
-            // livreSupprimer
-            // 
-            this.livreSupprimer.HeaderText = "Supprimer";
-            this.livreSupprimer.MinimumWidth = 6;
-            this.livreSupprimer.Name = "livreSupprimer";
-            this.livreSupprimer.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.livreSupprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.livreSupprimer.Visible = false;
-            this.livreSupprimer.Width = 125;
-            // 
             // FrmMediateq
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1668,6 +1768,9 @@ namespace Mediateq_AP_SIO2
             ((System.ComponentModel.ISupportInitialize)(this.dgvTitres)).EndInit();
             this.tabLivres.ResumeLayout(false);
             this.commanderLivre.ResumeLayout(false);
+            this.commanderLivre.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.livreCommandeNbSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.livreCommandePrixSelect)).EndInit();
             this.grpRechercheTitre.ResumeLayout(false);
             this.grpRechercheTitre.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLivres)).EndInit();
@@ -1676,20 +1779,23 @@ namespace Mediateq_AP_SIO2
             this.optionsLivre.ResumeLayout(false);
             this.tabDVD.ResumeLayout(false);
             this.commanderDVD.ResumeLayout(false);
+            this.commanderDVD.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_DVD)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUDDVD)).EndInit();
             this.optionsDVD.ResumeLayout(false);
             this.tabCommandes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridCommandes)).EndInit();
             this.abonneGestion.ResumeLayout(false);
             this.abonneGestion.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridAbonne)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUDDVD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1749,7 +1855,7 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox abonneExpireCheck;
         private System.Windows.Forms.TabPage tabCommandes;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridCommandes;
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeId;
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeNbEx;
         private System.Windows.Forms.DataGridViewTextBoxColumn commandeDate;
@@ -1835,6 +1941,14 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.DataGridViewTextBoxColumn isbn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lacollection;
         private System.Windows.Forms.DataGridViewButtonColumn livreSupprimer;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown livreCommandeNbSelect;
+        private System.Windows.Forms.NumericUpDown livreCommandePrixSelect;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
     }
 }
 

@@ -281,13 +281,13 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string reqLivre = "DELETE FROM dvd WHERE idDocument = '" + unDVD.IdDoc + "'; ";
+                string reqDVD = "DELETE FROM dvd WHERE idDocument = '" + unDVD.IdDoc + "'; ";
                 string req = "DELETE FROM document WHERE id = '" + unDVD.IdDoc + "'; ";
 
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(reqLivre);
+                DAOFactory.execSQLWrite(reqDVD);
 
                 DAOFactory.execSQLWrite(req);
 

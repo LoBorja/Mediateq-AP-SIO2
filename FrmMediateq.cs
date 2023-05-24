@@ -18,6 +18,7 @@ namespace Mediateq_AP_SIO2
         static List<Livre> lesLivres;
         static List<DVD> lesDVDs;
         static List<Abonne> lesAbonnes;
+        static List<Commande> lesCommandes;
 
         public Utilisateur user { get; set; }
 
@@ -317,6 +318,31 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        private void btnLivreOrder_Click(object sender, EventArgs e)
+        {
+            int nombreExemplaires = Convert.ToInt32(livreCommandeNbSelect.Value);
+            double prix = Convert.ToDouble(livreCommandePrixSelect.Value);
+
+            Livre unLivre = rechercherLivreParId(txtLivreNum.Text);
+
+            if (unLivre == null)
+            {
+                MessageBox.Show("Aucun livre n'est séléctionné");
+                return;
+            }
+            else if (nombreExemplaires == 0)
+            {
+                MessageBox.Show("Une commande doit contenir aumoins un exemplaire");
+                return;
+            }
+
+            double leMontant = nombreExemplaires * prix;
+
+            Commande nouvelleCommande = new Commande();
+
+
+        }
+
         private Livre rechercherLivreParId(string unId)
         {
             Livre unLivre = null;
@@ -552,7 +578,23 @@ namespace Mediateq_AP_SIO2
 
         #region Commande
 
+        private void tabCommandes_Enter(object sender, EventArgs e)
+        {
+            lesCommandes = DAOCommande.getAllCommandes();
 
+            commandeRemplirDataGrid();
+        }
+
+        private void commandeRemplirDataGrid()
+        {
+            dataGridCommandes.Rows.Clear();
+
+            foreach (Commande com in lesCommandes)
+            {
+
+                    dataGridCommandes.Rows.Add(com.Id, com.NbExemplaires, com.DateCommande.ToShortDateString(), com.Montant, com.Document.IdDoc, com.Document.Titre, com.Status.Libelle, "Modifier");
+            }
+        }
 
         #endregion
 
