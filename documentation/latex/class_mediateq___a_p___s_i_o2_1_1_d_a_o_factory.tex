@@ -1,0 +1,87 @@
+\doxysection{Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOFactory Class Reference}
+\hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory}{}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory}\index{Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}}
+
+
+Connexions générales à la base de données.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_a3a722d9807b472c59fe7f8887f070381}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_a3a722d9807b472c59fe7f8887f070381} 
+static void {\bfseries creer\+Connection} ()
+\begin{DoxyCompactList}\small\item\em Créer la connexion à la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_adedf985e723281bdb1affc0ac414daec}{connecter}} ()
+\begin{DoxyCompactList}\small\item\em Ouvre la connexion à la base de données. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_ac86a8a289653e78959a140f5cf154766}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_ac86a8a289653e78959a140f5cf154766} 
+static void {\bfseries deconnecter} ()
+\begin{DoxyCompactList}\small\item\em Ferme la connexion à la base de données. \end{DoxyCompactList}\item 
+static My\+Sql\+Data\+Reader \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_a5aa407caa14e0262686bdea5cff29a6e}{exec\+SQLRead}} (string requete)
+\begin{DoxyCompactList}\small\item\em Exécution d\textquotesingle{}une requête de lecture ; retourne un Datareader. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_ab19758ac5e276ee5bf519b7a18a1ffa7}{exec\+SQLWrite}} (string requete)
+\begin{DoxyCompactList}\small\item\em Exécution d\textquotesingle{}une requete d\textquotesingle{}écriture (Insert ou Update) ; ne retourne rien. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_aeb54029ed47148a900bbcbbef7ea92dc}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_aeb54029ed47148a900bbcbbef7ea92dc} 
+static My\+Sql\+Connection {\bfseries Connexion}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Getter et setter de connexion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Connexions générales à la base de données. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_adedf985e723281bdb1affc0ac414daec}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_adedf985e723281bdb1affc0ac414daec} 
+\index{Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}!connecter@{connecter}}
+\index{connecter@{connecter}!Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}}
+\doxysubsubsection{\texorpdfstring{connecter()}{connecter()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOFactory.\+connecter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ouvre la connexion à la base de données. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Exception\+SIO} & \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_a5aa407caa14e0262686bdea5cff29a6e}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_a5aa407caa14e0262686bdea5cff29a6e} 
+\index{Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}!execSQLRead@{execSQLRead}}
+\index{execSQLRead@{execSQLRead}!Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}}
+\doxysubsubsection{\texorpdfstring{execSQLRead()}{execSQLRead()}}
+{\footnotesize\ttfamily static My\+Sql\+Data\+Reader Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOFactory.\+exec\+SQLRead (\begin{DoxyParamCaption}\item[{string}]{requete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exécution d\textquotesingle{}une requête de lecture ; retourne un Datareader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requete} & Requête à exécuter\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_ab19758ac5e276ee5bf519b7a18a1ffa7}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_factory_ab19758ac5e276ee5bf519b7a18a1ffa7} 
+\index{Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}!execSQLWrite@{execSQLWrite}}
+\index{execSQLWrite@{execSQLWrite}!Mediateq\_AP\_SIO2.DAOFactory@{Mediateq\_AP\_SIO2.DAOFactory}}
+\doxysubsubsection{\texorpdfstring{execSQLWrite()}{execSQLWrite()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOFactory.\+exec\+SQLWrite (\begin{DoxyParamCaption}\item[{string}]{requete }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Exécution d\textquotesingle{}une requete d\textquotesingle{}écriture (Insert ou Update) ; ne retourne rien. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em requete} & Reqûete à exécuter\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+bdd/DAOFactory.\+cs\end{DoxyCompactItemize}
