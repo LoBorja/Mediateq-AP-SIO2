@@ -130,14 +130,25 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "INSERT INTO document (id ,titre, idPublic) VALUES ('" + pLivre.IdDoc + "' , '" + pLivre.Titre + "' , '" + pLivre.LaCategorie.Id + "' ); ";
-                string reqLivre = "INSERT INTO livre VALUES ('" + pLivre.IdDoc + "' , '" + pLivre.ISBN1 + "' , '" + pLivre.LaCollection + "' , '" + pLivre.Auteur + "' ); ";
+                string req = "INSERT INTO document (id, titre, idPublic) VALUES (@IdDoc, @Titre, @IdPublic)";
+                string reqLivre = "INSERT INTO livre VALUES (@IdDoc, @ISBN, @Collection, @Auteur)";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(req);
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", pLivre.IdDoc);
+                command.Parameters.AddWithValue("@Titre", pLivre.Titre);
+                command.Parameters.AddWithValue("@IdPublic", pLivre.LaCategorie.Id);
 
-                DAOFactory.execSQLWrite(reqLivre);
+                command.ExecuteNonQuery();
+
+                command = new MySqlCommand(reqLivre, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", pLivre.IdDoc);
+                command.Parameters.AddWithValue("@ISBN", pLivre.ISBN1);
+                command.Parameters.AddWithValue("@Collection", pLivre.LaCollection);
+                command.Parameters.AddWithValue("@Auteur", pLivre.Auteur);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
@@ -152,15 +163,20 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string reqLivre = "DELETE FROM livre WHERE idDocument = '" + unLivre.IdDoc + "'; ";
-                string req = "DELETE FROM document WHERE id = '" + unLivre.IdDoc + "'; ";
-
+                string reqLivre = "DELETE FROM livre WHERE idDocument = @IdDoc";
+                string req = "DELETE FROM document WHERE id = @IdDoc";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(reqLivre);
+                MySqlCommand command = new MySqlCommand(reqLivre, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", unLivre.IdDoc);
 
-                DAOFactory.execSQLWrite(req);
+                command.ExecuteNonQuery();
+
+                command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", unLivre.IdDoc);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
@@ -175,14 +191,24 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "UPDATE document SET document.titre = '" + unLivre.Titre + "', document.idPublic = '" + unLivre.LaCategorie.Id + "' WHERE id = '" + unLivre.IdDoc + "'; ";
-                string reqLivre = "UPDATE livre SET livre.ISBN = '" + unLivre.ISBN1 + "' , livre.auteur = '" + unLivre.Auteur + "' , livre.collection  = '" + unLivre.LaCollection + "' WHERE idDocument = '" + unLivre.IdDoc + "' ; ";
+                string req = "UPDATE document SET document.titre = @Titre, document.idPublic = @IdPublic WHERE id = @IdDoc";
+                string reqLivre = "UPDATE livre SET livre.ISBN = @ISBN, livre.auteur = @Auteur, livre.collection = @Collection WHERE idDocument = @IdDoc";
 
                 DAOFactory.connecter();
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@Titre", unLivre.Titre);
+                command.Parameters.AddWithValue("@IdPublic", unLivre.LaCategorie.Id);
+                command.Parameters.AddWithValue("@IdDoc", unLivre.IdDoc);
 
-                DAOFactory.execSQLWrite(req);
+                command.ExecuteNonQuery();
 
-                DAOFactory.execSQLWrite(reqLivre);
+                command = new MySqlCommand(reqLivre, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@ISBN", unLivre.ISBN1);
+                command.Parameters.AddWithValue("@Auteur", unLivre.Auteur);
+                command.Parameters.AddWithValue("@Collection", unLivre.LaCollection);
+                command.Parameters.AddWithValue("@IdDoc", unLivre.IdDoc);
+
+                command.ExecuteNonQuery(); 
 
                 DAOFactory.deconnecter();
             }

@@ -8,14 +8,14 @@ namespace Mediateq_AP_SIO2
 {
     class DAOCommande
     {
-        public static string abonneNumero()
+        public static string commandeNumero()
         {
             //string req = "Select COUNT(*)+1 from document";
             string numero = "00";
 
             try
             {
-                string req = "Select id + 1 FROM abonné WHERE id=(SELECT max(id) FROM abonné)";
+                string req = "Select id + 1 FROM commande WHERE id=(SELECT max(id) FROM commande)";
 
                 DAOFactory.connecter();
 
@@ -60,7 +60,7 @@ namespace Mediateq_AP_SIO2
                 {
                     // On ne renseigne pas le genre et la catégorie car on ne peut pas ouvrir 2 dataReader dans la même connexion
                     Commande uneCommande = new Commande(reader[0].ToString(), int.Parse(reader[1].ToString()), DateTime.Parse(reader[2].ToString()),
-                        double.Parse(reader[3].ToString()), null, new EtatSuivi(int.Parse(reader[5].ToString()), reader[6].ToString()));
+                        decimal.Parse(reader[3].ToString()), null, new EtatSuivi(int.Parse(reader[5].ToString()), reader[6].ToString()));
 
                     foreach(Document doc in lesDocuments)
                     {
@@ -82,15 +82,42 @@ namespace Mediateq_AP_SIO2
             return lesCommandes;
         }
 
-        public static void ajouterAbonne(Abonne abonne)
+        public static List<EtatSuivi> getAllEtatSuivi()
+        {
+            List<EtatSuivi> lesEtatSuivi = new List<EtatSuivi>();
+
+            try
+            {
+                string req = "Select id, libelle FROM commandeetat";
+
+                DAOFactory.connecter();
+
+                MySqlDataReader reader = DAOFactory.execSQLRead(req);
+
+                while (reader.Read())
+                {
+                    // On ne renseigne pas le genre et la catégorie car on ne peut pas ouvrir 2 dataReader dans la même connexion
+                    EtatSuivi unEtatSuivi = new EtatSuivi(int.Parse(reader[0].ToString()), reader[1].ToString());
+
+                    lesEtatSuivi.Add(unEtatSuivi);
+                }
+                DAOFactory.deconnecter();
+            }
+
+            catch (Exception exc)
+            {
+                throw exc;
+            }
+
+            return lesEtatSuivi;
+        }
+
+        public static void ajouterCommande(Commande commande)
         {
             try
             {
-                string mdp = abonne.Nom;
-
-                string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mdpU, mailU) " +
-                    "VALUES ('" + abonne.Id + "', '" + abonne.Nom + "', '" + abonne.Prenom + "', '" + abonne.DateNaissance.ToString("yyyy-MM-dd") + "', '" + abonne.Adresse + "', '" + 
-                    abonne.NumTel + "', '" + abonne.TypeAbonnement + "', '" + abonne.FinAbonnement.ToString("yyyy-MM-dd") + "', '" + mdp + "', '" + abonne.MailU + "'); ";
+                string req = "INSERT INTO commande (id, nbExemplaire, dateCommande, montant, idDocument, idEtat) " +
+                    "VALUES ('" + commande.Id + "', '" + commande.NbExemplaires + "', '" + commande.DateCommande.ToString("yyyy-MM-dd") + "', '" + commande.Montant.ToString().Replace(",", ".") + "', '" + commande.Document.IdDoc + "', '" + commande.Status.Id + "'); ";
 
                 DAOFactory.connecter();
 
@@ -105,11 +132,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
-        public static void supprimerAbonne(Abonne abonne)
+        public static void supprimerCommande(Commande uneCommande)
         {
             try
             {
-                string req = "DELETE FROM abonné WHERE id = '" + abonne.Id + "'; ";
+                string req = "DELETE FROM commande WHERE id = '" + uneCommande.Id + "'; ";
 
                 DAOFactory.connecter();
 
@@ -124,12 +151,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
-        public static void modifierAbonne(Abonne abonne)
+        public static void modifierCommande(Commande uneCommande)
         {
             try
             {
-                string req = "UPDATE abonné ab SET ab.nom = '" + abonne.Nom + "', ab.prenom = '" + abonne.Prenom + "', ab.dateNaissance = '" + abonne.DateNaissance.ToString("yyyy-MM-dd") + "', ab.adresse = '" + abonne.Adresse + "', ab.numTel = '" + 
-                abonne.NumTel + "', ab.typeAbonnement = '" + abonne.TypeAbonnement + "', ab.finAbonnement = '" + abonne.FinAbonnement.ToString("yyyy-MM-dd") + "', ab.mailU = '" + abonne.MailU + "' WHERE id = '" + abonne.Id + "'; ";
+                string req = "UPDATE commande SET idEtat = '" + uneCommande.Status.Id + "'; ";
 
                 DAOFactory.connecter();
 

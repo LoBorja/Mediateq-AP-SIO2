@@ -8,6 +8,8 @@ namespace Mediateq_AP_SIO2
     {
         private static MySqlConnection connexion;
 
+        public static MySqlConnection Connexion { get => connexion; set => connexion = value; }
+
         public static void creerConnection()
         {
             string serverIp = "localhost";

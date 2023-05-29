@@ -19,6 +19,7 @@ namespace Mediateq_AP_SIO2
         static List<DVD> lesDVDs;
         static List<Abonne> lesAbonnes;
         static List<Commande> lesCommandes;
+        static List<EtatSuivi> lesEtatSuivi;
 
         public Utilisateur user { get; set; }
 
@@ -35,6 +36,11 @@ namespace Mediateq_AP_SIO2
 
         private void FrmMediateq_Load(object sender, EventArgs e)
         {
+            if (!(user.IDService == 0 || user.IDService == 1))
+            {
+                tabOngletsApplication.TabPages.Remove(tabCommandes);
+            }
+
             if (user.IDService != 0)
             {
                 tabOngletsApplication.TabPages.Remove(abonneGestion);
@@ -79,6 +85,7 @@ namespace Mediateq_AP_SIO2
                 // Chargement des objets en mémoire
                 lesDescripteurs = DAODocuments.getAllDescripteurs();
                 lesRevues = DAOPresse.getAllRevues();
+                lesEtatSuivi = DAOCommande.getAllEtatSuivi();
             }
             catch (ExceptionSIO exc)
             {
@@ -321,7 +328,7 @@ namespace Mediateq_AP_SIO2
         private void btnLivreOrder_Click(object sender, EventArgs e)
         {
             int nombreExemplaires = Convert.ToInt32(livreCommandeNbSelect.Value);
-            double prix = Convert.ToDouble(livreCommandePrixSelect.Value);
+            decimal prix = livreCommandePrixSelect.Value;
 
             Livre unLivre = rechercherLivreParId(txtLivreNum.Text);
 
@@ -336,11 +343,16 @@ namespace Mediateq_AP_SIO2
                 return;
             }
 
-            double leMontant = nombreExemplaires * prix;
+            decimal leMontant = nombreExemplaires * prix;
 
-            //Commande nouvelleCommande = new Commande();
+            if (MessageBox.Show("Voulez vous commander " + nombreExemplaires + " exemplaires du livre numéro °" + unLivre.IdDoc + " " + unLivre.Titre + " pour un montant total de " + leMontant + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string idCommande = DAOCommande.commandeNumero();
 
+                Commande nouvelleCommande = new Commande(idCommande, nombreExemplaires, DateTime.Today, leMontant, unLivre, lesEtatSuivi[0]);
 
+                DAOCommande.ajouterCommande(nouvelleCommande);
+            }
         }
 
         private Livre rechercherLivreParId(string unId)
@@ -527,6 +539,36 @@ namespace Mediateq_AP_SIO2
             btnDVDUpdate.Enabled = false;
         }
 
+        private void btnDVDOrder_Click(object sender, EventArgs e)
+        {
+            int nombreExemplaires = Convert.ToInt32(dvdCommandeNbSelect.Value);
+            decimal prix = dvdCommandePrixSelect.Value;
+
+            DVD unDVD = rechercherDVDparId(txtDVDNum.Text);
+
+            if (unDVD == null)
+            {
+                MessageBox.Show("Aucun DVD n'est séléctionné");
+                return;
+            }
+            else if (nombreExemplaires == 0)
+            {
+                MessageBox.Show("Une commande doit contenir aumoins un exemplaire");
+                return;
+            }
+
+            decimal leMontant = nombreExemplaires * prix;
+
+            if (MessageBox.Show("Voulez vous commander " + nombreExemplaires + " exemplaires du DVD numéro °" + unDVD.IdDoc + " " + unDVD.Titre + " pour un montant total de " + leMontant + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                string idCommande = DAOCommande.commandeNumero();
+
+                Commande nouvelleCommande = new Commande(idCommande, nombreExemplaires, DateTime.Today, leMontant, unDVD, lesEtatSuivi[0]);
+
+                DAOCommande.ajouterCommande(nouvelleCommande);
+            }
+        }
+
         private DVD rechercherDVDparId(string unId)
         {
             DVD unDvd = null;
@@ -543,57 +585,205 @@ namespace Mediateq_AP_SIO2
 
         #endregion
 
-        /*#region AJOUT_DVD
-        //-----------------------------------------------------------
-        // ONGLET "Ajout dvd"
-        //-----------------------------------------------------------
-
-        private void tabADD_DVD_Enter(object sender, EventArgs e)
-        {
-            // Chargement des objets en mémoire
-            lesCategories = DAODocuments.getAllCategories();
-            lesDescripteurs = DAODocuments.getAllDescripteurs();
-            lesDVDs = DAODocuments.getAllDVD();
-        }
-
-        private void VALID_DVD_Click(object sender, EventArgs e)
-        {
-            String numero = DAODocuments.DocumentNumero();
-            String titre = ADD_DVD_Titre.Text;
-            String synopsis = ADD_DVD_Synop.Text;
-            String realisateur = ADD_DVD_Reali.Text;
-            int duree = int.Parse(ADD_DVD_Duree.Text);
-            String choixPublic = ADD_PUBLIC.Text.Substring(0, 5);
-
-            DVD newDVD = new DVD(numero, titre, synopsis, realisateur, duree, null);
-
-            DAODocuments.AjouterDVD(newDVD, choixPublic);
-            ADD_DVD_Titre.Text = "";
-            ADD_DVD_Synop.Text = "";
-            ADD_DVD_Reali.Text = "";
-            ADD_DVD_Duree.Text = "";
-        }
-
-        #endregion*/
-
         #region Commande
 
         private void tabCommandes_Enter(object sender, EventArgs e)
         {
             lesCommandes = DAOCommande.getAllCommandes();
 
+            cbxFiltreCommande.Items.Add("tout afficher");
+
+            foreach (EtatSuivi status in lesEtatSuivi)
+            {
+                cbxFiltreCommande.Items.Add(status.Libelle);
+            }
+
             commandeRemplirDataGrid();
         }
 
-        private void commandeRemplirDataGrid()
+        private void btnCommandeRecherche_Click(object sender, EventArgs e)
+        {
+            bool trouve = false;
+            foreach (Commande commande in lesCommandes)
+            {
+                if (commande.Id == txtCommandeRecherche.Text)
+                {
+                    setInfosCommande(commande);
+
+                    trouve = true;
+                }
+            }
+            if (!trouve)
+                MessageBox.Show("Aucune commande ne correspond à cet Id.");
+        }
+
+        private void cbxFiltreCommande_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            commandeRemplirDataGrid(cbxFiltreCommande.Text);
+        }
+
+        private void dataGridCommandes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow ligne = dataGridCommandes.Rows[e.RowIndex];
+
+                Commande commande = rechercherCommandeParId(ligne.Cells[0].Value.ToString());
+
+                if (dataGridCommandes.Columns[e.ColumnIndex].Name == "commandeModifier")
+                {
+                    setInfosCommande(commande);
+                }
+            }
+        }
+
+        private void btnModifStatusCommande_Click(object sender, EventArgs e)
+        {
+            Commande uneCommande = rechercherCommandeParId(txtIdCommande.Text);
+            string nouveauStatus = cbxStatusCommande.Text;
+
+            if (uneCommande == null)
+            {
+                MessageBox.Show("Aucune Commande n'est séléctionée");
+                return;
+            }
+            else if (nouveauStatus == "") 
+            {
+                MessageBox.Show("Veuillez choisir un nouveau status pour procéder");
+                return;
+            }
+
+            if (nouveauStatus == "supprimer")
+            {
+                if (MessageBox.Show("Voulez vous supprimer la commande n°" + uneCommande.Id + " du " + uneCommande.DateCommande.ToShortDateString() + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    DAOCommande.supprimerCommande(uneCommande);
+
+                    lesCommandes.Remove(uneCommande);
+
+                    commandeInfoReinitialiserChamps();
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("Voulez vous passer la commande n°" + uneCommande.Id + " du " + uneCommande.DateCommande.ToShortDateString() + " au status " + nouveauStatus + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    uneCommande.Status = rechercherStatusParLibelle(nouveauStatus);
+
+                    DAOCommande.modifierCommande(uneCommande);
+
+                    commandeInfoReinitialiserChamps();
+                }
+            }
+        }
+
+        private void commandeRemplirDataGrid(string unStatut = "tout afficher")
         {
             dataGridCommandes.Rows.Clear();
 
-            foreach (Commande com in lesCommandes)
+            if (unStatut == "tout afficher" || unStatut == "")
             {
-
+                foreach (Commande com in lesCommandes)
+                {
                     dataGridCommandes.Rows.Add(com.Id, com.NbExemplaires, com.DateCommande.ToShortDateString(), com.Montant, com.Document.IdDoc, com.Document.Titre, com.Status.Libelle, "Modifier");
+                }
             }
+            else
+            {
+                foreach (Commande com in lesCommandes)
+                {
+                    if (com.Status.Libelle == unStatut)
+                    {
+                        dataGridCommandes.Rows.Add(com.Id, com.NbExemplaires, com.DateCommande.ToShortDateString(), com.Montant, com.Document.IdDoc, com.Document.Titre, com.Status.Libelle, "Modifier");
+                    }
+                }
+            }
+        }
+
+        private void setInfosCommande(Commande uneCommande)
+        {
+            string libEnCours = lesEtatSuivi[0].Libelle;
+            string libLivree = lesEtatSuivi[1].Libelle;
+            string libRelancee = lesEtatSuivi[2].Libelle;
+            string libReglee = lesEtatSuivi[3].Libelle;
+            string libCloturee = lesEtatSuivi[4].Libelle;
+            string supprimer = "supprimer";
+
+            txtIdCommande.Text = uneCommande.Id;
+            txtNbExCommande.Text = uneCommande.NbExemplaires.ToString();
+            txtDateCommande.Text = uneCommande.DateCommande.ToShortDateString();
+            txtMontantCommande.Text = uneCommande.Montant.ToString();
+            txtIdDocCommande.Text = uneCommande.Document.IdDoc;
+            txtNomDocCommande.Text = uneCommande.Document.Titre;
+            txtActuelStatusCommande.Text = uneCommande.Status.Libelle;
+
+            cbxStatusCommande.Items.Clear();
+
+            switch (uneCommande.Status.Id)
+            {
+                case 1: // En Cours
+                    cbxStatusCommande.Items.Add(libLivree);
+                    cbxStatusCommande.Items.Add(libRelancee);
+                    cbxStatusCommande.Items.Add(supprimer);
+                    break;
+                case 2: // Livrée
+                    cbxStatusCommande.Items.Add(libReglee);
+                    break;
+                case 3: // Relancée
+                    cbxStatusCommande.Items.Add(libLivree);
+                    cbxStatusCommande.Items.Add(supprimer);
+                    break;
+                case 4: // Reglée
+                    cbxStatusCommande.Items.Add(libCloturee);
+                    break;
+                case 5: // Cloturée
+                    break;
+            }
+        }
+
+        private void commandeInfoReinitialiserChamps()
+        {
+            commandeRemplirDataGrid();
+
+            txtIdCommande.Text = "";
+            txtNbExCommande.Text = "";
+            txtDateCommande.Text = "";
+            txtMontantCommande.Text = "";
+            txtIdDocCommande.Text = "";
+            txtNomDocCommande.Text = "";
+            txtActuelStatusCommande.Text = "";
+
+            cbxStatusCommande.Items.Clear();
+        }
+
+        private Commande rechercherCommandeParId(string unId)
+        {
+            Commande uneCommande = null;
+
+            foreach (Commande commande in lesCommandes)
+            {
+                if (commande.Id == unId)
+                {
+                    uneCommande = commande;
+                }
+            }
+
+            return uneCommande;
+        }
+
+        private EtatSuivi rechercherStatusParLibelle(string unLibelle)
+        {
+            EtatSuivi status = null;
+
+            foreach (EtatSuivi unStatus in lesEtatSuivi)
+            {
+                if (unStatus.Libelle == unLibelle)
+                {
+                    status = unStatus;
+                }
+            }
+
+            return status;
         }
 
         #endregion

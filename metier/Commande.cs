@@ -11,11 +11,11 @@ namespace Mediateq_AP_SIO2.metier
         private string id;
         private int nbExemplaires;
         private DateTime dateCommande;
-        private double montant;
+        private decimal montant;
         private Document document;
         private EtatSuivi status;
 
-        public Commande(string id, int nbExemplaires, DateTime dateCommande, double montant, Document document, EtatSuivi status)
+        public Commande(string id, int nbExemplaires, DateTime dateCommande, decimal montant, Document document, EtatSuivi status)
         {
             this.id = id;
             this.nbExemplaires = nbExemplaires;
@@ -28,7 +28,7 @@ namespace Mediateq_AP_SIO2.metier
         public string Id { get => id; set => id = value; }
         public int NbExemplaires { get => nbExemplaires; set => nbExemplaires = value; }
         public DateTime DateCommande { get => dateCommande; set => dateCommande = value; }
-        public double Montant { get => montant; set => montant = value; }
+        public decimal Montant { get => montant; set => montant = value; }
         public Document Document { get => document; set => document = value; }
         public EtatSuivi Status { get => status; set => status = value; }
         
