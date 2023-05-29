@@ -6,8 +6,15 @@ using System.Collections.Generic;
 
 namespace Mediateq_AP_SIO2
 {
+    /// <summary>
+    /// Classe de connexion à la base de données pour Documents
+    /// </summary>
     class DAODocuments
     {
+        /// <summary>
+        /// Retourne le numéro de document disponible pour un ajout de document
+        /// </summary>
+        /// <returns>Numéro de document disponible</returns>
         public static string DocumentNumero()
         {
             string Numero = "00";
@@ -39,7 +46,10 @@ namespace Mediateq_AP_SIO2
             return Numero;
         }
 
-
+        /// <summary>
+        /// Retourne une liste de toutes les categories
+        /// </summary>
+        /// <returns>Liste des categories</returns>
         public static List<Categorie> getAllCategories()
         {
             List<Categorie> lesCategories = new List<Categorie>();
@@ -67,6 +77,10 @@ namespace Mediateq_AP_SIO2
             return lesCategories;
         }
 
+        /// <summary>
+        /// Retourne la liste des Descripteurs
+        /// </summary>
+        /// <returns>Liste des descripteurs</returns>
         public static List<Descripteur> getAllDescripteurs()
         {
             List<Descripteur> lesGenres = new List<Descripteur>();
@@ -94,6 +108,10 @@ namespace Mediateq_AP_SIO2
             return lesGenres;
         }
 
+        /// <summary>
+        /// Retourne la liste des Livres
+        /// </summary>
+        /// <returns>Liste des Livres</returns>
         public static List<Livre> getAllLivres()
         {
             List<Livre> lesLivres = new List<Livre>();
@@ -125,6 +143,10 @@ namespace Mediateq_AP_SIO2
             return lesLivres;
         }
 
+        /// <summary>
+        /// Ajoute un Livre à la base de données
+        /// </summary>
+        /// <param name="pLivre">Livre à ajouter</param>
         public static void AjouterLivre(Livre pLivre)
         {
             try
@@ -158,6 +180,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Supprime le livre choisi de la base de données
+        /// </summary>
+        /// <param name="unLivre">Livre à supprimer</param>
         public static void SupprimerLivre(Livre unLivre)
         {
             try
@@ -186,6 +212,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Met à jour le livre passé en paramêtre sur la base de données
+        /// </summary>
+        /// <param name="unLivre"></param>
         public static void ModifierLivre(Livre unLivre)
         {
             try
@@ -218,7 +248,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
-        //
+        /// <summary>
+        /// Retourne la liste des DVDs
+        /// </summary>
+        /// <returns>Liste des DVDs</returns>
         public static List<DVD> getAllDVD()
         {
             List<DVD> lesDVD = new List<DVD>();
@@ -249,6 +282,11 @@ namespace Mediateq_AP_SIO2
             return lesDVD;
         }
 
+        /// <summary>
+        /// Retourne la categorie, depuis la base de données, correspondant au document en paramêtre
+        /// </summary>
+        /// <param name="unDocument">Le document choisi</param>
+        /// <returns>La catégorie de ce document</returns>
         public static Categorie getCategorieByDocument(Document unDocument)
         {
             Categorie categorie;
@@ -280,6 +318,10 @@ namespace Mediateq_AP_SIO2
             return categorie;
         }
 
+        /// <summary>
+        /// Ajoute le dvd à la base de données
+        /// </summary>
+        /// <param name="pDVD">Objet DVD à ajouter</param>
         public static void AjouterDVD(DVD pDVD)
         {
             try
@@ -312,6 +354,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Supprime le dvd choisi de la base de données
+        /// </summary>
+        /// <param name="unDVD">Le DVD choisi</param>
         public static void SupprimerDVD(DVD unDVD)
         {
             try
@@ -339,6 +385,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Met à jour le dvd choisi sur la base de données
+        /// </summary>
+        /// <param name="unDVD">Le DVD choisi</param>
         public static void ModifierDVD(DVD unDVD)
         {
             try

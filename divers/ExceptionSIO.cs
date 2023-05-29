@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Mediateq_AP_SIO2.divers
 {
+    /// <summary>
+    /// Gestion des exceptions
+    /// </summary>
     class ExceptionSIO : Exception
     {
         private int niveauExc;
-        private string libelleExc;//
+        private string libelleExc;
 
         public ExceptionSIO(int pNiveau, string pLibelle, string pMessage):base(pMessage)
         {

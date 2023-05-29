@@ -6,11 +6,17 @@ using System.Collections.Generic;
 
 namespace Mediateq_AP_SIO2
 {
+    /// <summary>
+    /// Connexion à la base de données pour Abonnés
+    /// </summary>
     class DAOAbonne
     {
+        /// <summary>
+        /// Retourne le numéro d'abonné, pour un nouvel abonné, disponible sur la base de données
+        /// </summary>
+        /// <returns>Nouveau numéro d'abonné</returns>
         public static string abonneNumero()
         {
-            //string req = "Select COUNT(*)+1 from document";
             string numero = "00";
 
             try
@@ -38,6 +44,10 @@ namespace Mediateq_AP_SIO2
             return numero;
         }
 
+        /// <summary>
+        /// Retourne la liste des Abonnés de la base de données
+        /// </summary>
+        /// <returns>Liste des abonnés</returns>
         public static List<Abonne> getAllAbonne()
         {
             List<Abonne> lesAbonne = new List<Abonne>();
@@ -68,6 +78,10 @@ namespace Mediateq_AP_SIO2
             return lesAbonne;
         }
 
+        /// <summary>
+        /// Ajoute un abonné à la base de données
+        /// </summary>
+        /// <param name="abonne">Abonné à ajouter</param>
         public static void ajouterAbonne(Abonne abonne)
         {
             try
@@ -101,6 +115,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Supprime un abonné de la base de données
+        /// </summary>
+        /// <param name="abonne">Abonné à supprimer</param>
         public static void supprimerAbonne(Abonne abonne)
         {
             try
@@ -122,6 +140,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Modifie l'abonné sur la base de données
+        /// </summary>
+        /// <param name="abonne">Abonné à modifier</param>
         public static void modifierAbonne(Abonne abonne)
         {
             try

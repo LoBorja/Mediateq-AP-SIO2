@@ -6,8 +6,15 @@ using System.Linq;
 
 namespace Mediateq_AP_SIO2
 {
+    /// <summary>
+    /// Connexion à la base de données pour Commandes
+    /// </summary>
     class DAOCommande
     {
+        /// <summary>
+        /// Retourne le numéro de commande, pour une nouvelle commande, disponible sur la base de données
+        /// </summary>
+        /// <returns>Nouveau numéro de commande</returns>
         public static string commandeNumero()
         {
             string numero = "00";
@@ -37,6 +44,10 @@ namespace Mediateq_AP_SIO2
             return numero;
         }
 
+        /// <summary>
+        /// Retourne la liste des commandes de la base de données
+        /// </summary>
+        /// <returns>Liste des commandes</returns>
         public static List<Commande> getAllCommandes()
         {
             List<Commande> lesCommandes = new List<Commande>();
@@ -81,6 +92,10 @@ namespace Mediateq_AP_SIO2
             return lesCommandes;
         }
 
+        /// <summary>
+        /// Retourne la liste des status de commande de la base de données
+        /// </summary>
+        /// <returns>Liste des Status</returns>
         public static List<EtatSuivi> getAllEtatSuivi()
         {
             List<EtatSuivi> lesEtatSuivi = new List<EtatSuivi>();
@@ -111,6 +126,10 @@ namespace Mediateq_AP_SIO2
             return lesEtatSuivi;
         }
 
+        /// <summary>
+        /// Ajoute une commande à la base de données
+        /// </summary>
+        /// <param name="commande">Commande à ajouter</param>
         public static void ajouterCommande(Commande commande)
         {
             try
@@ -131,6 +150,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Supprime une commande de la base de données
+        /// </summary>
+        /// <param name="uneCommande">Commande à supprimer</param>
         public static void supprimerCommande(Commande uneCommande)
         {
             try
@@ -150,6 +173,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Modifie la commande sur la base de données
+        /// </summary>
+        /// <param name="uneCommande">Commande à modifier</param>
         public static void modifierCommande(Commande uneCommande)
         {
             try

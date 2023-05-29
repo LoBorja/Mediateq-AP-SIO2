@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet Parution
+    /// </summary>
     class Parution
     {
         private int numero;

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet Abonné
+    /// </summary>
     public class Abonne
     {
         private string id;

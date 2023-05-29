@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet Utilisateur, nécessaire à l'authentification sur l'application
+    /// </summary>
     public class Utilisateur
     {
         private int id;

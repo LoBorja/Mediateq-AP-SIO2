@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet de status de commande
+    /// </summary>
     class EtatSuivi
     {
         private int id;

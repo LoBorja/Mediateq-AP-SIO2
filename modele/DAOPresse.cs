@@ -8,8 +8,15 @@ using Mediateq_AP_SIO2.metier;
 
 namespace Mediateq_AP_SIO2
 {
+    /// <summary>
+    /// Classe de connexion à la base de données pour la presse
+    /// </summary>
     class DAOPresse
     {
+        /// <summary>
+        /// Retourne la liste des revues
+        /// </summary>
+        /// <returns>Liste de toutes les revues</returns>
         public static List<Revue> getAllRevues()
         {
             List<Revue> lesRevues = new List<Revue>();
@@ -36,6 +43,11 @@ namespace Mediateq_AP_SIO2
             return lesRevues;
         }
         
+        /// <summary>
+        /// Retourne la parution correspondant au titre
+        /// </summary>
+        /// <param name="pTitre">Titre de parution</param>
+        /// <returns>Objet parution correspondant</returns>
         public static List<Parution> getParutionByTitre(Revue pTitre)
         {
             List<Parution> lesParutions = new List<Parution>();

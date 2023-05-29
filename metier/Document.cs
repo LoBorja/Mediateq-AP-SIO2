@@ -2,6 +2,9 @@
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet Document
+    /// </summary>
     class Document
     {
         private string idDoc;
@@ -23,6 +26,4 @@ namespace Mediateq_AP_SIO2.metier
         public string Image { get => image; set => image = value; }
         public Categorie LaCategorie { get => laCategorie; set => laCategorie = value; }
     }
-
-
 }

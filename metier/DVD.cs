@@ -2,6 +2,9 @@
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet DVD, héritier de Document
+    /// </summary>
     class DVD : Document
     {
         private string synopsis;

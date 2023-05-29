@@ -1,7 +1,10 @@
 ﻿
 
 namespace Mediateq_AP_SIO2.metier
-{
+{   
+    /// <summary>
+    /// Objet Catégorie
+    /// </summary>
     class Categorie
     {
         private string id;

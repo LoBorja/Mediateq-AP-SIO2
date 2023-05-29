@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet Descripteur
+    /// </summary>
     class Descripteur
     {
         private string id;
@@ -20,9 +23,4 @@ namespace Mediateq_AP_SIO2.metier
         public string Id { get => id; set => id = value; }
         public string Libelle { get => libelle; set => libelle = value; }
     }
-
-
-
-
-
 }

@@ -7,11 +7,16 @@ using Mediateq_AP_SIO2.metier;
 
 
 namespace Mediateq_AP_SIO2
-{
+{   
+    /// <summary>
+    /// Fenêtre principale de l'application
+    /// </summary>
     public partial class FrmMediateq : Form
     {
         #region Variables globales
-
+        /// <summary>
+        /// Variables globales, listes d'objets
+        /// </summary>
         static List<Categorie> lesCategories;
         static List<Descripteur> lesDescripteurs;
         static List<Revue> lesRevues;
@@ -21,6 +26,10 @@ namespace Mediateq_AP_SIO2
         static List<Commande> lesCommandes;
         static List<EtatSuivi> lesEtatSuivi;
 
+
+        /// <summary>
+        /// Objet Utilisateur correspondant à l'utilisateur connecté
+        /// </summary>
         public Utilisateur user { get; set; }
 
         #endregion
@@ -28,12 +37,21 @@ namespace Mediateq_AP_SIO2
 
         #region Procédures évènementielles
 
+        /// <summary>
+        /// Constructeur de la classe de l'application principale.
+        /// </summary>
+        /// <param name="utilisateur">Objet utilisateur envoyé depuis le formulaire de connexion</param>
         public FrmMediateq(Utilisateur utilisateur)
         {
             InitializeComponent();
             user = utilisateur;
         }
 
+        /// <summary>
+        /// Fermeture des pages selon le role utilisateur et récupération de certaines données.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMediateq_Load(object sender, EventArgs e)
         {
             if (!(user.IDService == 0 || user.IDService == 1))
@@ -91,8 +109,6 @@ namespace Mediateq_AP_SIO2
             {
                 MessageBox.Show(exc.NiveauExc + " - " + exc.LibelleExc + " - " + exc.Message);
             }
-
-
         }
 
         #endregion
@@ -102,12 +118,22 @@ namespace Mediateq_AP_SIO2
         //-----------------------------------------------------------
         // ONGLET "PARUTIONS"
         //------------------------------------------------------------
+        /// <summary>
+        /// Mise en places des données dans le combobox Titres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabParutions_Enter(object sender, EventArgs e)
         {
             cbxTitres.DataSource = lesRevues;
             cbxTitres.DisplayMember = "titre";
         }
 
+        /// <summary>
+        /// Changement de l'affichage lors de la selection d'un titre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxTitres_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Parution> lesParutions;
@@ -132,12 +158,22 @@ namespace Mediateq_AP_SIO2
         //-----------------------------------------------------------
         // ONGLET "TITRES"
         //------------------------------------------------------------
+        /// <summary>
+        /// Mise en place des données dans le combobox Descripteurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabTitres_Enter(object sender, EventArgs e)
         {
             cbxDomaines.DataSource = lesDescripteurs;
             cbxDomaines.DisplayMember = "libelle";
         }
 
+        /// <summary>
+        /// Changements de l'affichage des revues lors de la selection d'un Descripteur
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxDomaines_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Objet Domaine sélectionné dans la comboBox
@@ -162,7 +198,11 @@ namespace Mediateq_AP_SIO2
         //-----------------------------------------------------------
         // ONGLET "LIVRES"
         //-----------------------------------------------------------
-
+        /// <summary>
+        /// Récupérations des données Categories, Descripteurs et Livres de la BDD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabLivres_Enter(object sender, EventArgs e)
         {
             // Chargement des objets en mémoire
@@ -179,6 +219,11 @@ namespace Mediateq_AP_SIO2
             resetChampsLivre();
         }
 
+        /// <summary>
+        /// Changement de l'affichage lors de la recherche par numéro de Livre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLivreRecherche_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
@@ -215,6 +260,11 @@ namespace Mediateq_AP_SIO2
                 MessageBox.Show("Document non trouvé dans les livres");
         }
 
+        /// <summary>
+        /// Création d'un nouveau objet Livre selon les informations entrées dans les champs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLivreNew_Click(object sender, EventArgs e)
         {
             string numero = DAODocuments.DocumentNumero();
@@ -235,6 +285,11 @@ namespace Mediateq_AP_SIO2
             resetChampsLivre();
         }
 
+        /// <summary>
+        /// Mise à jour du livre correspond au numéro séléctioné, selon les informations entrées dans les champs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLivreUpdate_Click(object sender, EventArgs e)
         {
             Livre livreModifie = rechercherLivreParId(txtLivreNum.Text);
@@ -252,11 +307,21 @@ namespace Mediateq_AP_SIO2
             resetChampsLivre();
         }
 
+        /// <summary>
+        /// Réinitialisation des champs de saisie et du numéro de Livre séléctioné lorsque l'utilisateur appuie sur le bouton de rénitialisation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLivreReset_Click(object sender, EventArgs e)
         {
             resetChampsLivre();
         }
 
+        /// <summary>
+        /// Changement de l'affichage lorsque l'utilisateur écrit un titre dans le champs de recherche par Titre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbTitre_TextChanged(object sender, EventArgs e)
         {
             dgvLivres.Rows.Clear();
@@ -279,6 +344,9 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Remet à zéro les champs de saisie, le numéro de Livre séléctionné et les permessions de boutons d'option
+        /// </summary>
         private void resetChampsLivre()
         {
             txtLivreNum.Text = "Nouveau";
@@ -293,6 +361,11 @@ namespace Mediateq_AP_SIO2
             btnLivreUpdate.Enabled = false;
         }
 
+        /// <summary>
+        /// Fonction du bouton supprimer présent sur le tableau des Livres
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvLivre_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -314,7 +387,10 @@ namespace Mediateq_AP_SIO2
                 }
             }
         }
-
+        
+        /// <summary>
+        /// Remplis le tableau des Livres présents sur la BDD
+        /// </summary>
         private void livreRemplirDataGrid()
         {
             dgvLivres.Rows.Clear();
@@ -325,6 +401,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Activation du bouton de commande d'un Livre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLivreOrder_Click(object sender, EventArgs e)
         {
             int nombreExemplaires = Convert.ToInt32(livreCommandeNbSelect.Value);
@@ -355,6 +436,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Recherche un objet Livre avec un Id
+        /// </summary>
+        /// <param name="unId">Id du Livre</param>
+        /// <returns>Objet Livre correspondant</returns>
         private Livre rechercherLivreParId(string unId)
         {
             Livre unLivre = null;
@@ -376,7 +462,11 @@ namespace Mediateq_AP_SIO2
         //-----------------------------------------------------------
         // ONGLET "DVD"
         //-----------------------------------------------------------
-
+        /// <summary>
+        /// Récupération des données Catégorie,Descripteurs et DVD et alimentation du tableau et des comboboxs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabDVD_Enter(object sender, EventArgs e)
         {
             // Chargement des objets en mémoire
@@ -393,6 +483,11 @@ namespace Mediateq_AP_SIO2
             resetChampsDVD();
         }
 
+        /// <summary>
+        /// Affichage du DVD recherché après utilisation du bouton Recherche par Numéro
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDVDRecherche_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
@@ -429,6 +524,11 @@ namespace Mediateq_AP_SIO2
                 MessageBox.Show("Document non trouvé dans les dvds");
         }
 
+        /// <summary>
+        /// Affichage du tableau lorsque l'utilisateur écris sur la barre de recherche par Titre
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtDVDRechercheParTitre_TextChanged(object sender, EventArgs e)
         {
             dataGridDVD.Rows.Clear();
@@ -451,6 +551,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Création d'un nouveau DVD selon les champs d'information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDVDNew_Click(object sender, EventArgs e)
         {
             string numero = DAODocuments.DocumentNumero();
@@ -471,6 +576,11 @@ namespace Mediateq_AP_SIO2
             resetChampsDVD();
         }
 
+        /// <summary>
+        /// Mise à jour d'un DVD selon les champs d'information
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDVDUpdate_Click(object sender, EventArgs e)
         {
             DVD dvdModifie = rechercherDVDparId(txtDVDNum.Text);
@@ -488,11 +598,21 @@ namespace Mediateq_AP_SIO2
             resetChampsDVD();
         }
 
+        /// <summary>
+        /// Mise à jour des champs de saisie, et du numéro de DVD, par le bouton Rénitialiser
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDVDReset_Click(object sender, EventArgs e)
         {
             resetChampsDVD();
         }
 
+        /// <summary>
+        /// Fonction des boutons de suppression du tableau de DVD
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridDVD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -515,6 +635,9 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Remplissage du tableau de DVD
+        /// </summary>
         private void dvdRemplirDataGrid()
         {
             dataGridDVD.Rows.Clear();
@@ -525,6 +648,9 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Remise à zéro des champs de saisie, du numéro de DVD et des permissions de boutons
+        /// </summary>
         private void resetChampsDVD()
         {
             txtDVDNum.Text = "Nouveau";
@@ -540,6 +666,11 @@ namespace Mediateq_AP_SIO2
             btnDVDUpdate.Enabled = false;
         }
 
+        /// <summary>
+        /// Commande d'un DVD, selon le montant et le nombre d'exemplaires inscrits dans les champs de commande
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDVDOrder_Click(object sender, EventArgs e)
         {
             int nombreExemplaires = Convert.ToInt32(dvdCommandeNbSelect.Value);
@@ -570,6 +701,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Recherche d'objet DVD par Id
+        /// </summary>
+        /// <param name="unId">Id de DVD</param>
+        /// <returns>Objet DVD correspondant</returns>
         private DVD rechercherDVDparId(string unId)
         {
             DVD unDvd = null;
@@ -588,7 +724,14 @@ namespace Mediateq_AP_SIO2
 
 
         #region Commande
-
+        //-----------------------------------------------------------
+        // ONGLET "Commande"
+        //-----------------------------------------------------------
+        /// <summary>
+        /// Récupération des données des Commandes et des Status de suivi et remplissage des tableaux et comboboxs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabCommandes_Enter(object sender, EventArgs e)
         {
             lesCommandes = DAOCommande.getAllCommandes();
@@ -603,6 +746,11 @@ namespace Mediateq_AP_SIO2
             commandeRemplirDataGrid();
         }
 
+        /// <summary>
+        /// Affichage de commande selon l'Id inscrit par l'utilisateur dans la barre de recherche
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCommandeRecherche_Click(object sender, EventArgs e)
         {
             bool trouve = false;
@@ -619,11 +767,21 @@ namespace Mediateq_AP_SIO2
                 MessageBox.Show("Aucune commande ne correspond à cet Id.");
         }
 
+        /// <summary>
+        /// Modification de l'affichage du tableau de commandes lors de la séléction de filtre 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxFiltreCommande_SelectedIndexChanged(object sender, EventArgs e)
         {
             commandeRemplirDataGrid(cbxFiltreCommande.Text);
         }
 
+        /// <summary>
+        /// Affichage de la commande séléctionné via le bouton Modifier correspondant
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridCommandes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -639,6 +797,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Modification du status de commande selon le status choisi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnModifStatusCommande_Click(object sender, EventArgs e)
         {
             Commande uneCommande = rechercherCommandeParId(txtIdCommande.Text);
@@ -679,6 +842,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Remplissage du tableau de commande selon le critère choisi, ou affichage complet si aucun critère choisi
+        /// </summary>
+        /// <param name="unStatut">Filtre séléctionné</param>
         private void commandeRemplirDataGrid(string unStatut = "tout afficher")
         {
             dataGridCommandes.Rows.Clear();
@@ -702,6 +869,10 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Affichage des informations et du status correspondant, et des status possibles pour la modification
+        /// </summary>
+        /// <param name="uneCommande"></param>
         private void setInfosCommande(Commande uneCommande)
         {
             string libEnCours = lesEtatSuivi[0].Libelle;
@@ -743,6 +914,9 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Remise à zéro des champs d'information et de status de commande
+        /// </summary>
         private void commandeInfoReinitialiserChamps()
         {
             commandeRemplirDataGrid();
@@ -758,6 +932,11 @@ namespace Mediateq_AP_SIO2
             cbxStatusCommande.Items.Clear();
         }
 
+        /// <summary>
+        /// Recherche commande par Id
+        /// </summary>
+        /// <param name="unId">Id de commande</param>
+        /// <returns>Objet Commande correspondant</returns>
         private Commande rechercherCommandeParId(string unId)
         {
             Commande uneCommande = null;
@@ -773,6 +952,11 @@ namespace Mediateq_AP_SIO2
             return uneCommande;
         }
 
+        /// <summary>
+        /// Recherche de status par libelle
+        /// </summary>
+        /// <param name="unLibelle">Libelle de status</param>
+        /// <returns>Objet EtatSuivi correspondant</returns>
         private EtatSuivi rechercherStatusParLibelle(string unLibelle)
         {
             EtatSuivi status = null;
@@ -792,7 +976,11 @@ namespace Mediateq_AP_SIO2
 
 
         #region Abonnee
-
+        /// <summary>
+        /// Récupération des objets abonnée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tabAbonne_Enter(object sender, EventArgs e)
         {
             // Chargement des objets en mémoire
@@ -803,6 +991,11 @@ namespace Mediateq_AP_SIO2
             abonneRemplirDataGrid();
         }
 
+        /// <summary>
+        /// Modification de l'affichage du tableau d'abonnés lorsque l'utilisateur écrit sur la barre de recherche par Nom
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txbAbonne_TextChanged(object sender, EventArgs e)
         {
             dataGridAbonne.Rows.Clear();
@@ -832,6 +1025,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Fonction des boutons de supression et de mise à jour d'abonnés sur le tableau d'abonné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dataGridAbonne_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -869,11 +1067,21 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Met à jour le datagrid lorsque le filtre pour séléctionner les abonnements fini ou proche de la fin est activé ou désactivé
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void abonneExpireCheck_CheckedChanged(object sender, EventArgs e)
         {
             abonneRemplirDataGrid();
         }
 
+        /// <summary>
+        /// Création d'un nouvel Abonné selon les informations entrées dans les champs de saisie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbonneNew_Click(object sender, EventArgs e)
         {
             string id = DAOAbonne.abonneNumero();
@@ -894,9 +1102,14 @@ namespace Mediateq_AP_SIO2
 
             abonneRemplirDataGrid();
 
-            resetChamps();
+            abonneResetChamps();
         }
 
+        /// <summary>
+        /// Mise à jour de l'Abonné séléctionné selon les informations entrées dans les champs de saisie
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbonneUpdate_Click(object sender, EventArgs e)
         {
             Abonne abonneModifie = rechercherAbonneParId(txtAbonneId.Text);
@@ -917,16 +1130,26 @@ namespace Mediateq_AP_SIO2
 
             btnAbonneUpdate.Enabled = false;
             btnAbonneNew.Enabled = true;
-            resetChamps();
+            abonneResetChamps();
         }
 
+        /// <summary>
+        /// Remise à zéro des champs de saisie d'abonné et des permissions de boutons
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbonneReset_Click(object sender, EventArgs e)
         {
             btnAbonneUpdate.Enabled = false;
             btnAbonneNew.Enabled = true;
-            resetChamps();
+            abonneResetChamps();
         }
 
+        /// <summary>
+        /// Affichage de l'abonné recherché selon l'Id inscrit dans le champs de recherche
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAbonneParId_Click(object sender, EventArgs e)
         {
             Abonne unAbonne = rechercherAbonneParId(txtAbonneParId.Text);
@@ -951,7 +1174,10 @@ namespace Mediateq_AP_SIO2
             btnAbonneNew.Enabled = false;
         }
 
-        private void resetChamps()
+        /// <summary>
+        /// Remise à zéro des champs de saisie
+        /// </summary>
+        private void abonneResetChamps()
         {
             txtAbonneId.Text = "Nouveau";
             txtAbonneNom.Text = "";
@@ -964,6 +1190,9 @@ namespace Mediateq_AP_SIO2
             txtAbonneMail.Text = "";
         }
 
+        /// <summary>
+        /// Remplissage du tableau d'abonnés
+        /// </summary>
         private void abonneRemplirDataGrid()
         {
             dataGridAbonne.Rows.Clear();
@@ -984,6 +1213,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Colorise les case de date d'abonnement sur le tableau abonné selon le temps restant pour l'abonnement
+        /// </summary>
+        /// <param name="indice">Numéro de ligne sur le tableau</param>
+        /// <param name="diffTemps">Différence de temps entre aujourd'hui et la fin d'abonnement</param>
         private void abonneColoriserFin(int indice, TimeSpan diffTemps)
         {
             if(diffTemps.TotalDays < 0)
@@ -1000,6 +1234,11 @@ namespace Mediateq_AP_SIO2
             }
         }
 
+        /// <summary>
+        /// Recherche d'abonné par Id
+        /// </summary>
+        /// <param name="idAbonne">Id d'Abonné</param>
+        /// <returns>Objet abonné correspondant</returns>
         private Abonne rechercherAbonneParId(string idAbonne)
         {
             Abonne unAbonne = null;
@@ -1015,7 +1254,12 @@ namespace Mediateq_AP_SIO2
         #endregion
 
 
-        #region Fonctions Supplémentaires Principales
+        #region Fonctions Supplémentaires 
+        /// <summary>
+        /// Recherche de Catégorie par Nom
+        /// </summary>
+        /// <param name="uneNomDeCategorie">Nom de catégorie</param>
+        /// <returns>Objet catégorie correspondant</returns>
         private Categorie categorieParLibelle(string uneNomDeCategorie)
         {
             Categorie resultatCategorie = lesCategories[0];
@@ -1031,6 +1275,11 @@ namespace Mediateq_AP_SIO2
             return resultatCategorie;
         }
 
+        /// <summary>
+        /// Fermeture de l'application entière lorsque la fênêtre principale est fermée
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmMediateq_FormClosed(object sender, FormClosedEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
