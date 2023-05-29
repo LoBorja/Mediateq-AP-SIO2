@@ -60,7 +60,7 @@ namespace Mediateq_AP_SIO2
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(183, 41);
             this.loginButton.TabIndex = 3;
-            this.loginButton.Text = "Connection";
+            this.loginButton.Text = "Connexion";
             this.loginButton.UseVisualStyleBackColor = false;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
@@ -108,11 +108,11 @@ namespace Mediateq_AP_SIO2
             this.Controls.Add(this.usernameTxtBox);
             this.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(165)))), ((int)(((byte)(169)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "authForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "authForm";
+            this.Text = "Connexion";
             this.Load += new System.EventHandler(this.authForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
