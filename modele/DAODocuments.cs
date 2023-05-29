@@ -285,18 +285,28 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "INSERT INTO document (id ,titre, idpublic) VALUES ('" + pDVD.IdDoc + "' , '" + pDVD.Titre + "' , '" + pDVD.LaCategorie.Id + "' ); ";
-                string reqDVD = "INSERT INTO dvd VALUES ('" + pDVD.IdDoc + "' , '" + pDVD.Synopsis + "' , '" + pDVD.Realisateur + "' , " + pDVD.Duree + " ); ";
+                string req = "INSERT INTO document (id, titre, idpublic) VALUES (@IdDoc, @Titre, @IdPublic)";
+                string reqDVD = "INSERT INTO dvd VALUES (@IdDoc, @Synopsis, @Realisateur, @Duree)";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(req);
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", pDVD.IdDoc);
+                command.Parameters.AddWithValue("@Titre", pDVD.Titre);
+                command.Parameters.AddWithValue("@IdPublic", pDVD.LaCategorie.Id);
 
-                DAOFactory.execSQLWrite(reqDVD);
+                command.ExecuteNonQuery();
+
+                command = new MySqlCommand(reqDVD, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", pDVD.IdDoc);
+                command.Parameters.AddWithValue("@Synopsis", pDVD.Synopsis);
+                command.Parameters.AddWithValue("@Realisateur", pDVD.Realisateur);
+                command.Parameters.AddWithValue("@Duree", pDVD.Duree);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
-
             catch (Exception exc)
             {
                 throw exc;
@@ -307,19 +317,23 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string reqDVD = "DELETE FROM dvd WHERE idDocument = '" + unDVD.IdDoc + "'; ";
-                string req = "DELETE FROM document WHERE id = '" + unDVD.IdDoc + "'; ";
-
+                string reqDVD = "DELETE FROM dvd WHERE idDocument = @IdDoc";
+                string req = "DELETE FROM document WHERE id = @IdDoc";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(reqDVD);
+                MySqlCommand command = new MySqlCommand(reqDVD, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", unDVD.IdDoc);
 
-                DAOFactory.execSQLWrite(req);
+                command.ExecuteNonQuery();
+
+                command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@IdDoc", unDVD.IdDoc);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
-
             catch (Exception exc)
             {
                 throw exc;
@@ -330,18 +344,28 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "UPDATE document SET document.titre = '" + unDVD.Titre + "', document.idPublic = '" + unDVD.LaCategorie.Id + "' WHERE id = '" + unDVD.IdDoc + "'; ";
-                string reqDVD = "UPDATE dvd SET dvd.Synopsis = '" + unDVD.Synopsis + "' , dvd.réalisateur = '" + unDVD.Realisateur + "' , dvd.duree = '" + unDVD.Duree + "' WHERE idDocument = '" + unDVD.IdDoc + "' ; ";
+                string req = "UPDATE document SET document.titre = @Titre, document.idPublic = @IdPublic WHERE id = @IdDoc";
+                string reqDVD = "UPDATE dvd SET dvd.Synopsis = @Synopsis, dvd.réalisateur = @Realisateur, dvd.duree = @Duree WHERE idDocument = @IdDoc";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(req);
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@Titre", unDVD.Titre);
+                command.Parameters.AddWithValue("@IdPublic", unDVD.LaCategorie.Id);
+                command.Parameters.AddWithValue("@IdDoc", unDVD.IdDoc);
 
-                DAOFactory.execSQLWrite(reqDVD);
+                command.ExecuteNonQuery();
+
+                command = new MySqlCommand(reqDVD, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@Synopsis", unDVD.Synopsis);
+                command.Parameters.AddWithValue("@Realisateur", unDVD.Realisateur);
+                command.Parameters.AddWithValue("@Duree", unDVD.Duree);
+                command.Parameters.AddWithValue("@IdDoc", unDVD.IdDoc);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
-
             catch (Exception exc)
             {
                 throw exc;

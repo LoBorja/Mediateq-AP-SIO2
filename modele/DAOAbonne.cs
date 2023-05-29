@@ -75,16 +75,26 @@ namespace Mediateq_AP_SIO2
                 string mdp = abonne.Nom;
 
                 string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mdpU, mailU) " +
-                    "VALUES ('" + abonne.Id + "', '" + abonne.Nom + "', '" + abonne.Prenom + "', '" + abonne.DateNaissance.ToString("yyyy-MM-dd") + "', '" + abonne.Adresse + "', '" + 
-                    abonne.NumTel + "', '" + abonne.TypeAbonnement + "', '" + abonne.FinAbonnement.ToString("yyyy-MM-dd") + "', '" + mdp + "', '" + abonne.MailU + "'); ";
+                    "VALUES (@Id, @Nom, @Prenom, @DateNaissance, @Adresse, @NumTel, @TypeAbonnement, @FinAbonnement, @Mdp, @MailU)";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(req);
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@Id", abonne.Id);
+                command.Parameters.AddWithValue("@Nom", abonne.Nom);
+                command.Parameters.AddWithValue("@Prenom", abonne.Prenom);
+                command.Parameters.AddWithValue("@DateNaissance", abonne.DateNaissance.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@Adresse", abonne.Adresse);
+                command.Parameters.AddWithValue("@NumTel", abonne.NumTel);
+                command.Parameters.AddWithValue("@TypeAbonnement", abonne.TypeAbonnement);
+                command.Parameters.AddWithValue("@FinAbonnement", abonne.FinAbonnement.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@Mdp", mdp);
+                command.Parameters.AddWithValue("@MailU", abonne.MailU);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
-
             catch (Exception exc)
             {
                 throw exc;
@@ -95,15 +105,17 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "DELETE FROM abonné WHERE id = '" + abonne.Id + "'; ";
+                string req = "DELETE FROM abonné WHERE id = @Id";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(req);
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@Id", abonne.Id);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
-
             catch (Exception exc)
             {
                 throw exc;
@@ -114,16 +126,25 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "UPDATE abonné ab SET ab.nom = '" + abonne.Nom + "', ab.prenom = '" + abonne.Prenom + "', ab.dateNaissance = '" + abonne.DateNaissance.ToString("yyyy-MM-dd") + "', ab.adresse = '" + abonne.Adresse + "', ab.numTel = '" + 
-                abonne.NumTel + "', ab.typeAbonnement = '" + abonne.TypeAbonnement + "', ab.finAbonnement = '" + abonne.FinAbonnement.ToString("yyyy-MM-dd") + "', ab.mailU = '" + abonne.MailU + "' WHERE id = '" + abonne.Id + "'; ";
+                string req = "UPDATE abonné SET nom = @Nom, prenom = @Prenom, dateNaissance = @DateNaissance, adresse = @Adresse, numTel = @NumTel, typeAbonnement = @TypeAbonnement, finAbonnement = @FinAbonnement, mailU = @MailU WHERE id = @Id";
 
                 DAOFactory.connecter();
 
-                DAOFactory.execSQLWrite(req);
+                MySqlCommand command = new MySqlCommand(req, DAOFactory.Connexion);
+                command.Parameters.AddWithValue("@Nom", abonne.Nom);
+                command.Parameters.AddWithValue("@Prenom", abonne.Prenom);
+                command.Parameters.AddWithValue("@DateNaissance", abonne.DateNaissance.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@Adresse", abonne.Adresse);
+                command.Parameters.AddWithValue("@NumTel", abonne.NumTel);
+                command.Parameters.AddWithValue("@TypeAbonnement", abonne.TypeAbonnement);
+                command.Parameters.AddWithValue("@FinAbonnement", abonne.FinAbonnement.ToString("yyyy-MM-dd"));
+                command.Parameters.AddWithValue("@MailU", abonne.MailU);
+                command.Parameters.AddWithValue("@Id", abonne.Id);
+
+                command.ExecuteNonQuery();
 
                 DAOFactory.deconnecter();
             }
-
             catch (Exception exc)
             {
                 throw exc;
