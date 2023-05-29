@@ -8,7 +8,6 @@ namespace Mediateq_AP_SIO2.metier
         private string titre;
         private string image;
         private Categorie laCategorie;
-        private List<Descripteur> lesDescripteurs;
 
         public Document(string unId, string unTitre, string uneImage, Categorie uneCategorie)
         {

@@ -179,7 +179,7 @@ namespace Mediateq_AP_SIO2
             resetChampsLivre();
         }
 
-        private void btnRechercher_Click(object sender, EventArgs e)
+        private void btnLivreRecherche_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
             txtLivreNum.Text = "";
@@ -195,7 +195,7 @@ namespace Mediateq_AP_SIO2
             bool trouve = false;
             foreach (Livre livre in lesLivres)
             {
-                if (livre.IdDoc == txbNumDoc.Text)
+                if (livre.IdDoc == txtLivreRechercheParNum.Text)
                 {
                     txtLivreNum.Text = livre.IdDoc;
                     txtLivreTitre.Text = livre.Titre;
@@ -267,7 +267,7 @@ namespace Mediateq_AP_SIO2
                 // on passe le champ de saisie et le titre en minuscules car la méthode Contains
                 // tient compte de la casse.
                 string saisieMinuscules;
-                saisieMinuscules = txbTitre.Text.ToLower();
+                saisieMinuscules = txtLivreRechercheParTitre.Text.ToLower();
                 string titreMinuscules;
                 titreMinuscules = livre.Titre.ToLower();
 
@@ -371,6 +371,7 @@ namespace Mediateq_AP_SIO2
 
         #endregion
 
+
         #region DVD
         //-----------------------------------------------------------
         // ONGLET "DVD"
@@ -392,7 +393,7 @@ namespace Mediateq_AP_SIO2
             resetChampsDVD();
         }
 
-        private void DVD_NUM_BUTTON_Click(object sender, EventArgs e)
+        private void btnDVDRecherche_Click(object sender, EventArgs e)
         {
             // On réinitialise les labels
             txtDVDNum.Text = "";
@@ -408,7 +409,7 @@ namespace Mediateq_AP_SIO2
             bool trouve = false;
             foreach (DVD dvd in lesDVDs)
             {
-                if (dvd.IdDoc == TXT_Search_NUM_DVD.Text)
+                if (dvd.IdDoc == txtDVDRechercheParNum.Text)
                 {
                     txtDVDNum.Text = dvd.IdDoc;
                     txtDVDTitre.Text = dvd.Titre;
@@ -428,9 +429,9 @@ namespace Mediateq_AP_SIO2
                 MessageBox.Show("Document non trouvé dans les dvds");
         }
 
-        private void TXT_Search_Titre_DVD_TextChanged(object sender, EventArgs e)
+        private void txtDVDRechercheParTitre_TextChanged(object sender, EventArgs e)
         {
-            DGV_DVD.Rows.Clear();
+            dataGridDVD.Rows.Clear();
 
             // On parcourt tous les livres. Si le titre matche avec la saisie, on l'affiche dans le datagrid.
             foreach (DVD dvd in lesDVDs)
@@ -438,14 +439,14 @@ namespace Mediateq_AP_SIO2
                 // on passe le champ de saisie et le titre en minuscules car la méthode Contains
                 // tient compte de la casse.
                 string saisieMinuscules;
-                saisieMinuscules = TXT_Search_Titre_DVD.Text.ToLower();
+                saisieMinuscules = txtDVDRechercheParTitre.Text.ToLower();
                 string titreMinuscules;
                 titreMinuscules = dvd.Titre.ToLower();
 
                 //on teste si le titre du livre contient ce qui a été saisi
                 if (titreMinuscules.Contains(saisieMinuscules))
                 {
-                    DGV_DVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString());
+                    dataGridDVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString());
                 }
             }
         }
@@ -492,21 +493,21 @@ namespace Mediateq_AP_SIO2
             resetChampsDVD();
         }
 
-        private void DGV_DVD_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridDVD_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow ligne = DGV_DVD.Rows[e.RowIndex];
+                DataGridViewRow ligne = dataGridDVD.Rows[e.RowIndex];
 
                 DVD unDvd = rechercherDVDparId(ligne.Cells[0].Value.ToString());
 
-                if (DGV_DVD.Columns[e.ColumnIndex].Name == "dvdSupprimer")
+                if (dataGridDVD.Columns[e.ColumnIndex].Name == "dvdSupprimer")
                 {
                     if (MessageBox.Show("Voulez vous supprimer le dvd numéro °" + unDvd.IdDoc + " " + unDvd.Titre + " ?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         DAODocuments.SupprimerDVD(unDvd);
 
-                        DGV_DVD.Rows.Remove(ligne);
+                        dataGridDVD.Rows.Remove(ligne);
 
                         lesDVDs.Remove(unDvd);
                     }
@@ -516,11 +517,11 @@ namespace Mediateq_AP_SIO2
 
         private void dvdRemplirDataGrid()
         {
-            DGV_DVD.Rows.Clear();
+            dataGridDVD.Rows.Clear();
 
             foreach (DVD dvd in lesDVDs)
             {
-                DGV_DVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString());
+                dataGridDVD.Rows.Add(dvd.IdDoc, dvd.Titre, dvd.Synopsis, dvd.Realisateur, dvd.Duree.ToString());
             }
         }
 
@@ -584,6 +585,7 @@ namespace Mediateq_AP_SIO2
         }
 
         #endregion
+
 
         #region Commande
 
@@ -787,6 +789,7 @@ namespace Mediateq_AP_SIO2
         }
 
         #endregion
+
 
         #region Abonnee
 
@@ -1011,6 +1014,8 @@ namespace Mediateq_AP_SIO2
 
         #endregion
 
+
+        #region Fonctions Supplémentaires Principales
         private Categorie categorieParLibelle(string uneNomDeCategorie)
         {
             Categorie resultatCategorie = lesCategories[0];
@@ -1030,5 +1035,7 @@ namespace Mediateq_AP_SIO2
         {
             System.Windows.Forms.Application.Exit();
         }
+
+        #endregion
     }
 }

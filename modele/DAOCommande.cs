@@ -10,7 +10,6 @@ namespace Mediateq_AP_SIO2
     {
         public static string commandeNumero()
         {
-            //string req = "Select COUNT(*)+1 from document";
             string numero = "00";
 
             try
