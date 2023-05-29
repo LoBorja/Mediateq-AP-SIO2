@@ -22,12 +22,63 @@ Inheritance diagram for Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+auth\+Form\+:\begin{fig
 \item 
 override void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1auth_form_a265f0147e14c9c3189b617d945a6664f}{Dispose}} (bool disposing)
 \begin{DoxyCompactList}\small\item\em Clean up any resources being used. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1auth_form_a794516dba990a34b08f345764a61c0aa}{auth\+Form\+\_\+\+Load}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Lors de l\textquotesingle{}ouverture du formulaire, créée une connection à la base de données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1auth_form_ac7363285392c046940a233f2a6b50581}{login\+Button\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Bouton de connexion, prend en compte le login et mot de passe entrés et les verifiés avec une requête à la BDD. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_aded297c2bffe970b614745a7d72a0155}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_aded297c2bffe970b614745a7d72a0155} 
+void {\bfseries Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Required method for Designer support -\/ do not modify the contents of this method with the code editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_ab325d498ba171d01e2b22bae5d3ac106}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_ab325d498ba171d01e2b22bae5d3ac106} 
+System.\+Component\+Model.\+IContainer {\bfseries components} = null
+\begin{DoxyCompactList}\small\item\em Required designer variable. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_aa59d09f7fa04949e7ebaa09a9e8b3d5c}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_aa59d09f7fa04949e7ebaa09a9e8b3d5c} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries username\+Txt\+Box}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_aefd616fd2841ba12a07d6804672138dc}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_aefd616fd2841ba12a07d6804672138dc} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries password\+Txt\+Box}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_a98af583ab0f95a4a66d4e7b44952f1fa}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_a98af583ab0f95a4a66d4e7b44952f1fa} 
+System.\+Windows.\+Forms.\+Button {\bfseries login\+Button}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_ae801e920ef36965db32ae37fe56ce88a}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_ae801e920ef36965db32ae37fe56ce88a} 
+System.\+Windows.\+Forms.\+Label {\bfseries label1}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_a4bd664df0a4c667ab89bbc90c8a9c191}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_a4bd664df0a4c667ab89bbc90c8a9c191} 
+System.\+Windows.\+Forms.\+Label {\bfseries label2}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_a9c5a07f8e8a51666de613e7caa3a405c}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_a9c5a07f8e8a51666de613e7caa3a405c} 
+System.\+Windows.\+Forms.\+Label {\bfseries login\+Label}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Fenêtre de la page de connexion. 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_a794516dba990a34b08f345764a61c0aa}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_a794516dba990a34b08f345764a61c0aa} 
+\index{Mediateq\_AP\_SIO2.authForm@{Mediateq\_AP\_SIO2.authForm}!authForm\_Load@{authForm\_Load}}
+\index{authForm\_Load@{authForm\_Load}!Mediateq\_AP\_SIO2.authForm@{Mediateq\_AP\_SIO2.authForm}}
+\doxysubsubsection{\texorpdfstring{authForm\_Load()}{authForm\_Load()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+auth\+Form.\+auth\+Form\+\_\+\+Load (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Lors de l\textquotesingle{}ouverture du formulaire, créée une connection à la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
 \Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_a265f0147e14c9c3189b617d945a6664f}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_a265f0147e14c9c3189b617d945a6664f} 
 \index{Mediateq\_AP\_SIO2.authForm@{Mediateq\_AP\_SIO2.authForm}!Dispose@{Dispose}}
 \index{Dispose@{Dispose}!Mediateq\_AP\_SIO2.authForm@{Mediateq\_AP\_SIO2.authForm}}
@@ -41,6 +92,23 @@ Clean up any resources being used.
 
 \begin{DoxyParams}{Parameters}
 {\em disposing} & true if managed resources should be disposed; otherwise, false.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1auth_form_ac7363285392c046940a233f2a6b50581}\label{class_mediateq___a_p___s_i_o2_1_1auth_form_ac7363285392c046940a233f2a6b50581} 
+\index{Mediateq\_AP\_SIO2.authForm@{Mediateq\_AP\_SIO2.authForm}!loginButton\_Click@{loginButton\_Click}}
+\index{loginButton\_Click@{loginButton\_Click}!Mediateq\_AP\_SIO2.authForm@{Mediateq\_AP\_SIO2.authForm}}
+\doxysubsubsection{\texorpdfstring{loginButton\_Click()}{loginButton\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+auth\+Form.\+login\+Button\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Bouton de connexion, prend en compte le login et mot de passe entrés et les verifiés avec une requête à la BDD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
 \hline
 \end{DoxyParams}
 
