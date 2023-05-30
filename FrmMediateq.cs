@@ -54,14 +54,10 @@ namespace Mediateq_AP_SIO2
         /// <param name="e"></param>
         private void FrmMediateq_Load(object sender, EventArgs e)
         {
-            if (!(user.IDService == 0 || user.IDService == 1))
-            {
-                tabOngletsApplication.TabPages.Remove(tabCommandes);
-            }
-
             if (user.IDService != 0)
             {
                 tabOngletsApplication.TabPages.Remove(abonneGestion);
+                tabOngletsApplication.TabPages.Remove(tabCommandes);
             }
             else
             {
