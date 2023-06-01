@@ -86,10 +86,9 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string mdp = abonne.Nom;
 
-                string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mdpU, mailU) " +
-                    "VALUES (@Id, @Nom, @Prenom, @DateNaissance, @Adresse, @NumTel, @TypeAbonnement, @FinAbonnement, @Mdp, @MailU)";
+                string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mailU) " +
+                    "VALUES (@Id, @Nom, @Prenom, @DateNaissance, @Adresse, @NumTel, @TypeAbonnement, @FinAbonnement, @MailU)";
 
                 DAOFactory.connecter();
 
@@ -102,7 +101,6 @@ namespace Mediateq_AP_SIO2
                 command.Parameters.AddWithValue("@NumTel", abonne.NumTel);
                 command.Parameters.AddWithValue("@TypeAbonnement", abonne.TypeAbonnement);
                 command.Parameters.AddWithValue("@FinAbonnement", abonne.FinAbonnement.ToString("yyyy-MM-dd"));
-                command.Parameters.AddWithValue("@Mdp", mdp);
                 command.Parameters.AddWithValue("@MailU", abonne.MailU);
 
                 command.ExecuteNonQuery();
