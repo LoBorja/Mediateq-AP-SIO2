@@ -732,6 +732,8 @@ namespace Mediateq_AP_SIO2
         {
             lesCommandes = DAOCommande.getAllCommandes();
 
+            cbxFiltreCommande.Items.Clear();
+
             cbxFiltreCommande.Items.Add("tout afficher");
 
             foreach (EtatSuivi status in lesEtatSuivi)

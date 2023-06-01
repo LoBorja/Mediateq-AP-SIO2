@@ -27,7 +27,7 @@ namespace Mediateq_AP_SIO2
             string serverIp = "localhost";
             string username = "root";
             string password = "root";
-            string databaseName = "mediateq-2023-2";
+            string databaseName = "mediateq_loris";
 
             string dbConnectionString = string.Format("server={0};uid={1};pwd={2};database={3};", serverIp, username, password, databaseName);
            
