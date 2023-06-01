@@ -54,7 +54,7 @@ namespace Mediateq_AP_SIO2
 
             try
             {
-                string req = "Select id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mailU from abonné";
+                string req = "Select id, nom, prenom, dateNaissance, adresse, numTel, debutAbonnement, finAbonnement, mailU from abonné";
 
                 DAOFactory.connecter();
 
@@ -64,7 +64,7 @@ namespace Mediateq_AP_SIO2
                 {
                     // On ne renseigne pas le genre et la catégorie car on ne peut pas ouvrir 2 dataReader dans la même connexion
                     Abonne abonne = new Abonne(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(),
-                        DateTime.Parse(reader[3].ToString()), reader[4].ToString(), reader[5].ToString(), reader[6].ToString(),
+                        DateTime.Parse(reader[3].ToString()), reader[4].ToString(), reader[5].ToString(), DateTime.Parse(reader[6].ToString()),
                         DateTime.Parse(reader[7].ToString()), reader[8].ToString());
                     lesAbonne.Add(abonne);
                 }
@@ -87,8 +87,8 @@ namespace Mediateq_AP_SIO2
             try
             {
 
-                string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, typeAbonnement, finAbonnement, mailU) " +
-                    "VALUES (@Id, @Nom, @Prenom, @DateNaissance, @Adresse, @NumTel, @TypeAbonnement, @FinAbonnement, @MailU)";
+                string req = "INSERT INTO abonné (id, nom, prenom, dateNaissance, adresse, numTel, debutAbonnement, finAbonnement, mailU) " +
+                    "VALUES (@Id, @Nom, @Prenom, @DateNaissance, @Adresse, @NumTel, @DebutAbonnement, @FinAbonnement, @MailU)";
 
                 DAOFactory.connecter();
 
@@ -99,7 +99,7 @@ namespace Mediateq_AP_SIO2
                 command.Parameters.AddWithValue("@DateNaissance", abonne.DateNaissance.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@Adresse", abonne.Adresse);
                 command.Parameters.AddWithValue("@NumTel", abonne.NumTel);
-                command.Parameters.AddWithValue("@TypeAbonnement", abonne.TypeAbonnement);
+                command.Parameters.AddWithValue("@DebutAbonnement", abonne.DebutAbonnement.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@FinAbonnement", abonne.FinAbonnement.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@MailU", abonne.MailU);
 
@@ -146,7 +146,7 @@ namespace Mediateq_AP_SIO2
         {
             try
             {
-                string req = "UPDATE abonné SET nom = @Nom, prenom = @Prenom, dateNaissance = @DateNaissance, adresse = @Adresse, numTel = @NumTel, typeAbonnement = @TypeAbonnement, finAbonnement = @FinAbonnement, mailU = @MailU WHERE id = @Id";
+                string req = "UPDATE abonné SET nom = @Nom, prenom = @Prenom, dateNaissance = @DateNaissance, adresse = @Adresse, numTel = @NumTel, debutAbonnement = @DebutAbonnement, finAbonnement = @FinAbonnement, mailU = @MailU WHERE id = @Id";
 
                 DAOFactory.connecter();
 
@@ -156,7 +156,7 @@ namespace Mediateq_AP_SIO2
                 command.Parameters.AddWithValue("@DateNaissance", abonne.DateNaissance.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@Adresse", abonne.Adresse);
                 command.Parameters.AddWithValue("@NumTel", abonne.NumTel);
-                command.Parameters.AddWithValue("@TypeAbonnement", abonne.TypeAbonnement);
+                command.Parameters.AddWithValue("@DebutAbonnement", abonne.DebutAbonnement.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@FinAbonnement", abonne.FinAbonnement.ToString("yyyy-MM-dd"));
                 command.Parameters.AddWithValue("@MailU", abonne.MailU);
                 command.Parameters.AddWithValue("@Id", abonne.Id);

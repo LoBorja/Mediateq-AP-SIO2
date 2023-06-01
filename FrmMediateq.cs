@@ -379,6 +379,8 @@ namespace Mediateq_AP_SIO2
                         dgvLivres.Rows.Remove(ligne);
 
                         lesLivres.Remove(unLivre);
+
+                        resetChampsLivre();
                     }
                 }
             }
@@ -626,6 +628,8 @@ namespace Mediateq_AP_SIO2
                         dataGridDVD.Rows.Remove(ligne);
 
                         lesDVDs.Remove(unDvd);
+
+                        resetChampsDVD();
                     }
                 }
             }
@@ -1013,7 +1017,7 @@ namespace Mediateq_AP_SIO2
 
                     if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays >= 30)
                     {
-                        dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(),"Modifier", "Supprimer");
+                        dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.DebutAbonnement.ToShortDateString(), abonne.FinAbonnement.ToShortDateString(),"Modifier", "Supprimer");
 
                         abonneColoriserFin(i,differenceTemps);
 
@@ -1045,6 +1049,8 @@ namespace Mediateq_AP_SIO2
                         dataGridAbonne.Rows.Remove(ligne);
 
                         lesAbonnes.Remove(unAbonne);
+
+                        abonneResetChamps();
                     }
                 }
                 else if (dataGridAbonne.Columns[e.ColumnIndex].Name == "abonneModifier")
@@ -1055,7 +1061,7 @@ namespace Mediateq_AP_SIO2
                     dtpAbonneNaissance.Value = unAbonne.DateNaissance;
                     txtAbonneAdresse.Text = unAbonne.Adresse;
                     txtAbonneTel.Text = unAbonne.NumTel;
-                    txtTypeAbonnement.Text = unAbonne.TypeAbonnement;
+                    dtpDebutAbonnement.Value = unAbonne.DebutAbonnement;
                     dtpFinAbonnement.Value = unAbonne.FinAbonnement;
                     txtAbonneMail.Text = unAbonne.MailU;
 
@@ -1088,11 +1094,11 @@ namespace Mediateq_AP_SIO2
             DateTime naissance = dtpAbonneNaissance.Value;
             string adresse = txtAbonneAdresse.Text;
             string numTel = txtAbonneTel.Text;
-            string typeAbonnement = txtTypeAbonnement.Text;
+            DateTime debutAbonnement = dtpDebutAbonnement.Value;
             DateTime finAbonnement = dtpFinAbonnement.Value;
             string mail = txtAbonneMail.Text;
 
-            Abonne nouvelAbonne = new Abonne(id,nom,prenom,naissance,adresse,numTel,typeAbonnement,finAbonnement,mail);
+            Abonne nouvelAbonne = new Abonne(id,nom,prenom,naissance,adresse,numTel,debutAbonnement,finAbonnement,mail);
 
             DAOAbonne.ajouterAbonne(nouvelAbonne);
 
@@ -1117,7 +1123,7 @@ namespace Mediateq_AP_SIO2
             abonneModifie.DateNaissance = dtpAbonneNaissance.Value;
             abonneModifie.Adresse = txtAbonneAdresse.Text;
             abonneModifie.NumTel = txtAbonneTel.Text;
-            abonneModifie.TypeAbonnement = txtTypeAbonnement.Text;
+            abonneModifie.DebutAbonnement = dtpDebutAbonnement.Value;
             abonneModifie.FinAbonnement = dtpFinAbonnement.Value;
             abonneModifie.MailU = txtAbonneMail.Text;
 
@@ -1164,7 +1170,7 @@ namespace Mediateq_AP_SIO2
             dtpAbonneNaissance.Value = unAbonne.DateNaissance;
             txtAbonneAdresse.Text = unAbonne.Adresse;
             txtAbonneTel.Text = unAbonne.NumTel;
-            txtTypeAbonnement.Text = unAbonne.TypeAbonnement;
+            dtpDebutAbonnement.Value = unAbonne.DebutAbonnement;
             dtpFinAbonnement.Value = unAbonne.FinAbonnement;
             txtAbonneMail.Text = unAbonne.MailU;
 
@@ -1183,7 +1189,7 @@ namespace Mediateq_AP_SIO2
             dtpAbonneNaissance.Value = DateTime.Today;
             txtAbonneAdresse.Text = "";
             txtAbonneTel.Text = "";
-            txtTypeAbonnement.Text = "";
+            dtpDebutAbonnement.Value = DateTime.Today;
             dtpFinAbonnement.Value = DateTime.Today;
             txtAbonneMail.Text = "";
         }
@@ -1203,7 +1209,7 @@ namespace Mediateq_AP_SIO2
 
                 if (abonneExpireCheck.Checked == false || differenceTemps.TotalDays <= 30)
                 {
-                    dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.TypeAbonnement, abonne.FinAbonnement.ToShortDateString(),"Modifier", "Supprimer");
+                    dataGridAbonne.Rows.Add(abonne.Id, abonne.Nom, abonne.Prenom, abonne.Adresse, abonne.NumTel, abonne.MailU, abonne.DateNaissance.ToShortDateString(), abonne.DebutAbonnement.ToShortDateString(), abonne.FinAbonnement.ToShortDateString(),"Modifier", "Supprimer");
                     abonneColoriserFin(i, differenceTemps);
 
                     i++;

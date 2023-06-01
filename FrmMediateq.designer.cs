@@ -174,7 +174,6 @@ namespace Mediateq_AP_SIO2
             this.btnAbonneReset = new System.Windows.Forms.Button();
             this.btnAbonneUpdate = new System.Windows.Forms.Button();
             this.btnAbonneNew = new System.Windows.Forms.Button();
-            this.txtTypeAbonnement = new System.Windows.Forms.TextBox();
             this.dtpFinAbonnement = new System.Windows.Forms.DateTimePicker();
             this.dtpAbonneNaissance = new System.Windows.Forms.DateTimePicker();
             this.txtAbonneMail = new System.Windows.Forms.TextBox();
@@ -187,6 +186,7 @@ namespace Mediateq_AP_SIO2
             this.abonneLabelSearch = new System.Windows.Forms.Label();
             this.abonneTxtBox = new System.Windows.Forms.TextBox();
             this.dataGridAbonne = new System.Windows.Forms.DataGridView();
+            this.dtpDebutAbonnement = new System.Windows.Forms.DateTimePicker();
             this.abonneId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonnePrenom = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -194,7 +194,7 @@ namespace Mediateq_AP_SIO2
             this.abonneTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneMail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneNais = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonneTypeAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abonneDebutAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneFinAbo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonneModifier = new System.Windows.Forms.DataGridViewButtonColumn();
             this.abonneDGVSupprimer = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -254,7 +254,7 @@ namespace Mediateq_AP_SIO2
             this.tabParutions.Controls.Add(this.cbxTitres);
             this.tabParutions.Location = new System.Drawing.Point(4, 22);
             this.tabParutions.Name = "tabParutions";
-            this.tabParutions.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabParutions.Padding = new System.Windows.Forms.Padding(3);
             this.tabParutions.Size = new System.Drawing.Size(890, 523);
             this.tabParutions.TabIndex = 0;
             this.tabParutions.Text = "Parutions";
@@ -334,7 +334,7 @@ namespace Mediateq_AP_SIO2
             this.tabTitres.Controls.Add(this.cbxDomaines);
             this.tabTitres.Location = new System.Drawing.Point(4, 22);
             this.tabTitres.Name = "tabTitres";
-            this.tabTitres.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabTitres.Padding = new System.Windows.Forms.Padding(3);
             this.tabTitres.Size = new System.Drawing.Size(890, 523);
             this.tabTitres.TabIndex = 1;
             this.tabTitres.Text = "Titres";
@@ -443,9 +443,9 @@ namespace Mediateq_AP_SIO2
             this.commanderLivre.Controls.Add(this.livreCommandePrixSelect);
             this.commanderLivre.Controls.Add(this.btnLivreOrder);
             this.commanderLivre.Location = new System.Drawing.Point(737, 19);
-            this.commanderLivre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.commanderLivre.Margin = new System.Windows.Forms.Padding(2);
             this.commanderLivre.Name = "commanderLivre";
-            this.commanderLivre.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.commanderLivre.Padding = new System.Windows.Forms.Padding(2);
             this.commanderLivre.Size = new System.Drawing.Size(144, 206);
             this.commanderLivre.TabIndex = 36;
             this.commanderLivre.TabStop = false;
@@ -477,7 +477,7 @@ namespace Mediateq_AP_SIO2
             // livreCommandeNbSelect
             // 
             this.livreCommandeNbSelect.Location = new System.Drawing.Point(11, 113);
-            this.livreCommandeNbSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.livreCommandeNbSelect.Margin = new System.Windows.Forms.Padding(2);
             this.livreCommandeNbSelect.Name = "livreCommandeNbSelect";
             this.livreCommandeNbSelect.Size = new System.Drawing.Size(118, 20);
             this.livreCommandeNbSelect.TabIndex = 37;
@@ -486,7 +486,7 @@ namespace Mediateq_AP_SIO2
             // 
             this.livreCommandePrixSelect.DecimalPlaces = 2;
             this.livreCommandePrixSelect.Location = new System.Drawing.Point(11, 51);
-            this.livreCommandePrixSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.livreCommandePrixSelect.Margin = new System.Windows.Forms.Padding(2);
             this.livreCommandePrixSelect.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -499,7 +499,7 @@ namespace Mediateq_AP_SIO2
             // btnLivreOrder
             // 
             this.btnLivreOrder.Location = new System.Drawing.Point(11, 161);
-            this.btnLivreOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLivreOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnLivreOrder.Name = "btnLivreOrder";
             this.btnLivreOrder.Size = new System.Drawing.Size(118, 33);
             this.btnLivreOrder.TabIndex = 35;
@@ -632,7 +632,7 @@ namespace Mediateq_AP_SIO2
             this.cbxLivrePublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxLivrePublic.FormattingEnabled = true;
             this.cbxLivrePublic.Location = new System.Drawing.Point(436, 145);
-            this.cbxLivrePublic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxLivrePublic.Margin = new System.Windows.Forms.Padding(2);
             this.cbxLivrePublic.Name = "cbxLivrePublic";
             this.cbxLivrePublic.Size = new System.Drawing.Size(92, 21);
             this.cbxLivrePublic.TabIndex = 38;
@@ -641,7 +641,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreAuteur
             // 
             this.txtLivreAuteur.Location = new System.Drawing.Point(436, 113);
-            this.txtLivreAuteur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLivreAuteur.Margin = new System.Windows.Forms.Padding(2);
             this.txtLivreAuteur.MaxLength = 20;
             this.txtLivreAuteur.Name = "txtLivreAuteur";
             this.txtLivreAuteur.ReadOnly = true;
@@ -654,9 +654,9 @@ namespace Mediateq_AP_SIO2
             this.optionsLivre.Controls.Add(this.btnLivreNew);
             this.optionsLivre.Controls.Add(this.btnLivreUpdate);
             this.optionsLivre.Location = new System.Drawing.Point(588, 0);
-            this.optionsLivre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.optionsLivre.Margin = new System.Windows.Forms.Padding(2);
             this.optionsLivre.Name = "optionsLivre";
-            this.optionsLivre.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.optionsLivre.Padding = new System.Windows.Forms.Padding(2);
             this.optionsLivre.Size = new System.Drawing.Size(122, 206);
             this.optionsLivre.TabIndex = 37;
             this.optionsLivre.TabStop = false;
@@ -666,7 +666,7 @@ namespace Mediateq_AP_SIO2
             // btnLivreReset
             // 
             this.btnLivreReset.Location = new System.Drawing.Point(17, 145);
-            this.btnLivreReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLivreReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnLivreReset.Name = "btnLivreReset";
             this.btnLivreReset.Size = new System.Drawing.Size(93, 49);
             this.btnLivreReset.TabIndex = 34;
@@ -677,7 +677,7 @@ namespace Mediateq_AP_SIO2
             // btnLivreNew
             // 
             this.btnLivreNew.Location = new System.Drawing.Point(17, 25);
-            this.btnLivreNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLivreNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnLivreNew.Name = "btnLivreNew";
             this.btnLivreNew.Size = new System.Drawing.Size(93, 44);
             this.btnLivreNew.TabIndex = 32;
@@ -688,7 +688,7 @@ namespace Mediateq_AP_SIO2
             // btnLivreUpdate
             // 
             this.btnLivreUpdate.Location = new System.Drawing.Point(17, 84);
-            this.btnLivreUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLivreUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnLivreUpdate.Name = "btnLivreUpdate";
             this.btnLivreUpdate.Size = new System.Drawing.Size(93, 44);
             this.btnLivreUpdate.TabIndex = 33;
@@ -699,7 +699,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreISBN
             // 
             this.txtLivreISBN.Location = new System.Drawing.Point(146, 115);
-            this.txtLivreISBN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLivreISBN.Margin = new System.Windows.Forms.Padding(2);
             this.txtLivreISBN.MaxLength = 13;
             this.txtLivreISBN.Name = "txtLivreISBN";
             this.txtLivreISBN.ReadOnly = true;
@@ -709,7 +709,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreCollection
             // 
             this.txtLivreCollection.Location = new System.Drawing.Point(146, 145);
-            this.txtLivreCollection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLivreCollection.Margin = new System.Windows.Forms.Padding(2);
             this.txtLivreCollection.MaxLength = 50;
             this.txtLivreCollection.Name = "txtLivreCollection";
             this.txtLivreCollection.ReadOnly = true;
@@ -719,7 +719,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreTitre
             // 
             this.txtLivreTitre.Location = new System.Drawing.Point(436, 79);
-            this.txtLivreTitre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLivreTitre.Margin = new System.Windows.Forms.Padding(2);
             this.txtLivreTitre.MaxLength = 50;
             this.txtLivreTitre.Name = "txtLivreTitre";
             this.txtLivreTitre.ReadOnly = true;
@@ -729,7 +729,7 @@ namespace Mediateq_AP_SIO2
             // txtLivrePublic
             // 
             this.txtLivrePublic.Location = new System.Drawing.Point(436, 146);
-            this.txtLivrePublic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLivrePublic.Margin = new System.Windows.Forms.Padding(2);
             this.txtLivrePublic.Name = "txtLivrePublic";
             this.txtLivrePublic.ReadOnly = true;
             this.txtLivrePublic.Size = new System.Drawing.Size(76, 20);
@@ -738,7 +738,7 @@ namespace Mediateq_AP_SIO2
             // txtLivreNum
             // 
             this.txtLivreNum.Location = new System.Drawing.Point(146, 80);
-            this.txtLivreNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLivreNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtLivreNum.Name = "txtLivreNum";
             this.txtLivreNum.ReadOnly = true;
             this.txtLivreNum.Size = new System.Drawing.Size(76, 20);
@@ -853,9 +853,9 @@ namespace Mediateq_AP_SIO2
             this.commanderDVD.Controls.Add(this.dvdCommandePrixSelect);
             this.commanderDVD.Controls.Add(this.btnDVDOrder);
             this.commanderDVD.Location = new System.Drawing.Point(719, 21);
-            this.commanderDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.commanderDVD.Margin = new System.Windows.Forms.Padding(2);
             this.commanderDVD.Name = "commanderDVD";
-            this.commanderDVD.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.commanderDVD.Padding = new System.Windows.Forms.Padding(2);
             this.commanderDVD.Size = new System.Drawing.Size(141, 224);
             this.commanderDVD.TabIndex = 37;
             this.commanderDVD.TabStop = false;
@@ -887,7 +887,7 @@ namespace Mediateq_AP_SIO2
             // dvdCommandeNbSelect
             // 
             this.dvdCommandeNbSelect.Location = new System.Drawing.Point(12, 119);
-            this.dvdCommandeNbSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dvdCommandeNbSelect.Margin = new System.Windows.Forms.Padding(2);
             this.dvdCommandeNbSelect.Name = "dvdCommandeNbSelect";
             this.dvdCommandeNbSelect.Size = new System.Drawing.Size(118, 20);
             this.dvdCommandeNbSelect.TabIndex = 39;
@@ -896,7 +896,7 @@ namespace Mediateq_AP_SIO2
             // 
             this.dvdCommandePrixSelect.DecimalPlaces = 2;
             this.dvdCommandePrixSelect.Location = new System.Drawing.Point(12, 58);
-            this.dvdCommandePrixSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dvdCommandePrixSelect.Margin = new System.Windows.Forms.Padding(2);
             this.dvdCommandePrixSelect.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -909,7 +909,7 @@ namespace Mediateq_AP_SIO2
             // btnDVDOrder
             // 
             this.btnDVDOrder.Location = new System.Drawing.Point(12, 169);
-            this.btnDVDOrder.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDVDOrder.Margin = new System.Windows.Forms.Padding(2);
             this.btnDVDOrder.Name = "btnDVDOrder";
             this.btnDVDOrder.Size = new System.Drawing.Size(110, 33);
             this.btnDVDOrder.TabIndex = 35;
@@ -1041,7 +1041,7 @@ namespace Mediateq_AP_SIO2
             // numericUDDVD
             // 
             this.numericUDDVD.Location = new System.Drawing.Point(135, 141);
-            this.numericUDDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUDDVD.Margin = new System.Windows.Forms.Padding(2);
             this.numericUDDVD.Maximum = new decimal(new int[] {
             8000,
             0,
@@ -1057,7 +1057,7 @@ namespace Mediateq_AP_SIO2
             this.cbxDVDPublic.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxDVDPublic.FormattingEnabled = true;
             this.cbxDVDPublic.Location = new System.Drawing.Point(443, 138);
-            this.cbxDVDPublic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxDVDPublic.Margin = new System.Windows.Forms.Padding(2);
             this.cbxDVDPublic.Name = "cbxDVDPublic";
             this.cbxDVDPublic.Size = new System.Drawing.Size(92, 21);
             this.cbxDVDPublic.TabIndex = 32;
@@ -1069,9 +1069,9 @@ namespace Mediateq_AP_SIO2
             this.optionsDVD.Controls.Add(this.btnDVDReset);
             this.optionsDVD.Controls.Add(this.btnDVDUpdate);
             this.optionsDVD.Location = new System.Drawing.Point(584, 0);
-            this.optionsDVD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.optionsDVD.Margin = new System.Windows.Forms.Padding(2);
             this.optionsDVD.Name = "optionsDVD";
-            this.optionsDVD.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.optionsDVD.Padding = new System.Windows.Forms.Padding(2);
             this.optionsDVD.Size = new System.Drawing.Size(124, 224);
             this.optionsDVD.TabIndex = 31;
             this.optionsDVD.TabStop = false;
@@ -1081,7 +1081,7 @@ namespace Mediateq_AP_SIO2
             // btnDVDNew
             // 
             this.btnDVDNew.Location = new System.Drawing.Point(16, 27);
-            this.btnDVDNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDVDNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnDVDNew.Name = "btnDVDNew";
             this.btnDVDNew.Size = new System.Drawing.Size(93, 49);
             this.btnDVDNew.TabIndex = 28;
@@ -1092,7 +1092,7 @@ namespace Mediateq_AP_SIO2
             // btnDVDReset
             // 
             this.btnDVDReset.Location = new System.Drawing.Point(17, 154);
-            this.btnDVDReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDVDReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnDVDReset.Name = "btnDVDReset";
             this.btnDVDReset.Size = new System.Drawing.Size(92, 48);
             this.btnDVDReset.TabIndex = 30;
@@ -1103,7 +1103,7 @@ namespace Mediateq_AP_SIO2
             // btnDVDUpdate
             // 
             this.btnDVDUpdate.Location = new System.Drawing.Point(17, 93);
-            this.btnDVDUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDVDUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnDVDUpdate.Name = "btnDVDUpdate";
             this.btnDVDUpdate.Size = new System.Drawing.Size(92, 49);
             this.btnDVDUpdate.TabIndex = 29;
@@ -1114,7 +1114,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDPublic
             // 
             this.txtDVDPublic.Location = new System.Drawing.Point(443, 138);
-            this.txtDVDPublic.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVDPublic.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVDPublic.Name = "txtDVDPublic";
             this.txtDVDPublic.ReadOnly = true;
             this.txtDVDPublic.Size = new System.Drawing.Size(81, 20);
@@ -1123,7 +1123,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDRealisateur
             // 
             this.txtDVDRealisateur.Location = new System.Drawing.Point(443, 108);
-            this.txtDVDRealisateur.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVDRealisateur.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVDRealisateur.MaxLength = 20;
             this.txtDVDRealisateur.Name = "txtDVDRealisateur";
             this.txtDVDRealisateur.ReadOnly = true;
@@ -1133,7 +1133,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDTitre
             // 
             this.txtDVDTitre.Location = new System.Drawing.Point(443, 80);
-            this.txtDVDTitre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVDTitre.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVDTitre.MaxLength = 50;
             this.txtDVDTitre.Name = "txtDVDTitre";
             this.txtDVDTitre.ReadOnly = true;
@@ -1143,7 +1143,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDSynopsis
             // 
             this.txtDVDSynopsis.Location = new System.Drawing.Point(135, 110);
-            this.txtDVDSynopsis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVDSynopsis.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVDSynopsis.MaxLength = 100;
             this.txtDVDSynopsis.Name = "txtDVDSynopsis";
             this.txtDVDSynopsis.ReadOnly = true;
@@ -1153,7 +1153,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDDuree
             // 
             this.txtDVDDuree.Location = new System.Drawing.Point(135, 141);
-            this.txtDVDDuree.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVDDuree.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVDDuree.Name = "txtDVDDuree";
             this.txtDVDDuree.ReadOnly = true;
             this.txtDVDDuree.Size = new System.Drawing.Size(76, 20);
@@ -1162,7 +1162,7 @@ namespace Mediateq_AP_SIO2
             // txtDVDNum
             // 
             this.txtDVDNum.Location = new System.Drawing.Point(135, 80);
-            this.txtDVDNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDVDNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtDVDNum.Name = "txtDVDNum";
             this.txtDVDNum.ReadOnly = true;
             this.txtDVDNum.Size = new System.Drawing.Size(76, 20);
@@ -1272,7 +1272,7 @@ namespace Mediateq_AP_SIO2
             this.tabCommandes.Controls.Add(this.groupBox4);
             this.tabCommandes.Controls.Add(this.dataGridCommandes);
             this.tabCommandes.Location = new System.Drawing.Point(4, 22);
-            this.tabCommandes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabCommandes.Margin = new System.Windows.Forms.Padding(2);
             this.tabCommandes.Name = "tabCommandes";
             this.tabCommandes.Size = new System.Drawing.Size(890, 523);
             this.tabCommandes.TabIndex = 6;
@@ -1285,9 +1285,9 @@ namespace Mediateq_AP_SIO2
             this.groupBox7.Controls.Add(this.btnModifStatusCommande);
             this.groupBox7.Controls.Add(this.cbxStatusCommande);
             this.groupBox7.Location = new System.Drawing.Point(683, 410);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox7.Size = new System.Drawing.Size(203, 110);
             this.groupBox7.TabIndex = 9;
             this.groupBox7.TabStop = false;
@@ -1296,7 +1296,7 @@ namespace Mediateq_AP_SIO2
             // btnModifStatusCommande
             // 
             this.btnModifStatusCommande.Location = new System.Drawing.Point(16, 54);
-            this.btnModifStatusCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModifStatusCommande.Margin = new System.Windows.Forms.Padding(2);
             this.btnModifStatusCommande.Name = "btnModifStatusCommande";
             this.btnModifStatusCommande.Size = new System.Drawing.Size(118, 41);
             this.btnModifStatusCommande.TabIndex = 7;
@@ -1310,7 +1310,7 @@ namespace Mediateq_AP_SIO2
             this.cbxStatusCommande.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxStatusCommande.FormattingEnabled = true;
             this.cbxStatusCommande.Location = new System.Drawing.Point(16, 25);
-            this.cbxStatusCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxStatusCommande.Margin = new System.Windows.Forms.Padding(2);
             this.cbxStatusCommande.Name = "cbxStatusCommande";
             this.cbxStatusCommande.Size = new System.Drawing.Size(119, 25);
             this.cbxStatusCommande.TabIndex = 6;
@@ -1331,7 +1331,7 @@ namespace Mediateq_AP_SIO2
             this.cbxFiltreCommande.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxFiltreCommande.FormattingEnabled = true;
             this.cbxFiltreCommande.Location = new System.Drawing.Point(148, 68);
-            this.cbxFiltreCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbxFiltreCommande.Margin = new System.Windows.Forms.Padding(2);
             this.cbxFiltreCommande.Name = "cbxFiltreCommande";
             this.cbxFiltreCommande.Size = new System.Drawing.Size(100, 21);
             this.cbxFiltreCommande.TabIndex = 7;
@@ -1362,9 +1362,9 @@ namespace Mediateq_AP_SIO2
             this.groupBox5.Controls.Add(this.txtNbExCommande);
             this.groupBox5.Controls.Add(this.txtIdCommande);
             this.groupBox5.Location = new System.Drawing.Point(683, 137);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(203, 372);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
@@ -1413,7 +1413,7 @@ namespace Mediateq_AP_SIO2
             // txtNomDocCommande
             // 
             this.txtNomDocCommande.Location = new System.Drawing.Point(75, 184);
-            this.txtNomDocCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomDocCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomDocCommande.Name = "txtNomDocCommande";
             this.txtNomDocCommande.ReadOnly = true;
             this.txtNomDocCommande.Size = new System.Drawing.Size(108, 20);
@@ -1423,9 +1423,9 @@ namespace Mediateq_AP_SIO2
             // 
             this.groupBox6.Controls.Add(this.txtActuelStatusCommande);
             this.groupBox6.Location = new System.Drawing.Point(0, 214);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(203, 158);
             this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
@@ -1435,7 +1435,7 @@ namespace Mediateq_AP_SIO2
             // 
             this.txtActuelStatusCommande.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtActuelStatusCommande.Location = new System.Drawing.Point(14, 24);
-            this.txtActuelStatusCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtActuelStatusCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtActuelStatusCommande.Name = "txtActuelStatusCommande";
             this.txtActuelStatusCommande.ReadOnly = true;
             this.txtActuelStatusCommande.Size = new System.Drawing.Size(119, 23);
@@ -1444,7 +1444,7 @@ namespace Mediateq_AP_SIO2
             // txtIdDocCommande
             // 
             this.txtIdDocCommande.Location = new System.Drawing.Point(14, 184);
-            this.txtIdDocCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdDocCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdDocCommande.Name = "txtIdDocCommande";
             this.txtIdDocCommande.ReadOnly = true;
             this.txtIdDocCommande.Size = new System.Drawing.Size(48, 20);
@@ -1453,7 +1453,7 @@ namespace Mediateq_AP_SIO2
             // txtMontantCommande
             // 
             this.txtMontantCommande.Location = new System.Drawing.Point(107, 89);
-            this.txtMontantCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMontantCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtMontantCommande.Name = "txtMontantCommande";
             this.txtMontantCommande.ReadOnly = true;
             this.txtMontantCommande.Size = new System.Drawing.Size(76, 20);
@@ -1462,7 +1462,7 @@ namespace Mediateq_AP_SIO2
             // txtDateCommande
             // 
             this.txtDateCommande.Location = new System.Drawing.Point(14, 138);
-            this.txtDateCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDateCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtDateCommande.Name = "txtDateCommande";
             this.txtDateCommande.ReadOnly = true;
             this.txtDateCommande.Size = new System.Drawing.Size(76, 20);
@@ -1471,7 +1471,7 @@ namespace Mediateq_AP_SIO2
             // txtNbExCommande
             // 
             this.txtNbExCommande.Location = new System.Drawing.Point(14, 89);
-            this.txtNbExCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNbExCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtNbExCommande.Name = "txtNbExCommande";
             this.txtNbExCommande.ReadOnly = true;
             this.txtNbExCommande.Size = new System.Drawing.Size(76, 20);
@@ -1480,7 +1480,7 @@ namespace Mediateq_AP_SIO2
             // txtIdCommande
             // 
             this.txtIdCommande.Location = new System.Drawing.Point(14, 38);
-            this.txtIdCommande.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdCommande.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdCommande.Name = "txtIdCommande";
             this.txtIdCommande.ReadOnly = true;
             this.txtIdCommande.Size = new System.Drawing.Size(48, 20);
@@ -1491,9 +1491,9 @@ namespace Mediateq_AP_SIO2
             this.groupBox4.Controls.Add(this.txtCommandeRecherche);
             this.groupBox4.Controls.Add(this.btnCommandeRecherche);
             this.groupBox4.Location = new System.Drawing.Point(683, 28);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(203, 105);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
@@ -1502,7 +1502,7 @@ namespace Mediateq_AP_SIO2
             // txtCommandeRecherche
             // 
             this.txtCommandeRecherche.Location = new System.Drawing.Point(14, 74);
-            this.txtCommandeRecherche.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCommandeRecherche.Margin = new System.Windows.Forms.Padding(2);
             this.txtCommandeRecherche.Name = "txtCommandeRecherche";
             this.txtCommandeRecherche.Size = new System.Drawing.Size(119, 20);
             this.txtCommandeRecherche.TabIndex = 2;
@@ -1510,7 +1510,7 @@ namespace Mediateq_AP_SIO2
             // btnCommandeRecherche
             // 
             this.btnCommandeRecherche.Location = new System.Drawing.Point(14, 17);
-            this.btnCommandeRecherche.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCommandeRecherche.Margin = new System.Windows.Forms.Padding(2);
             this.btnCommandeRecherche.Name = "btnCommandeRecherche";
             this.btnCommandeRecherche.Size = new System.Drawing.Size(118, 41);
             this.btnCommandeRecherche.TabIndex = 1;
@@ -1533,7 +1533,7 @@ namespace Mediateq_AP_SIO2
             this.commandeStatus,
             this.commandeModifier});
             this.dataGridCommandes.Location = new System.Drawing.Point(16, 102);
-            this.dataGridCommandes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridCommandes.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridCommandes.Name = "dataGridCommandes";
             this.dataGridCommandes.ReadOnly = true;
             this.dataGridCommandes.RowHeadersWidth = 51;
@@ -1619,9 +1619,9 @@ namespace Mediateq_AP_SIO2
             this.abonneGestion.Controls.Add(this.abonneTxtBox);
             this.abonneGestion.Controls.Add(this.dataGridAbonne);
             this.abonneGestion.Location = new System.Drawing.Point(4, 22);
-            this.abonneGestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.abonneGestion.Margin = new System.Windows.Forms.Padding(2);
             this.abonneGestion.Name = "abonneGestion";
-            this.abonneGestion.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.abonneGestion.Padding = new System.Windows.Forms.Padding(2);
             this.abonneGestion.Size = new System.Drawing.Size(890, 523);
             this.abonneGestion.TabIndex = 5;
             this.abonneGestion.Text = "Abonnés";
@@ -1632,7 +1632,7 @@ namespace Mediateq_AP_SIO2
             // 
             this.btnAbonneParId.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbonneParId.Location = new System.Drawing.Point(383, 26);
-            this.btnAbonneParId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAbonneParId.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbonneParId.Name = "btnAbonneParId";
             this.btnAbonneParId.Size = new System.Drawing.Size(92, 19);
             this.btnAbonneParId.TabIndex = 7;
@@ -1654,13 +1654,14 @@ namespace Mediateq_AP_SIO2
             // txtAbonneParId
             // 
             this.txtAbonneParId.Location = new System.Drawing.Point(170, 26);
-            this.txtAbonneParId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonneParId.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonneParId.Name = "txtAbonneParId";
             this.txtAbonneParId.Size = new System.Drawing.Size(210, 20);
             this.txtAbonneParId.TabIndex = 5;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.dtpDebutAbonnement);
             this.groupBox3.Controls.Add(this.label33);
             this.groupBox3.Controls.Add(this.label32);
             this.groupBox3.Controls.Add(this.label31);
@@ -1673,7 +1674,6 @@ namespace Mediateq_AP_SIO2
             this.groupBox3.Controls.Add(this.btnAbonneReset);
             this.groupBox3.Controls.Add(this.btnAbonneUpdate);
             this.groupBox3.Controls.Add(this.btnAbonneNew);
-            this.groupBox3.Controls.Add(this.txtTypeAbonnement);
             this.groupBox3.Controls.Add(this.dtpFinAbonnement);
             this.groupBox3.Controls.Add(this.dtpAbonneNaissance);
             this.groupBox3.Controls.Add(this.txtAbonneMail);
@@ -1683,9 +1683,9 @@ namespace Mediateq_AP_SIO2
             this.groupBox3.Controls.Add(this.txtAbonneNom);
             this.groupBox3.Controls.Add(this.txtAbonneId);
             this.groupBox3.Location = new System.Drawing.Point(29, 61);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(736, 202);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
@@ -1706,12 +1706,12 @@ namespace Mediateq_AP_SIO2
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(230, 133);
+            this.label32.Location = new System.Drawing.Point(226, 133);
             this.label32.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(119, 13);
+            this.label32.Size = new System.Drawing.Size(125, 13);
             this.label32.TabIndex = 20;
-            this.label32.Text = "Type d\'Abonnement";
+            this.label32.Text = "Début d\'Abonnement";
             // 
             // label31
             // 
@@ -1793,7 +1793,7 @@ namespace Mediateq_AP_SIO2
             // btnAbonneReset
             // 
             this.btnAbonneReset.Location = new System.Drawing.Point(614, 142);
-            this.btnAbonneReset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAbonneReset.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbonneReset.Name = "btnAbonneReset";
             this.btnAbonneReset.Size = new System.Drawing.Size(86, 40);
             this.btnAbonneReset.TabIndex = 12;
@@ -1804,7 +1804,7 @@ namespace Mediateq_AP_SIO2
             // btnAbonneUpdate
             // 
             this.btnAbonneUpdate.Location = new System.Drawing.Point(614, 87);
-            this.btnAbonneUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAbonneUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbonneUpdate.Name = "btnAbonneUpdate";
             this.btnAbonneUpdate.Size = new System.Drawing.Size(86, 39);
             this.btnAbonneUpdate.TabIndex = 11;
@@ -1815,7 +1815,7 @@ namespace Mediateq_AP_SIO2
             // btnAbonneNew
             // 
             this.btnAbonneNew.Location = new System.Drawing.Point(614, 31);
-            this.btnAbonneNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAbonneNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbonneNew.Name = "btnAbonneNew";
             this.btnAbonneNew.Size = new System.Drawing.Size(86, 37);
             this.btnAbonneNew.TabIndex = 10;
@@ -1823,19 +1823,10 @@ namespace Mediateq_AP_SIO2
             this.btnAbonneNew.UseVisualStyleBackColor = true;
             this.btnAbonneNew.Click += new System.EventHandler(this.btnAbonneNew_Click);
             // 
-            // txtTypeAbonnement
-            // 
-            this.txtTypeAbonnement.Location = new System.Drawing.Point(352, 131);
-            this.txtTypeAbonnement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtTypeAbonnement.MaxLength = 20;
-            this.txtTypeAbonnement.Name = "txtTypeAbonnement";
-            this.txtTypeAbonnement.Size = new System.Drawing.Size(76, 20);
-            this.txtTypeAbonnement.TabIndex = 9;
-            // 
             // dtpFinAbonnement
             // 
-            this.dtpFinAbonnement.Location = new System.Drawing.Point(352, 163);
-            this.dtpFinAbonnement.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpFinAbonnement.Location = new System.Drawing.Point(355, 163);
+            this.dtpFinAbonnement.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFinAbonnement.Name = "dtpFinAbonnement";
             this.dtpFinAbonnement.Size = new System.Drawing.Size(151, 20);
             this.dtpFinAbonnement.TabIndex = 8;
@@ -1843,8 +1834,8 @@ namespace Mediateq_AP_SIO2
             // dtpAbonneNaissance
             // 
             this.dtpAbonneNaissance.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpAbonneNaissance.Location = new System.Drawing.Point(352, 95);
-            this.dtpAbonneNaissance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpAbonneNaissance.Location = new System.Drawing.Point(355, 95);
+            this.dtpAbonneNaissance.Margin = new System.Windows.Forms.Padding(2);
             this.dtpAbonneNaissance.Name = "dtpAbonneNaissance";
             this.dtpAbonneNaissance.Size = new System.Drawing.Size(94, 20);
             this.dtpAbonneNaissance.TabIndex = 7;
@@ -1852,8 +1843,8 @@ namespace Mediateq_AP_SIO2
             // 
             // txtAbonneMail
             // 
-            this.txtAbonneMail.Location = new System.Drawing.Point(352, 63);
-            this.txtAbonneMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonneMail.Location = new System.Drawing.Point(355, 63);
+            this.txtAbonneMail.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonneMail.MaxLength = 50;
             this.txtAbonneMail.Name = "txtAbonneMail";
             this.txtAbonneMail.Size = new System.Drawing.Size(94, 20);
@@ -1861,8 +1852,8 @@ namespace Mediateq_AP_SIO2
             // 
             // txtAbonneTel
             // 
-            this.txtAbonneTel.Location = new System.Drawing.Point(352, 28);
-            this.txtAbonneTel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonneTel.Location = new System.Drawing.Point(355, 28);
+            this.txtAbonneTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonneTel.MaxLength = 15;
             this.txtAbonneTel.Name = "txtAbonneTel";
             this.txtAbonneTel.Size = new System.Drawing.Size(94, 20);
@@ -1871,7 +1862,7 @@ namespace Mediateq_AP_SIO2
             // txtAbonneAdresse
             // 
             this.txtAbonneAdresse.Location = new System.Drawing.Point(67, 133);
-            this.txtAbonneAdresse.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonneAdresse.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonneAdresse.MaxLength = 100;
             this.txtAbonneAdresse.Name = "txtAbonneAdresse";
             this.txtAbonneAdresse.Size = new System.Drawing.Size(140, 20);
@@ -1880,7 +1871,7 @@ namespace Mediateq_AP_SIO2
             // txtAbonnePrenom
             // 
             this.txtAbonnePrenom.Location = new System.Drawing.Point(67, 98);
-            this.txtAbonnePrenom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonnePrenom.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonnePrenom.MaxLength = 50;
             this.txtAbonnePrenom.Name = "txtAbonnePrenom";
             this.txtAbonnePrenom.Size = new System.Drawing.Size(76, 20);
@@ -1889,7 +1880,7 @@ namespace Mediateq_AP_SIO2
             // txtAbonneNom
             // 
             this.txtAbonneNom.Location = new System.Drawing.Point(67, 63);
-            this.txtAbonneNom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonneNom.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonneNom.MaxLength = 50;
             this.txtAbonneNom.Name = "txtAbonneNom";
             this.txtAbonneNom.Size = new System.Drawing.Size(76, 20);
@@ -1898,7 +1889,7 @@ namespace Mediateq_AP_SIO2
             // txtAbonneId
             // 
             this.txtAbonneId.Location = new System.Drawing.Point(67, 30);
-            this.txtAbonneId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAbonneId.Margin = new System.Windows.Forms.Padding(2);
             this.txtAbonneId.Name = "txtAbonneId";
             this.txtAbonneId.ReadOnly = true;
             this.txtAbonneId.Size = new System.Drawing.Size(76, 20);
@@ -1909,7 +1900,7 @@ namespace Mediateq_AP_SIO2
             // 
             this.abonneExpireCheck.AutoSize = true;
             this.abonneExpireCheck.Location = new System.Drawing.Point(448, 277);
-            this.abonneExpireCheck.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.abonneExpireCheck.Margin = new System.Windows.Forms.Padding(2);
             this.abonneExpireCheck.Name = "abonneExpireCheck";
             this.abonneExpireCheck.Size = new System.Drawing.Size(299, 17);
             this.abonneExpireCheck.TabIndex = 3;
@@ -1931,7 +1922,7 @@ namespace Mediateq_AP_SIO2
             // abonneTxtBox
             // 
             this.abonneTxtBox.Location = new System.Drawing.Point(170, 275);
-            this.abonneTxtBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.abonneTxtBox.Margin = new System.Windows.Forms.Padding(2);
             this.abonneTxtBox.Name = "abonneTxtBox";
             this.abonneTxtBox.Size = new System.Drawing.Size(210, 20);
             this.abonneTxtBox.TabIndex = 1;
@@ -1951,12 +1942,12 @@ namespace Mediateq_AP_SIO2
             this.abonneTel,
             this.abonneMail,
             this.abonneNais,
-            this.abonneTypeAbo,
+            this.abonneDebutAbo,
             this.abonneFinAbo,
             this.abonneModifier,
             this.abonneDGVSupprimer});
             this.dataGridAbonne.Location = new System.Drawing.Point(16, 313);
-            this.dataGridAbonne.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridAbonne.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridAbonne.Name = "dataGridAbonne";
             this.dataGridAbonne.ReadOnly = true;
             this.dataGridAbonne.RowHeadersWidth = 51;
@@ -1964,6 +1955,14 @@ namespace Mediateq_AP_SIO2
             this.dataGridAbonne.Size = new System.Drawing.Size(825, 206);
             this.dataGridAbonne.TabIndex = 0;
             this.dataGridAbonne.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAbonne_CellContentClick);
+            // 
+            // dtpDebutAbonnement
+            // 
+            this.dtpDebutAbonnement.Location = new System.Drawing.Point(355, 130);
+            this.dtpDebutAbonnement.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpDebutAbonnement.Name = "dtpDebutAbonnement";
+            this.dtpDebutAbonnement.Size = new System.Drawing.Size(151, 20);
+            this.dtpDebutAbonnement.TabIndex = 22;
             // 
             // abonneId
             // 
@@ -2011,7 +2010,7 @@ namespace Mediateq_AP_SIO2
             this.abonneMail.MinimumWidth = 6;
             this.abonneMail.Name = "abonneMail";
             this.abonneMail.ReadOnly = true;
-            this.abonneMail.Width = 85;
+            this.abonneMail.Width = 92;
             // 
             // abonneNais
             // 
@@ -2021,13 +2020,13 @@ namespace Mediateq_AP_SIO2
             this.abonneNais.ReadOnly = true;
             this.abonneNais.Width = 82;
             // 
-            // abonneTypeAbo
+            // abonneDebutAbo
             // 
-            this.abonneTypeAbo.HeaderText = "Type d\'Abonnement";
-            this.abonneTypeAbo.MinimumWidth = 6;
-            this.abonneTypeAbo.Name = "abonneTypeAbo";
-            this.abonneTypeAbo.ReadOnly = true;
-            this.abonneTypeAbo.Width = 116;
+            this.abonneDebutAbo.HeaderText = "Début d\'Abonnement";
+            this.abonneDebutAbo.MinimumWidth = 6;
+            this.abonneDebutAbo.Name = "abonneDebutAbo";
+            this.abonneDebutAbo.ReadOnly = true;
+            this.abonneDebutAbo.Width = 121;
             // 
             // abonneFinAbo
             // 
@@ -2186,7 +2185,6 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.Button btnAbonneReset;
         private System.Windows.Forms.Button btnAbonneUpdate;
         private System.Windows.Forms.Button btnAbonneNew;
-        private System.Windows.Forms.TextBox txtTypeAbonnement;
         private System.Windows.Forms.DateTimePicker dtpFinAbonnement;
         private System.Windows.Forms.DateTimePicker dtpAbonneNaissance;
         private System.Windows.Forms.TextBox txtAbonneMail;
@@ -2207,17 +2205,6 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.Button btnAbonneParId;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TextBox txtAbonneParId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonnePrenom;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneAdresse;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneMail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNais;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTypeAbo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonneFinAbo;
-        private System.Windows.Forms.DataGridViewButtonColumn abonneModifier;
-        private System.Windows.Forms.DataGridViewButtonColumn abonneDGVSupprimer;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.TextBox txtDVDNum;
         private System.Windows.Forms.Label label38;
@@ -2289,6 +2276,18 @@ namespace Mediateq_AP_SIO2
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.DateTimePicker dtpDebutAbonnement;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonnePrenom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneAdresse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneMail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneNais;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneDebutAbo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abonneFinAbo;
+        private System.Windows.Forms.DataGridViewButtonColumn abonneModifier;
+        private System.Windows.Forms.DataGridViewButtonColumn abonneDGVSupprimer;
     }
 }
 

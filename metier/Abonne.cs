@@ -17,7 +17,7 @@ namespace Mediateq_AP_SIO2.metier
         private DateTime dateNaissance;
         private string adresse;
         private string numTel;
-        private string typeAbonnement;
+        private DateTime debutAbonnement;
         private DateTime finAbonnement;
         private string mailU;
 
@@ -30,10 +30,10 @@ namespace Mediateq_AP_SIO2.metier
         /// <param name="dateNaissance"></param>
         /// <param name="adresse"></param>
         /// <param name="numTel"></param>
-        /// <param name="typeAbonnement"></param>
+        /// <param name="debutAbonnement"></param>
         /// <param name="finAbonnement"></param>
         /// <param name="mailU"></param>
-        public Abonne(string id, string nom, string prenom, DateTime dateNaissance, string adresse, string numTel, string typeAbonnement, DateTime finAbonnement, string mailU)
+        public Abonne(string id, string nom, string prenom, DateTime dateNaissance, string adresse, string numTel, DateTime debutAbonnement, DateTime finAbonnement, string mailU)
         {
             this.id = id;
             this.nom = nom;
@@ -41,7 +41,7 @@ namespace Mediateq_AP_SIO2.metier
             this.dateNaissance = dateNaissance;
             this.adresse = adresse;
             this.numTel = numTel;
-            this.typeAbonnement = typeAbonnement;
+            this.debutAbonnement = debutAbonnement;
             this.finAbonnement = finAbonnement;
             this.mailU = mailU;
         }
@@ -77,9 +77,9 @@ namespace Mediateq_AP_SIO2.metier
         public string NumTel { get => numTel; set => numTel = value; }
 
         /// <summary>
-        /// getter setter Type d'abonnement
+        /// getter setter Date de début de l'abonnement
         /// </summary>
-        public string TypeAbonnement { get => typeAbonnement; set => typeAbonnement = value; }
+        public DateTime DebutAbonnement { get => debutAbonnement; set => debutAbonnement = value; }
 
         /// <summary>
         /// getter setter Date de fin d'abonnement
