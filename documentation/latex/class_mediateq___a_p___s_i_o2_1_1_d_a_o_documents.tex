@@ -1,0 +1,218 @@
+\doxysection{Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments Class Reference}
+\hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents}{}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents}\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+
+
+Classe de connexion à la base de données pour Documents.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a8cbfd590d6fbc36e1cc81dd063480651}{Document\+Numero}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le numéro de document disponible pour un ajout de document. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} $>$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ad250f26fcbea81c456debb7141c87ec4}{get\+All\+Categories}} ()
+\begin{DoxyCompactList}\small\item\em Retourne une liste de toutes les categories. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_descripteur}{Descripteur}} $>$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ae07676baa733e62aeac962e9bca6ba27}{get\+All\+Descripteurs}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des Descripteurs. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} $>$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ae5f9027a77d809647c362d50b407cd3f}{get\+All\+Livres}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des Livres. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a31b9e213c1a205392f722900e50b0e80}{Ajouter\+Livre}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} p\+Livre)
+\begin{DoxyCompactList}\small\item\em Ajoute un Livre à la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_aab588e2a0bd0c7a4f1f244173d9bc183}{Supprimer\+Livre}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} un\+Livre)
+\begin{DoxyCompactList}\small\item\em Supprime le livre choisi de la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a4ce653860f8e3c8e88876da4acdf54c0}{Modifier\+Livre}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} un\+Livre)
+\begin{DoxyCompactList}\small\item\em Met à jour le livre passé en paramêtre sur la base de données. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} $>$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_af647dec44474d5dd30e7276889370eec}{get\+All\+DVD}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des DVDs. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a5c64462f6d44d87f76903a8edcfe2bfc}{get\+Categorie\+By\+Document}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_document}{Document}} un\+Document)
+\begin{DoxyCompactList}\small\item\em Retourne la categorie, depuis la base de données, correspondant au document en paramêtre. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a3da84f285f241551e819d711858ccac1}{Ajouter\+DVD}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} p\+DVD)
+\begin{DoxyCompactList}\small\item\em Ajoute le dvd à la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a8ac83bd5da09e71a74f16978009a8bbd}{Supprimer\+DVD}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} un\+DVD)
+\begin{DoxyCompactList}\small\item\em Supprime le dvd choisi de la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_adfd52e1771ee62910b220b2395e2fdd9}{Modifier\+DVD}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} un\+DVD)
+\begin{DoxyCompactList}\small\item\em Met à jour le dvd choisi sur la base de données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe de connexion à la base de données pour Documents. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a3da84f285f241551e819d711858ccac1}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a3da84f285f241551e819d711858ccac1} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!AjouterDVD@{AjouterDVD}}
+\index{AjouterDVD@{AjouterDVD}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{AjouterDVD()}{AjouterDVD()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Ajouter\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}}}]{p\+DVD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ajoute le dvd à la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+DVD} & Objet DVD à ajouter\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a31b9e213c1a205392f722900e50b0e80}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a31b9e213c1a205392f722900e50b0e80} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!AjouterLivre@{AjouterLivre}}
+\index{AjouterLivre@{AjouterLivre}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{AjouterLivre()}{AjouterLivre()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Ajouter\+Livre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}}}]{p\+Livre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ajoute un Livre à la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Livre} & Livre à ajouter\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a8cbfd590d6fbc36e1cc81dd063480651}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a8cbfd590d6fbc36e1cc81dd063480651} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!DocumentNumero@{DocumentNumero}}
+\index{DocumentNumero@{DocumentNumero}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{DocumentNumero()}{DocumentNumero()}}
+{\footnotesize\ttfamily static string Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Document\+Numero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne le numéro de document disponible pour un ajout de document. 
+
+\begin{DoxyReturn}{Returns}
+Numéro de document disponible
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ad250f26fcbea81c456debb7141c87ec4}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ad250f26fcbea81c456debb7141c87ec4} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!getAllCategories@{getAllCategories}}
+\index{getAllCategories@{getAllCategories}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{getAllCategories()}{getAllCategories()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} $>$ Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+get\+All\+Categories (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne une liste de toutes les categories. 
+
+\begin{DoxyReturn}{Returns}
+Liste des categories
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ae07676baa733e62aeac962e9bca6ba27}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ae07676baa733e62aeac962e9bca6ba27} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!getAllDescripteurs@{getAllDescripteurs}}
+\index{getAllDescripteurs@{getAllDescripteurs}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{getAllDescripteurs()}{getAllDescripteurs()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_descripteur}{Descripteur}} $>$ Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+get\+All\+Descripteurs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la liste des Descripteurs. 
+
+\begin{DoxyReturn}{Returns}
+Liste des descripteurs
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_af647dec44474d5dd30e7276889370eec}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_af647dec44474d5dd30e7276889370eec} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!getAllDVD@{getAllDVD}}
+\index{getAllDVD@{getAllDVD}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{getAllDVD()}{getAllDVD()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} $>$ Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+get\+All\+DVD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la liste des DVDs. 
+
+\begin{DoxyReturn}{Returns}
+Liste des DVDs
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ae5f9027a77d809647c362d50b407cd3f}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_ae5f9027a77d809647c362d50b407cd3f} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!getAllLivres@{getAllLivres}}
+\index{getAllLivres@{getAllLivres}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{getAllLivres()}{getAllLivres()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} $>$ Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+get\+All\+Livres (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la liste des Livres. 
+
+\begin{DoxyReturn}{Returns}
+Liste des Livres
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a5c64462f6d44d87f76903a8edcfe2bfc}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a5c64462f6d44d87f76903a8edcfe2bfc} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!getCategorieByDocument@{getCategorieByDocument}}
+\index{getCategorieByDocument@{getCategorieByDocument}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{getCategorieByDocument()}{getCategorieByDocument()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+get\+Categorie\+By\+Document (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_document}{Document}}}]{un\+Document }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la categorie, depuis la base de données, correspondant au document en paramêtre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Document} & Le document choisi\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+La catégorie de ce document
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_adfd52e1771ee62910b220b2395e2fdd9}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_adfd52e1771ee62910b220b2395e2fdd9} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!ModifierDVD@{ModifierDVD}}
+\index{ModifierDVD@{ModifierDVD}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{ModifierDVD()}{ModifierDVD()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Modifier\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}}}]{un\+DVD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Met à jour le dvd choisi sur la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+DVD} & Le DVD choisi\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a4ce653860f8e3c8e88876da4acdf54c0}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a4ce653860f8e3c8e88876da4acdf54c0} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!ModifierLivre@{ModifierLivre}}
+\index{ModifierLivre@{ModifierLivre}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{ModifierLivre()}{ModifierLivre()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Modifier\+Livre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}}}]{un\+Livre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Met à jour le livre passé en paramêtre sur la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Livre} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a8ac83bd5da09e71a74f16978009a8bbd}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_a8ac83bd5da09e71a74f16978009a8bbd} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!SupprimerDVD@{SupprimerDVD}}
+\index{SupprimerDVD@{SupprimerDVD}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{SupprimerDVD()}{SupprimerDVD()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Supprimer\+DVD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}}}]{un\+DVD }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Supprime le dvd choisi de la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+DVD} & Le DVD choisi\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_aab588e2a0bd0c7a4f1f244173d9bc183}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_documents_aab588e2a0bd0c7a4f1f244173d9bc183} 
+\index{Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}!SupprimerLivre@{SupprimerLivre}}
+\index{SupprimerLivre@{SupprimerLivre}!Mediateq\_AP\_SIO2.DAODocuments@{Mediateq\_AP\_SIO2.DAODocuments}}
+\doxysubsubsection{\texorpdfstring{SupprimerLivre()}{SupprimerLivre()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAODocuments.\+Supprimer\+Livre (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}}}]{un\+Livre }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Supprime le livre choisi de la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Livre} & Livre à supprimer\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modele/DAODocuments.\+cs\end{DoxyCompactItemize}

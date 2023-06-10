@@ -1,0 +1,117 @@
+\doxysection{Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande Class Reference}
+\hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande}{}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande}\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+
+
+Connexion à la base de données pour Commandes.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a903877e3601c25e078f910db5c2997b0}{commande\+Numero}} ()
+\begin{DoxyCompactList}\small\item\em Retourne le numéro de commande, pour une nouvelle commande, disponible sur la base de données. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} $>$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a6f52b552d5465a45445535015c854391}{get\+All\+Commandes}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des commandes de la base de données. \end{DoxyCompactList}\item 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_etat_suivi}{Etat\+Suivi}} $>$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a89e034cb7d0fbccd2697069da4d9227c}{get\+All\+Etat\+Suivi}} ()
+\begin{DoxyCompactList}\small\item\em Retourne la liste des status de commande de la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a7c38a1f410b21459a15cc1d4d117130d}{ajouter\+Commande}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} commande)
+\begin{DoxyCompactList}\small\item\em Ajoute une commande à la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a6fd05e08b8c719d4e01299fa95c6cd32}{supprimer\+Commande}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} une\+Commande)
+\begin{DoxyCompactList}\small\item\em Supprime une commande de la base de données. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a7664e263efd1cc8c7961eaf9353e64bb}{modifier\+Commande}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} une\+Commande)
+\begin{DoxyCompactList}\small\item\em Modifie la commande sur la base de données. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Connexion à la base de données pour Commandes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a7c38a1f410b21459a15cc1d4d117130d}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a7c38a1f410b21459a15cc1d4d117130d} 
+\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}!ajouterCommande@{ajouterCommande}}
+\index{ajouterCommande@{ajouterCommande}!Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+\doxysubsubsection{\texorpdfstring{ajouterCommande()}{ajouterCommande()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande.\+ajouter\+Commande (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}}}]{commande }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Ajoute une commande à la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em commande} & Commande à ajouter\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a903877e3601c25e078f910db5c2997b0}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a903877e3601c25e078f910db5c2997b0} 
+\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}!commandeNumero@{commandeNumero}}
+\index{commandeNumero@{commandeNumero}!Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+\doxysubsubsection{\texorpdfstring{commandeNumero()}{commandeNumero()}}
+{\footnotesize\ttfamily static string Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande.\+commande\+Numero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne le numéro de commande, pour une nouvelle commande, disponible sur la base de données. 
+
+\begin{DoxyReturn}{Returns}
+Nouveau numéro de commande
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a6f52b552d5465a45445535015c854391}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a6f52b552d5465a45445535015c854391} 
+\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}!getAllCommandes@{getAllCommandes}}
+\index{getAllCommandes@{getAllCommandes}!Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+\doxysubsubsection{\texorpdfstring{getAllCommandes()}{getAllCommandes()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} $>$ Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande.\+get\+All\+Commandes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la liste des commandes de la base de données. 
+
+\begin{DoxyReturn}{Returns}
+Liste des commandes
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a89e034cb7d0fbccd2697069da4d9227c}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a89e034cb7d0fbccd2697069da4d9227c} 
+\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}!getAllEtatSuivi@{getAllEtatSuivi}}
+\index{getAllEtatSuivi@{getAllEtatSuivi}!Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+\doxysubsubsection{\texorpdfstring{getAllEtatSuivi()}{getAllEtatSuivi()}}
+{\footnotesize\ttfamily static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_etat_suivi}{Etat\+Suivi}} $>$ Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande.\+get\+All\+Etat\+Suivi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Retourne la liste des status de commande de la base de données. 
+
+\begin{DoxyReturn}{Returns}
+Liste des Status
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a7664e263efd1cc8c7961eaf9353e64bb}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a7664e263efd1cc8c7961eaf9353e64bb} 
+\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}!modifierCommande@{modifierCommande}}
+\index{modifierCommande@{modifierCommande}!Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+\doxysubsubsection{\texorpdfstring{modifierCommande()}{modifierCommande()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande.\+modifier\+Commande (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}}}]{une\+Commande }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Modifie la commande sur la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em une\+Commande} & Commande à modifier\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a6fd05e08b8c719d4e01299fa95c6cd32}\label{class_mediateq___a_p___s_i_o2_1_1_d_a_o_commande_a6fd05e08b8c719d4e01299fa95c6cd32} 
+\index{Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}!supprimerCommande@{supprimerCommande}}
+\index{supprimerCommande@{supprimerCommande}!Mediateq\_AP\_SIO2.DAOCommande@{Mediateq\_AP\_SIO2.DAOCommande}}
+\doxysubsubsection{\texorpdfstring{supprimerCommande()}{supprimerCommande()}}
+{\footnotesize\ttfamily static void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+DAOCommande.\+supprimer\+Commande (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}}}]{une\+Commande }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Supprime une commande de la base de données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em une\+Commande} & Commande à supprimer\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modele/DAOCommande.\+cs\end{DoxyCompactItemize}

@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Mediateq-AP-SIO2.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -89,15 +90,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="authForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="authForm.Designer.cs">
+      <DependentUpon>authForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="bdd\DAOFactory.cs" />
     <Compile Include="divers\ExceptionSIO.cs" />
+    <Compile Include="metier\EtatSuivi.cs" />
+    <Compile Include="metier\Commande.cs" />
     <Compile Include="metier\Categorie.cs" />
+    <Compile Include="metier\Abonne.cs" />
+    <Compile Include="metier\Utilisateur.cs" />
     <Compile Include="metier\Document.cs" />
     <Compile Include="metier\Descripteur.cs" />
     <Compile Include="metier\DVD.cs" />
     <Compile Include="metier\Livre.cs" />
     <Compile Include="metier\Parution.cs" />
     <Compile Include="metier\Revue.cs" />
+    <Compile Include="modele\DAOCommande.cs" />
+    <Compile Include="modele\DAOAuth.cs" />
+    <Compile Include="modele\DAOAbonne.cs" />
     <Compile Include="modele\DAODocuments.cs" />
     <Compile Include="modele\DAOPresse.cs" />
     <Compile Include="Program.cs" />
@@ -108,6 +122,9 @@
     <Compile Include="FrmMediateq.designer.cs">
       <DependentUpon>FrmMediateq.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="authForm.resx">
+      <DependentUpon>authForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

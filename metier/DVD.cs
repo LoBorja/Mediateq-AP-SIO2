@@ -2,6 +2,9 @@
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet DVD, héritier de Document
+    /// </summary>
     class DVD : Document
     {
         private string synopsis;
@@ -9,7 +12,7 @@ namespace Mediateq_AP_SIO2.metier
         private int duree;
 
 
-        public DVD(string unId, string unTitre, string unSynopsis, string unRealisateur, int uneDuree,string uneImage) : base(unId, unTitre, uneImage)
+        public DVD(string unId, string unTitre, string unSynopsis, string unRealisateur, int uneDuree, string uneImage, Categorie uneCategorie) : base(unId, unTitre, uneImage, uneCategorie)
         {
             Synopsis = unSynopsis;
             Realisateur = unRealisateur;

@@ -2,6 +2,9 @@
 
 namespace Mediateq_AP_SIO2.metier
 {
+    /// <summary>
+    /// Objet Revue
+    /// </summary>
     class Revue
     {
         private string id;

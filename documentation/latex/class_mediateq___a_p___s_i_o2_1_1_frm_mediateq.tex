@@ -1,0 +1,1479 @@
+\doxysection{Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq Class Reference}
+\hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq}{}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq}\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+
+
+Fenêtre principale de l\textquotesingle{}application.  
+
+
+Inheritance diagram for Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6722130072cea0dcf6d5369cd534d792}{Frm\+Mediateq}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_utilisateur}{Utilisateur}} utilisateur)
+\begin{DoxyCompactList}\small\item\em Constructeur de la classe de l\textquotesingle{}application principale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a306284f0ed1846a75a3d48f1d05ae29a}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Nettoyage des ressources utilisées. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a402f9c702f5846c056d8cdbe0070717f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a402f9c702f5846c056d8cdbe0070717f} 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_utilisateur}{Utilisateur}} {\bfseries user}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Objet Utilisateur correspondant à l\textquotesingle{}utilisateur connecté \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6a3af12aa4d58d895ce7f1479d9b31a3}{Frm\+Mediateq\+\_\+\+Load}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Fermeture des pages selon le role utilisateur et récupération de certaines données. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a45e14c44e60ce4e5c149b32354b08a0f}{tab\+Parutions\+\_\+\+Enter}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Mise en places des données dans le combobox Titres. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a63fff34b7e400345be18a04380a46d13}{cbx\+Titres\+\_\+\+Selected\+Index\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Changement de l\textquotesingle{}affichage lors de la selection d\textquotesingle{}un titre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69b36787516bebc68034ad1524788c58}{tab\+Titres\+\_\+\+Enter}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Mise en place des données dans le combobox Descripteurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a53b487da702bdb1f0bbacf3be0f103}{cbx\+Domaines\+\_\+\+Selected\+Index\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Changements de l\textquotesingle{}affichage des revues lors de la selection d\textquotesingle{}un Descripteur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a49dc3dd52ed215b14300786f697d657e}{tab\+Livres\+\_\+\+Enter}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Récupérations des données Categories, Descripteurs et Livres de la BDD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2a689216a1fbc6a71f11ede08b1ecf17}{btn\+Livre\+Recherche\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Changement de l\textquotesingle{}affichage lors de la recherche par numéro de Livre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0c428632b896548fd3930c7445607588}{btn\+Livre\+New\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un nouveau objet Livre selon les informations entrées dans les champs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa4705d637fde9dd11e9f5292c4bf0c89}{btn\+Livre\+Update\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Mise à jour du livre correspond au numéro séléctioné, selon les informations entrées dans les champs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3774bcb5bedb8982c9be0141c56d2818}{btn\+Livre\+Reset\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Réinitialisation des champs de saisie et du numéro de Livre séléctioné lorsque l\textquotesingle{}utilisateur appuie sur le bouton de rénitialisation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0959493cf9327387451888922bed9e86}{txb\+Titre\+\_\+\+Text\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Changement de l\textquotesingle{}affichage lorsque l\textquotesingle{}utilisateur écrit un titre dans le champs de recherche par Titre. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aec7c5a55a55232521fb6d00472b624f6}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aec7c5a55a55232521fb6d00472b624f6} 
+void {\bfseries reset\+Champs\+Livre} ()
+\begin{DoxyCompactList}\small\item\em Remet à zéro les champs de saisie, le numéro de Livre séléctionné et les permessions de boutons d\textquotesingle{}option. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae283c1ed42e5b06837358d21bbfdc238}{dgv\+Livre\+\_\+\+Cell\+Content\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Fonction du bouton supprimer présent sur le tableau des Livres. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1333b4ff44a7142b89ce5f1f0b05f182}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1333b4ff44a7142b89ce5f1f0b05f182} 
+void {\bfseries livre\+Remplir\+Data\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Remplis le tableau des Livres présents sur la BDD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8c06855f5561177d6b3ac0d1b56c006}{btn\+Livre\+Order\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Activation du bouton de commande d\textquotesingle{}un Livre. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0108c754f42446065c0e942f3c33b021}{rechercher\+Livre\+Par\+Id}} (string un\+Id)
+\begin{DoxyCompactList}\small\item\em Recherche un objet Livre avec un Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a97b46f830aceb6fd9c82dc9d1829ce9e}{tab\+DVD\+\_\+\+Enter}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Récupération des données Catégorie,Descripteurs et DVD et alimentation du tableau et des comboboxs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af667c3239969174535b3961d72c28b53}{btn\+DVDRecherche\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Affichage du DVD recherché après utilisation du bouton Recherche par Numéro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad7b922164dc895a334e9a91c03cd8227}{txt\+DVDRecherche\+Par\+Titre\+\_\+\+Text\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Affichage du tableau lorsque l\textquotesingle{}utilisateur écris sur la barre de recherche par Titre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a04dd9ecfbbe064bf11c05304cbe97cc9}{btn\+DVDNew\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un nouveau DVD selon les champs d\textquotesingle{}information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acdb661b6d3613cb99651e67eaee07c9f}{btn\+DVDUpdate\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Mise à jour d\textquotesingle{}un DVD selon les champs d\textquotesingle{}information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8aafa9e8f9445c9b3adc7763d9aa93b4}{btn\+DVDReset\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Mise à jour des champs de saisie, et du numéro de DVD, par le bouton Rénitialiser. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4ad1ec2bb18e03c98700851bebf5b39e}{data\+Grid\+DVD\+\_\+\+Cell\+Content\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Fonction des boutons de suppression du tableau de DVD. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9a2f0fec96ecf2ad8daae17650370b08}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9a2f0fec96ecf2ad8daae17650370b08} 
+void {\bfseries dvd\+Remplir\+Data\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Remplissage du tableau de DVD. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9f53490f792f5f5faafe4f5f5a71e2f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9f53490f792f5f5faafe4f5f5a71e2f} 
+void {\bfseries reset\+Champs\+DVD} ()
+\begin{DoxyCompactList}\small\item\em Remise à zéro des champs de saisie, du numéro de DVD et des permissions de boutons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a23d14699acf9c464fcfb84353ac5c2f3}{btn\+DVDOrder\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Commande d\textquotesingle{}un DVD, selon le montant et le nombre d\textquotesingle{}exemplaires inscrits dans les champs de commande. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af1ee31613a7461db2be2a3c81a547234}{rechercher\+DVDpar\+Id}} (string un\+Id)
+\begin{DoxyCompactList}\small\item\em Recherche d\textquotesingle{}objet DVD par Id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa0fa567e800be91f77500992a0a092bd}{tab\+Commandes\+\_\+\+Enter}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Récupération des données des Commandes et des Status de suivi et remplissage des tableaux et comboboxs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8b0f956f82128ab5855d6aa1f5cfeffd}{btn\+Commande\+Recherche\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Affichage de commande selon l\textquotesingle{}Id inscrit par l\textquotesingle{}utilisateur dans la barre de recherche. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afb8f71578a117274c0ff7c468df00cc8}{cbx\+Filtre\+Commande\+\_\+\+Selected\+Index\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Modification de l\textquotesingle{}affichage du tableau de commandes lors de la séléction de filtre. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac04564879d6eb83f05f486c8c9ba4e42}{data\+Grid\+Commandes\+\_\+\+Cell\+Content\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Affichage de la commande séléctionné via le bouton Modifier correspondant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aee01646e8dc246b4a430778d66858da6}{btn\+Modif\+Status\+Commande\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Modification du status de commande selon le status choisi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6ac30b18e40b4433413bacef5b91f8c9}{commande\+Remplir\+Data\+Grid}} (string un\+Statut=\"{}tout afficher\"{})
+\begin{DoxyCompactList}\small\item\em Remplissage du tableau de commande selon le critère choisi, ou affichage complet si aucun critère choisi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad346666989bfb37f97f533d5eaae6885}{set\+Infos\+Commande}} (\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} une\+Commande)
+\begin{DoxyCompactList}\small\item\em Affichage des informations et du status correspondant, et des status possibles pour la modification. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acb1989401f4ebf31a871dc60ee07e657}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acb1989401f4ebf31a871dc60ee07e657} 
+void {\bfseries commande\+Info\+Reinitialiser\+Champs} ()
+\begin{DoxyCompactList}\small\item\em Remise à zéro des champs d\textquotesingle{}information et de status de commande. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcc3d416f784f2c9f7d2cf4ab62dbf94}{rechercher\+Commande\+Par\+Id}} (string un\+Id)
+\begin{DoxyCompactList}\small\item\em Recherche commande par Id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_etat_suivi}{Etat\+Suivi}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aef4affba638e1920013dfabf9ce0d3f0}{rechercher\+Status\+Par\+Libelle}} (string un\+Libelle)
+\begin{DoxyCompactList}\small\item\em Recherche de status par libelle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae441f538b152c0e1e3e6756b4f7ef9bf}{tab\+Abonne\+\_\+\+Enter}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Récupération des objets abonnée. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd67af362ad8e97e6a7260b0a7dacd4c}{txb\+Abonne\+\_\+\+Text\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Modification de l\textquotesingle{}affichage du tableau d\textquotesingle{}abonnés lorsque l\textquotesingle{}utilisateur écrit sur la barre de recherche par Nom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1ff0beb39b88a989bcade112f6aa940a}{data\+Grid\+Abonne\+\_\+\+Cell\+Content\+Click}} (object sender, Data\+Grid\+View\+Cell\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Fonction des boutons de supression et de mise à jour d\textquotesingle{}abonnés sur le tableau d\textquotesingle{}abonné \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2b89aae54a264ec3b8d5b3ab8cfdb17}{abonne\+Expire\+Check\+\_\+\+Checked\+Changed}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Met à jour le datagrid lorsque le filtre pour séléctionner les abonnements fini ou proche de la fin est activé ou désactivé \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa220ca17a9509e59811212c5e70c9dac}{btn\+Abonne\+New\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Création d\textquotesingle{}un nouvel Abonné selon les informations entrées dans les champs de saisie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a03d7783eaeeab043e98e24e7d61ef704}{btn\+Abonne\+Update\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Mise à jour de l\textquotesingle{}Abonné séléctionné selon les informations entrées dans les champs de saisie. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9f584e8434b9da31d776445d180401c}{btn\+Abonne\+Reset\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Remise à zéro des champs de saisie d\textquotesingle{}abonné et des permissions de boutons. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcac81bdb0aa6978b45fc4a9dd617e90}{btn\+Abonne\+Par\+Id\+\_\+\+Click}} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Affichage de l\textquotesingle{}abonné recherché selon l\textquotesingle{}Id inscrit dans le champs de recherche. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a64d4f17355b6ff8108de19a8ab0fcdcd}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a64d4f17355b6ff8108de19a8ab0fcdcd} 
+void {\bfseries abonne\+Reset\+Champs} ()
+\begin{DoxyCompactList}\small\item\em Remise à zéro des champs de saisie. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5fdf7b05cab15abbec0a070da39bd287}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5fdf7b05cab15abbec0a070da39bd287} 
+void {\bfseries abonne\+Remplir\+Data\+Grid} ()
+\begin{DoxyCompactList}\small\item\em Remplissage du tableau d\textquotesingle{}abonnés. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5589199d49ef89669efbd29de7835136}{abonne\+Coloriser\+Fin}} (int indice, Time\+Span diff\+Temps)
+\begin{DoxyCompactList}\small\item\em Colorise les case de date d\textquotesingle{}abonnement sur le tableau abonné selon le temps restant pour l\textquotesingle{}abonnement. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_abonne}{Abonne}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aecd3b5a914ceb2f5b5766f73ec127b84}{rechercher\+Abonne\+Par\+Id}} (string id\+Abonne)
+\begin{DoxyCompactList}\small\item\em Recherche d\textquotesingle{}abonné par Id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afb25cc5ad1741147d3232af638727720}{categorie\+Par\+Libelle}} (string une\+Nom\+De\+Categorie)
+\begin{DoxyCompactList}\small\item\em Recherche de Catégorie par Nom. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9b0c53a7c476adafcd9e3b62fd90407}{Frm\+Mediateq\+\_\+\+Form\+Closed}} (object sender, Form\+Closed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Fermeture de l\textquotesingle{}application entière lorsque la fênêtre principale est fermée. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0b42291db65ee2b3a0f38ec73001a539}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0b42291db65ee2b3a0f38ec73001a539} 
+void {\bfseries Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Méthode requise pour la prise en charge du concepteur -\/ ne modifiez pas le contenu de cette méthode avec l\textquotesingle{}éditeur de code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7074b03c363c957c091ee5ffea20a225}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7074b03c363c957c091ee5ffea20a225} 
+System.\+Component\+Model.\+IContainer {\bfseries components} = null
+\begin{DoxyCompactList}\small\item\em Variable nécessaire au concepteur. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad33097a9f5f4aa69c8b9e0f3d7c99a4c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad33097a9f5f4aa69c8b9e0f3d7c99a4c} 
+System.\+Windows.\+Forms.\+Tab\+Control {\bfseries tab\+Onglets\+Application}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a314a7a72cb89b7f690ce4d86863d61cf}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a314a7a72cb89b7f690ce4d86863d61cf} 
+System.\+Windows.\+Forms.\+Tab\+Page {\bfseries tab\+Parutions}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8187a8d300b339826475d12d5aded775}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8187a8d300b339826475d12d5aded775} 
+System.\+Windows.\+Forms.\+Label {\bfseries label1}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a26655b435e06baba888053ee40b99cc0}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a26655b435e06baba888053ee40b99cc0} 
+System.\+Windows.\+Forms.\+Combo\+Box {\bfseries cbx\+Titres}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4d16b3ac7336f4cd8ad15b733bd45395}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4d16b3ac7336f4cd8ad15b733bd45395} 
+System.\+Windows.\+Forms.\+Tab\+Page {\bfseries tab\+Titres}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a75a710db1f1aac1d9dfa82a305e1253c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a75a710db1f1aac1d9dfa82a305e1253c} 
+System.\+Windows.\+Forms.\+Combo\+Box {\bfseries cbx\+Domaines}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aaf928ca5a05f5ed8022b23c5d0a09e71}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aaf928ca5a05f5ed8022b23c5d0a09e71} 
+System.\+Windows.\+Forms.\+Label {\bfseries label2}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a63135fca8df2fa0f6f308d891e0463fb}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a63135fca8df2fa0f6f308d891e0463fb} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries dgv\+Titres}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a82bfcafd7e80b2eefc88f50111c851c4}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a82bfcafd7e80b2eefc88f50111c851c4} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries dgv\+Parutions}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd38ce03c17afc897399297b554023c5}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd38ce03c17afc897399297b554023c5} 
+System.\+Windows.\+Forms.\+Label {\bfseries label3}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a90c00d6657a03e486756f2d09bf50954}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a90c00d6657a03e486756f2d09bf50954} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries numero}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae68300db13a07d9be25657fdf250898b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae68300db13a07d9be25657fdf250898b} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries date\+Parution}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3dfb928ae0d201b3fbebe716fe9e496f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3dfb928ae0d201b3fbebe716fe9e496f} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries photo}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a05cc3d9377ed59199c40b5c953ca9b73}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a05cc3d9377ed59199c40b5c953ca9b73} 
+System.\+Windows.\+Forms.\+Label {\bfseries label4}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4d780b9ccf0a0a25f36a423064416a03}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4d780b9ccf0a0a25f36a423064416a03} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries id\+Titre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa968b0fcc5b6be9b601690fb5e240a18}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa968b0fcc5b6be9b601690fb5e240a18} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries nom}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a22729170fa048e8c4db9430217618347}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a22729170fa048e8c4db9430217618347} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries empruntable}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab05259fb3fc26bb1897ad4891e03ed6c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab05259fb3fc26bb1897ad4891e03ed6c} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries date\+Fin}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcbcd1ada45c80ac3f7ab99288150dbf}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcbcd1ada45c80ac3f7ab99288150dbf} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries periodicite}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a84f0e56bb2df0c0cb5f7ba3c30cedaa6}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a84f0e56bb2df0c0cb5f7ba3c30cedaa6} 
+System.\+Windows.\+Forms.\+Tab\+Page {\bfseries tab\+Livres}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0fd5d38b9099e61962f80ed4ac91e750}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0fd5d38b9099e61962f80ed4ac91e750} 
+System.\+Windows.\+Forms.\+Tab\+Page {\bfseries tab\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad05a2847ed9fef5119b3e2eb80cc9afd}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad05a2847ed9fef5119b3e2eb80cc9afd} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Livre\+Recherche}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4dd3f1f1e81fa6047f388c3a1d11dab3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4dd3f1f1e81fa6047f388c3a1d11dab3} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Recherche\+Par\+Titre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae62227d10770cecd5a622b73cc35a3ff}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae62227d10770cecd5a622b73cc35a3ff} 
+System.\+Windows.\+Forms.\+Label {\bfseries label6}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac876ddeb458a0550f2fc7cc65f917159}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac876ddeb458a0550f2fc7cc65f917159} 
+System.\+Windows.\+Forms.\+Label {\bfseries label5}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abdb17ba68109ce941966855b443b9103}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abdb17ba68109ce941966855b443b9103} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Recherche\+Par\+Num}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a757eb1fca6a93bc8d02adb771a4dce84}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a757eb1fca6a93bc8d02adb771a4dce84} 
+System.\+Windows.\+Forms.\+Label {\bfseries label12}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0f655da1dd28184f6425c916d250c468}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0f655da1dd28184f6425c916d250c468} 
+System.\+Windows.\+Forms.\+Label {\bfseries label11}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2605dac86ff3ec0d5a3cdfa0ec869578}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2605dac86ff3ec0d5a3cdfa0ec869578} 
+System.\+Windows.\+Forms.\+Label {\bfseries label10}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5ffd99d6c1b40496d668639bf6c56988}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5ffd99d6c1b40496d668639bf6c56988} 
+System.\+Windows.\+Forms.\+Label {\bfseries label9}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6f5e245b7dc6b354ed1291449322ff1b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6f5e245b7dc6b354ed1291449322ff1b} 
+System.\+Windows.\+Forms.\+Label {\bfseries label7}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2fce8b1bc0af63d0b64c3aa2c584266e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2fce8b1bc0af63d0b64c3aa2c584266e} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries grp\+Recherche\+Titre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a09f75ba14bd3c7be100c9cc2c5294aea}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a09f75ba14bd3c7be100c9cc2c5294aea} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries grp\+Recherche\+Code}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7a4c6f6c02ab914845a2c5cd6af4e9da}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7a4c6f6c02ab914845a2c5cd6af4e9da} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries dgv\+Livres}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7d825c1f33b58032b93b71dab95564d2}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7d825c1f33b58032b93b71dab95564d2} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box2}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a9143987f07a7fd5bb42d4237dd205c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a9143987f07a7fd5bb42d4237dd205c} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDRecherche\+Par\+Titre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a45e1aa64efe00a8af18517f3e76494be}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a45e1aa64efe00a8af18517f3e76494be} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box1}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a09b52a34cb64cc82e138de714f75139f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a09b52a34cb64cc82e138de714f75139f} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries data\+Grid\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4b7ee7dce7f5c6acf3c4130e5fd5df03}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4b7ee7dce7f5c6acf3c4130e5fd5df03} 
+System.\+Windows.\+Forms.\+Label {\bfseries label13}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af58342218b1c03381f38826c61c579c7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af58342218b1c03381f38826c61c579c7} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+DVDRecherche}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a06fe81bb0835ef866c7ca27e9a2f166f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a06fe81bb0835ef866c7ca27e9a2f166f} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDRecherche\+Par\+Num}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a48f3c788e9318868813acdd189c9eb32}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a48f3c788e9318868813acdd189c9eb32} 
+System.\+Windows.\+Forms.\+Label {\bfseries label14}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab6eb7345dc4267b8fc1b69504aa66ae8}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab6eb7345dc4267b8fc1b69504aa66ae8} 
+System.\+Windows.\+Forms.\+Tab\+Page {\bfseries abonne\+Gestion}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9c582a4d2ec7a1f2a888f59a434ae98a}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9c582a4d2ec7a1f2a888f59a434ae98a} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries abonne\+Txt\+Box}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae7af0ca223e95c5b2d26e6a8bb4657a9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae7af0ca223e95c5b2d26e6a8bb4657a9} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries data\+Grid\+Abonne}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afa297ba271f25c284bfaedd66896e896}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afa297ba271f25c284bfaedd66896e896} 
+System.\+Windows.\+Forms.\+Label {\bfseries abonne\+Label\+Search}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac063a01fd26a935c647a96822b91402f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac063a01fd26a935c647a96822b91402f} 
+System.\+Windows.\+Forms.\+Label {\bfseries label24}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad19625adf2efdeb7a039eb4e0e476c6f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad19625adf2efdeb7a039eb4e0e476c6f} 
+System.\+Windows.\+Forms.\+Label {\bfseries label23}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aba0671da4efb7b765b35d4bd373ff844}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aba0671da4efb7b765b35d4bd373ff844} 
+System.\+Windows.\+Forms.\+Label {\bfseries label22}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adf084fd52be995acac532f871056238c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adf084fd52be995acac532f871056238c} 
+System.\+Windows.\+Forms.\+Label {\bfseries label21}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a40fd491990d453ce027146a680e8d1bb}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a40fd491990d453ce027146a680e8d1bb} 
+System.\+Windows.\+Forms.\+Label {\bfseries label19}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9be796afdbc5b2a55d3fcc42cd97429b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9be796afdbc5b2a55d3fcc42cd97429b} 
+System.\+Windows.\+Forms.\+Check\+Box {\bfseries abonne\+Expire\+Check}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8726071ddc518ec1c9082b30b60ea9c9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8726071ddc518ec1c9082b30b60ea9c9} 
+System.\+Windows.\+Forms.\+Tab\+Page {\bfseries tab\+Commandes}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a508c2141178fcd10b85e2bfd735bfcfc}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a508c2141178fcd10b85e2bfd735bfcfc} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View {\bfseries data\+Grid\+Commandes}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad6d882b380a0e450a79103b1362aaa7b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad6d882b380a0e450a79103b1362aaa7b} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Id}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aabd12dc53f3cb04921b6e25365a3c9de}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aabd12dc53f3cb04921b6e25365a3c9de} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Nb\+Ex}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aafb9f74e49a77cd14de759bea0f23400}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aafb9f74e49a77cd14de759bea0f23400} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Date}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad3bc1b2d8b21eefdd16130d89f860d5c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad3bc1b2d8b21eefdd16130d89f860d5c} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Montant}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5b12b156ed9fb7bcbc69e999248d0df1}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5b12b156ed9fb7bcbc69e999248d0df1} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Document\+Id}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab61a75938212792c69e5162b572eeee8}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab61a75938212792c69e5162b572eeee8} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Nom\+Document}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9c8e26670a402e4bfa3f52beed8931d3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9c8e26670a402e4bfa3f52beed8931d3} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries commande\+Status}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2cb12c9db3bcb79b6c5dbe44ebaa1fc6}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2cb12c9db3bcb79b6c5dbe44ebaa1fc6} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Button\+Column {\bfseries commande\+Modifier}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a53d6856d09c1d7901b7f58ebf36736e9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a53d6856d09c1d7901b7f58ebf36736e9} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box3}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4ee42f41b8ee62a7921fd181c5059a0c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4ee42f41b8ee62a7921fd181c5059a0c} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Abonne\+Reset}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9bbffc990520839df73c84f9b61af57b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9bbffc990520839df73c84f9b61af57b} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Abonne\+Update}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abf40a812d055aa49f867211e841d23da}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abf40a812d055aa49f867211e841d23da} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Abonne\+New}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2b784791937f1273bfefb8d79361fa0f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2b784791937f1273bfefb8d79361fa0f} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Type\+Abonnement}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a8305023a2db3234c3ba0b468a22c85}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a8305023a2db3234c3ba0b468a22c85} 
+System.\+Windows.\+Forms.\+Date\+Time\+Picker {\bfseries dtp\+Fin\+Abonnement}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a12e15facfe2b56808ba2900c988d4549}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a12e15facfe2b56808ba2900c988d4549} 
+System.\+Windows.\+Forms.\+Date\+Time\+Picker {\bfseries dtp\+Abonne\+Naissance}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9e906397c363e8dcd284d0cf6da9c8de}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9e906397c363e8dcd284d0cf6da9c8de} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Mail}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adefacc2cf6b84ac308018bae4ea195e8}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adefacc2cf6b84ac308018bae4ea195e8} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Tel}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9dd1063d2464af72cb7dc2394316cab3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9dd1063d2464af72cb7dc2394316cab3} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Adresse}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a04b7b82a9077144a614f75972c2eeb62}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a04b7b82a9077144a614f75972c2eeb62} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Prenom}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a404927d869aebc2d3ddfae938521a80a}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a404927d869aebc2d3ddfae938521a80a} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Nom}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad341dcde5e152927eb46de2ca0f57aec}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad341dcde5e152927eb46de2ca0f57aec} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Id}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a909a7dee57cf4580a39f92250027594d}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a909a7dee57cf4580a39f92250027594d} 
+System.\+Windows.\+Forms.\+Label {\bfseries label33}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a771e2772d7773a8b761ca5baffe1b6bb}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a771e2772d7773a8b761ca5baffe1b6bb} 
+System.\+Windows.\+Forms.\+Label {\bfseries label32}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a115da73ce2f41593fdc4d045b0b14a3c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a115da73ce2f41593fdc4d045b0b14a3c} 
+System.\+Windows.\+Forms.\+Label {\bfseries label31}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a659481ab2166eeb4940dea40b77cdaea}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a659481ab2166eeb4940dea40b77cdaea} 
+System.\+Windows.\+Forms.\+Label {\bfseries label30}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adc9b91cb57611077209301fc64fb145d}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adc9b91cb57611077209301fc64fb145d} 
+System.\+Windows.\+Forms.\+Label {\bfseries label29}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac2e3da9b9e1e907937479ba2c1077138}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac2e3da9b9e1e907937479ba2c1077138} 
+System.\+Windows.\+Forms.\+Label {\bfseries label28}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0b46da0023823ca8568914b1c0a37390}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0b46da0023823ca8568914b1c0a37390} 
+System.\+Windows.\+Forms.\+Label {\bfseries label27}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a572c67f475aa086a30d307af2addf77e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a572c67f475aa086a30d307af2addf77e} 
+System.\+Windows.\+Forms.\+Label {\bfseries label26}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad1555f826785e551593722a920129f6f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad1555f826785e551593722a920129f6f} 
+System.\+Windows.\+Forms.\+Label {\bfseries label25}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1bba08ca3b96e5924274c5dba2390329}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1bba08ca3b96e5924274c5dba2390329} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Abonne\+Par\+Id}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a32b13fd0d2bee07e37f250c4320c03ee}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a32b13fd0d2bee07e37f250c4320c03ee} 
+System.\+Windows.\+Forms.\+Label {\bfseries label35}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af8d44827cd11ec33ca31fae42eda3a5c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af8d44827cd11ec33ca31fae42eda3a5c} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Abonne\+Par\+Id}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2ef1430c7a61f6bce0b0827776f4d8a}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2ef1430c7a61f6bce0b0827776f4d8a} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Id}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a51f962edaf54f24b340e64dbf5496f2e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a51f962edaf54f24b340e64dbf5496f2e} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Nom}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adee0366b7a5627bef2f0c7b52f4770fa}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adee0366b7a5627bef2f0c7b52f4770fa} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Prenom}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd6400f1a733c27b26f050cde679fbb5}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd6400f1a733c27b26f050cde679fbb5} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Adresse}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afc04cac786631d61160695809a3754b0}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afc04cac786631d61160695809a3754b0} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Tel}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac2411a93e4d41acab06b8cda55d846a9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac2411a93e4d41acab06b8cda55d846a9} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Mail}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9840385e4a48f91b3e9fdd5e2d923bf9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9840385e4a48f91b3e9fdd5e2d923bf9} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Nais}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a674bafbdca410fb077eccb88f5d1703c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a674bafbdca410fb077eccb88f5d1703c} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Type\+Abo}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9ec4d2990caf90606e44de4d59a2b33f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9ec4d2990caf90606e44de4d59a2b33f} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries abonne\+Fin\+Abo}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae8af5293bdb5dc9396dd9b77e1395d08}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae8af5293bdb5dc9396dd9b77e1395d08} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Button\+Column {\bfseries abonne\+Modifier}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a223af61bf94f49e34d6d71f135d5c03f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a223af61bf94f49e34d6d71f135d5c03f} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Button\+Column {\bfseries abonne\+DGVSupprimer}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a02412afdfb4c7276b9bb8e8e878dd7fe}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a02412afdfb4c7276b9bb8e8e878dd7fe} 
+System.\+Windows.\+Forms.\+Label {\bfseries label36}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a117c834a1c2e03ee51c21fa402ef4530}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a117c834a1c2e03ee51c21fa402ef4530} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDNum}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8ec32602d921f2065890457a91fb169}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8ec32602d921f2065890457a91fb169} 
+System.\+Windows.\+Forms.\+Label {\bfseries label38}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a579c965434f47eef2591836aa309524d}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a579c965434f47eef2591836aa309524d} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDPublic}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4196d7e545517ed0ddb2b4d15cdede3d}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4196d7e545517ed0ddb2b4d15cdede3d} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDRealisateur}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a46816dcd0dfaca3afe77ad4a588b25d0}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a46816dcd0dfaca3afe77ad4a588b25d0} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDTitre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9116c13da79c2a702c16f3d05970dae9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9116c13da79c2a702c16f3d05970dae9} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDSynopsis}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa53077933c8c0d3184501997850a243f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa53077933c8c0d3184501997850a243f} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+DVDDuree}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7a38c4c15e27d796da810eb33f35f908}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7a38c4c15e27d796da810eb33f35f908} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Auteur}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9f910b68fdcb68bfcbe06ab2517c3701}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9f910b68fdcb68bfcbe06ab2517c3701} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+ISBN}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abfd5e97bfd912e620b2171f8ef0001e5}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abfd5e97bfd912e620b2171f8ef0001e5} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Collection}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab46f5f98b8a7eaac05085e8d19e525fd}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab46f5f98b8a7eaac05085e8d19e525fd} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Titre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a98204ea420af394f06f7ebfafd82b359}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a98204ea420af394f06f7ebfafd82b359} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Public}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab91d170657038a8a129ac92d7a263b3b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab91d170657038a8a129ac92d7a263b3b} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Livre\+Num}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae0d9604a7331123c23f3df2565cabbe7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae0d9604a7331123c23f3df2565cabbe7} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries commander\+Livre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7ae9e8598b310f90b659b5436fd94983}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a7ae9e8598b310f90b659b5436fd94983} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Livre\+Order}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae38a9919352ba544e965cee283cfc0b7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae38a9919352ba544e965cee283cfc0b7} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Livre\+Reset}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae237c9a3bd306012bffed054e00d9ee7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae237c9a3bd306012bffed054e00d9ee7} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Livre\+Update}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a78dc351b9e421e65e0adeeb59e33ef91}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a78dc351b9e421e65e0adeeb59e33ef91} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Livre\+New}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a30dd1c88f70865564d2c4d059887d936}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a30dd1c88f70865564d2c4d059887d936} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries commander\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8ba0b3693ad6cd7450b3d52ebaf9f5de}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8ba0b3693ad6cd7450b3d52ebaf9f5de} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+DVDOrder}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a362e7b82141a3dc86e802546966dae42}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a362e7b82141a3dc86e802546966dae42} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+DVDReset}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a331241914d78d30d66d62ef283845f65}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a331241914d78d30d66d62ef283845f65} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+DVDUpdate}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a180be5d71727dd0590156a06df567a25}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a180be5d71727dd0590156a06df567a25} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+DVDNew}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adab6fcc388bc199f98da43c1e51677da}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_adab6fcc388bc199f98da43c1e51677da} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries options\+Livre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a792259ddd7aa25c524ae5a98ba6baa93}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a792259ddd7aa25c524ae5a98ba6baa93} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries options\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a881acd4fd3c516cba7bac3e833d6ad8a}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a881acd4fd3c516cba7bac3e833d6ad8a} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries NUMERODVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a91443ead070076ad1ab90aa6e38e9371}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a91443ead070076ad1ab90aa6e38e9371} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries TITREDVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69b88384fbdc807f54d098458cb8fcb5}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69b88384fbdc807f54d098458cb8fcb5} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries SYPNOSIS\+\_\+\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8cf687ddaf8bc86b4c214d9efbfb3d9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8cf687ddaf8bc86b4c214d9efbfb3d9} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries REALISATEUR\+\_\+\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a27e67ff8d48b0efdbfbbea902d461a77}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a27e67ff8d48b0efdbfbbea902d461a77} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries DUREE\+\_\+\+DVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aedf7e4f74c659a8561be6072d124d5c9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aedf7e4f74c659a8561be6072d124d5c9} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Button\+Column {\bfseries dvd\+Supprimer}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a03e891ec9540a706060a192ad59555b7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a03e891ec9540a706060a192ad59555b7} 
+System.\+Windows.\+Forms.\+Combo\+Box {\bfseries cbx\+Livre\+Public}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2517942fb2d75b8ced9580ad6af4160}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2517942fb2d75b8ced9580ad6af4160} 
+System.\+Windows.\+Forms.\+Combo\+Box {\bfseries cbx\+DVDPublic}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afdde5733da950b5d4e842741317597da}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afdde5733da950b5d4e842741317597da} 
+System.\+Windows.\+Forms.\+Numeric\+Up\+Down {\bfseries numeric\+UDDVD}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae3210489aed2753f51b041d16cc7e133}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae3210489aed2753f51b041d16cc7e133} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries id\+Doc}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8ff4127786f073aa1b3ff77852ee3c63}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8ff4127786f073aa1b3ff77852ee3c63} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries titre}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a11bb7b39d64fb71c2ed749affdbd3c3b}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a11bb7b39d64fb71c2ed749affdbd3c3b} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries auteur}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a78510502208a4c51fb21d5862574f741}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a78510502208a4c51fb21d5862574f741} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries isbn}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a15b840c02b52b200e7699a417c3a19f0}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a15b840c02b52b200e7699a417c3a19f0} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Text\+Box\+Column {\bfseries lacollection}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af41831889fb1bd2e429bd296e9506d1f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af41831889fb1bd2e429bd296e9506d1f} 
+System.\+Windows.\+Forms.\+Data\+Grid\+View\+Button\+Column {\bfseries livre\+Supprimer}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab669742f622fdea1c76b4ea7e61488ec}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab669742f622fdea1c76b4ea7e61488ec} 
+System.\+Windows.\+Forms.\+Label {\bfseries label15}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1f4ff991effa502184ec3b130f7c8aa9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1f4ff991effa502184ec3b130f7c8aa9} 
+System.\+Windows.\+Forms.\+Label {\bfseries label8}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a351ab2c5b9f1772d409d93acc0bccb61}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a351ab2c5b9f1772d409d93acc0bccb61} 
+System.\+Windows.\+Forms.\+Numeric\+Up\+Down {\bfseries livre\+Commande\+Nb\+Select}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a304d86b67d6bf98234d4a678fad1bf77}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a304d86b67d6bf98234d4a678fad1bf77} 
+System.\+Windows.\+Forms.\+Numeric\+Up\+Down {\bfseries livre\+Commande\+Prix\+Select}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a981253b4e414f39bd8dfd2c53b66971c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a981253b4e414f39bd8dfd2c53b66971c} 
+System.\+Windows.\+Forms.\+Label {\bfseries label17}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a626e8be9fc0b592615f73872a8331ade}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a626e8be9fc0b592615f73872a8331ade} 
+System.\+Windows.\+Forms.\+Label {\bfseries label16}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69a9e0cae62eab09983d872023eff19e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69a9e0cae62eab09983d872023eff19e} 
+System.\+Windows.\+Forms.\+Numeric\+Up\+Down {\bfseries dvd\+Commande\+Nb\+Select}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6362b8c60ce74855bb504b42422014d9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6362b8c60ce74855bb504b42422014d9} 
+System.\+Windows.\+Forms.\+Numeric\+Up\+Down {\bfseries dvd\+Commande\+Prix\+Select}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa5c949b4b9da098dd3c771211958d22e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa5c949b4b9da098dd3c771211958d22e} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box5}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_add11998c2659690f87759586dd149e1f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_add11998c2659690f87759586dd149e1f} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box4}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab97e47dec12bddfa504c0c4998674631}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab97e47dec12bddfa504c0c4998674631} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Commande\+Recherche}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a519b221549afda91459d385334e3b17f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a519b221549afda91459d385334e3b17f} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Commande\+Recherche}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4b85d63477ef8391d5926299e26e7c21}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4b85d63477ef8391d5926299e26e7c21} 
+System.\+Windows.\+Forms.\+Label {\bfseries label18}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6335bbb69790ba3bedec63dc840ae484}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6335bbb69790ba3bedec63dc840ae484} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Nom\+Doc\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad63d9d03e476148673baa9ff7db06d01}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad63d9d03e476148673baa9ff7db06d01} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box6}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab96d69e5b30ef12ec4a9c3e77738dce7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab96d69e5b30ef12ec4a9c3e77738dce7} 
+System.\+Windows.\+Forms.\+Button {\bfseries btn\+Modif\+Status\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab72ea0972c60d52627b4318fbb8700b0}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab72ea0972c60d52627b4318fbb8700b0} 
+System.\+Windows.\+Forms.\+Combo\+Box {\bfseries cbx\+Status\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abe5069dbbf0ec5275b4df144385088ce}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abe5069dbbf0ec5275b4df144385088ce} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Id\+Doc\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a34ea36c0a0c1d3ade838b3f881104ead}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a34ea36c0a0c1d3ade838b3f881104ead} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Montant\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a039f2b7332daf01444b925357b76d998}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a039f2b7332daf01444b925357b76d998} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Date\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2f9fd1e112578fc84435df65244a1025}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2f9fd1e112578fc84435df65244a1025} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Nb\+Ex\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a717e1c5c0cc93fad2440732809630777}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a717e1c5c0cc93fad2440732809630777} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Id\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9e9632faab1edcb47e15fed37b6a4f0e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a9e9632faab1edcb47e15fed37b6a4f0e} 
+System.\+Windows.\+Forms.\+Label {\bfseries label20}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1e1de25812c3d660a1b10eba84bb3c57}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1e1de25812c3d660a1b10eba84bb3c57} 
+System.\+Windows.\+Forms.\+Combo\+Box {\bfseries cbx\+Filtre\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad388fa863dbd6ffb5a6394b2b5460941}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad388fa863dbd6ffb5a6394b2b5460941} 
+System.\+Windows.\+Forms.\+Text\+Box {\bfseries txt\+Actuel\+Status\+Commande}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a96e41f8f0dd7d10b2d3b2c4343ce99a3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a96e41f8f0dd7d10b2d3b2c4343ce99a3} 
+System.\+Windows.\+Forms.\+Group\+Box {\bfseries group\+Box7}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a75293b99b8b9f5fd1d7e3bcd66d45b53}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a75293b99b8b9f5fd1d7e3bcd66d45b53} 
+System.\+Windows.\+Forms.\+Label {\bfseries label40}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab2b00e8c44021d3cde1a89ecd1d4ff3d}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab2b00e8c44021d3cde1a89ecd1d4ff3d} 
+System.\+Windows.\+Forms.\+Label {\bfseries label39}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0461a7946665805315d1e9e80229d12d}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0461a7946665805315d1e9e80229d12d} 
+System.\+Windows.\+Forms.\+Label {\bfseries label37}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae5142784699f1fae6e4c9f7d4d0028d6}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae5142784699f1fae6e4c9f7d4d0028d6} 
+System.\+Windows.\+Forms.\+Label {\bfseries label34}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac9fa5b468437c2d38e2f409d216f3135}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac9fa5b468437c2d38e2f409d216f3135} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} $>$ {\bfseries les\+Categories}
+\begin{DoxyCompactList}\small\item\em Variables globales, listes d\textquotesingle{}objets. \end{DoxyCompactList}\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6ecc3d90245cf784d00ee411483120f8}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6ecc3d90245cf784d00ee411483120f8} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_descripteur}{Descripteur}} $>$ {\bfseries les\+Descripteurs}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af12d3b8203b98defeebf49b0877ec89e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af12d3b8203b98defeebf49b0877ec89e} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_revue}{Revue}} $>$ {\bfseries les\+Revues}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad225ef738f12bf65f46085fdb8f0bee7}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad225ef738f12bf65f46085fdb8f0bee7} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} $>$ {\bfseries les\+Livres}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1f559e3d48ec2fc9c38956825df6e6a3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1f559e3d48ec2fc9c38956825df6e6a3} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} $>$ {\bfseries les\+DVDs}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a53c5472a4d378a59104aea17f4baefdf}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a53c5472a4d378a59104aea17f4baefdf} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_abonne}{Abonne}} $>$ {\bfseries les\+Abonnes}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3eaf717ad53b782a38937b3e5618fe9c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3eaf717ad53b782a38937b3e5618fe9c} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} $>$ {\bfseries les\+Commandes}
+\item 
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab9359887f132eb3b0b61d0dbffef898e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ab9359887f132eb3b0b61d0dbffef898e} 
+static List$<$ \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_etat_suivi}{Etat\+Suivi}} $>$ {\bfseries les\+Etat\+Suivi}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Fenêtre principale de l\textquotesingle{}application. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6722130072cea0dcf6d5369cd534d792}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6722130072cea0dcf6d5369cd534d792} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!FrmMediateq@{FrmMediateq}}
+\index{FrmMediateq@{FrmMediateq}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{FrmMediateq()}{FrmMediateq()}}
+{\footnotesize\ttfamily Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+Frm\+Mediateq (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_utilisateur}{Utilisateur}}}]{utilisateur }\end{DoxyParamCaption})}
+
+
+
+Constructeur de la classe de l\textquotesingle{}application principale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utilisateur} & Objet utilisateur envoyé depuis le formulaire de connexion\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5589199d49ef89669efbd29de7835136}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a5589199d49ef89669efbd29de7835136} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!abonneColoriserFin@{abonneColoriserFin}}
+\index{abonneColoriserFin@{abonneColoriserFin}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{abonneColoriserFin()}{abonneColoriserFin()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+abonne\+Coloriser\+Fin (\begin{DoxyParamCaption}\item[{int}]{indice,  }\item[{Time\+Span}]{diff\+Temps }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Colorise les case de date d\textquotesingle{}abonnement sur le tableau abonné selon le temps restant pour l\textquotesingle{}abonnement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em indice} & Numéro de ligne sur le tableau\\
+\hline
+{\em diff\+Temps} & Différence de temps entre aujourd\textquotesingle{}hui et la fin d\textquotesingle{}abonnement\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2b89aae54a264ec3b8d5b3ab8cfdb17}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad2b89aae54a264ec3b8d5b3ab8cfdb17} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!abonneExpireCheck\_CheckedChanged@{abonneExpireCheck\_CheckedChanged}}
+\index{abonneExpireCheck\_CheckedChanged@{abonneExpireCheck\_CheckedChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{abonneExpireCheck\_CheckedChanged()}{abonneExpireCheck\_CheckedChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+abonne\+Expire\+Check\+\_\+\+Checked\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Met à jour le datagrid lorsque le filtre pour séléctionner les abonnements fini ou proche de la fin est activé ou désactivé 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa220ca17a9509e59811212c5e70c9dac}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa220ca17a9509e59811212c5e70c9dac} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnAbonneNew\_Click@{btnAbonneNew\_Click}}
+\index{btnAbonneNew\_Click@{btnAbonneNew\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnAbonneNew\_Click()}{btnAbonneNew\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Abonne\+New\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Création d\textquotesingle{}un nouvel Abonné selon les informations entrées dans les champs de saisie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcac81bdb0aa6978b45fc4a9dd617e90}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcac81bdb0aa6978b45fc4a9dd617e90} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnAbonneParId\_Click@{btnAbonneParId\_Click}}
+\index{btnAbonneParId\_Click@{btnAbonneParId\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnAbonneParId\_Click()}{btnAbonneParId\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Abonne\+Par\+Id\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affichage de l\textquotesingle{}abonné recherché selon l\textquotesingle{}Id inscrit dans le champs de recherche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9f584e8434b9da31d776445d180401c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9f584e8434b9da31d776445d180401c} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnAbonneReset\_Click@{btnAbonneReset\_Click}}
+\index{btnAbonneReset\_Click@{btnAbonneReset\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnAbonneReset\_Click()}{btnAbonneReset\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Abonne\+Reset\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remise à zéro des champs de saisie d\textquotesingle{}abonné et des permissions de boutons. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a03d7783eaeeab043e98e24e7d61ef704}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a03d7783eaeeab043e98e24e7d61ef704} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnAbonneUpdate\_Click@{btnAbonneUpdate\_Click}}
+\index{btnAbonneUpdate\_Click@{btnAbonneUpdate\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnAbonneUpdate\_Click()}{btnAbonneUpdate\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Abonne\+Update\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mise à jour de l\textquotesingle{}Abonné séléctionné selon les informations entrées dans les champs de saisie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8b0f956f82128ab5855d6aa1f5cfeffd}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8b0f956f82128ab5855d6aa1f5cfeffd} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnCommandeRecherche\_Click@{btnCommandeRecherche\_Click}}
+\index{btnCommandeRecherche\_Click@{btnCommandeRecherche\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnCommandeRecherche\_Click()}{btnCommandeRecherche\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Commande\+Recherche\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affichage de commande selon l\textquotesingle{}Id inscrit par l\textquotesingle{}utilisateur dans la barre de recherche. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a04dd9ecfbbe064bf11c05304cbe97cc9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a04dd9ecfbbe064bf11c05304cbe97cc9} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnDVDNew\_Click@{btnDVDNew\_Click}}
+\index{btnDVDNew\_Click@{btnDVDNew\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnDVDNew\_Click()}{btnDVDNew\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+DVDNew\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Création d\textquotesingle{}un nouveau DVD selon les champs d\textquotesingle{}information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a23d14699acf9c464fcfb84353ac5c2f3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a23d14699acf9c464fcfb84353ac5c2f3} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnDVDOrder\_Click@{btnDVDOrder\_Click}}
+\index{btnDVDOrder\_Click@{btnDVDOrder\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnDVDOrder\_Click()}{btnDVDOrder\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+DVDOrder\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Commande d\textquotesingle{}un DVD, selon le montant et le nombre d\textquotesingle{}exemplaires inscrits dans les champs de commande. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af667c3239969174535b3961d72c28b53}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af667c3239969174535b3961d72c28b53} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnDVDRecherche\_Click@{btnDVDRecherche\_Click}}
+\index{btnDVDRecherche\_Click@{btnDVDRecherche\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnDVDRecherche\_Click()}{btnDVDRecherche\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+DVDRecherche\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affichage du DVD recherché après utilisation du bouton Recherche par Numéro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8aafa9e8f9445c9b3adc7763d9aa93b4}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a8aafa9e8f9445c9b3adc7763d9aa93b4} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnDVDReset\_Click@{btnDVDReset\_Click}}
+\index{btnDVDReset\_Click@{btnDVDReset\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnDVDReset\_Click()}{btnDVDReset\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+DVDReset\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mise à jour des champs de saisie, et du numéro de DVD, par le bouton Rénitialiser. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acdb661b6d3613cb99651e67eaee07c9f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acdb661b6d3613cb99651e67eaee07c9f} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnDVDUpdate\_Click@{btnDVDUpdate\_Click}}
+\index{btnDVDUpdate\_Click@{btnDVDUpdate\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnDVDUpdate\_Click()}{btnDVDUpdate\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+DVDUpdate\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mise à jour d\textquotesingle{}un DVD selon les champs d\textquotesingle{}information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0c428632b896548fd3930c7445607588}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0c428632b896548fd3930c7445607588} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnLivreNew\_Click@{btnLivreNew\_Click}}
+\index{btnLivreNew\_Click@{btnLivreNew\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnLivreNew\_Click()}{btnLivreNew\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Livre\+New\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Création d\textquotesingle{}un nouveau objet Livre selon les informations entrées dans les champs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8c06855f5561177d6b3ac0d1b56c006}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac8c06855f5561177d6b3ac0d1b56c006} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnLivreOrder\_Click@{btnLivreOrder\_Click}}
+\index{btnLivreOrder\_Click@{btnLivreOrder\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnLivreOrder\_Click()}{btnLivreOrder\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Livre\+Order\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Activation du bouton de commande d\textquotesingle{}un Livre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2a689216a1fbc6a71f11ede08b1ecf17}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a2a689216a1fbc6a71f11ede08b1ecf17} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnLivreRecherche\_Click@{btnLivreRecherche\_Click}}
+\index{btnLivreRecherche\_Click@{btnLivreRecherche\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnLivreRecherche\_Click()}{btnLivreRecherche\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Livre\+Recherche\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Changement de l\textquotesingle{}affichage lors de la recherche par numéro de Livre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3774bcb5bedb8982c9be0141c56d2818}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a3774bcb5bedb8982c9be0141c56d2818} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnLivreReset\_Click@{btnLivreReset\_Click}}
+\index{btnLivreReset\_Click@{btnLivreReset\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnLivreReset\_Click()}{btnLivreReset\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Livre\+Reset\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Réinitialisation des champs de saisie et du numéro de Livre séléctioné lorsque l\textquotesingle{}utilisateur appuie sur le bouton de rénitialisation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa4705d637fde9dd11e9f5292c4bf0c89}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa4705d637fde9dd11e9f5292c4bf0c89} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnLivreUpdate\_Click@{btnLivreUpdate\_Click}}
+\index{btnLivreUpdate\_Click@{btnLivreUpdate\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnLivreUpdate\_Click()}{btnLivreUpdate\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Livre\+Update\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mise à jour du livre correspond au numéro séléctioné, selon les informations entrées dans les champs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aee01646e8dc246b4a430778d66858da6}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aee01646e8dc246b4a430778d66858da6} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!btnModifStatusCommande\_Click@{btnModifStatusCommande\_Click}}
+\index{btnModifStatusCommande\_Click@{btnModifStatusCommande\_Click}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{btnModifStatusCommande\_Click()}{btnModifStatusCommande\_Click()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+btn\+Modif\+Status\+Commande\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modification du status de commande selon le status choisi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afb25cc5ad1741147d3232af638727720}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afb25cc5ad1741147d3232af638727720} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!categorieParLibelle@{categorieParLibelle}}
+\index{categorieParLibelle@{categorieParLibelle}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{categorieParLibelle()}{categorieParLibelle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_categorie}{Categorie}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+categorie\+Par\+Libelle (\begin{DoxyParamCaption}\item[{string}]{une\+Nom\+De\+Categorie }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recherche de Catégorie par Nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em une\+Nom\+De\+Categorie} & Nom de catégorie\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet catégorie correspondant
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a53b487da702bdb1f0bbacf3be0f103}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4a53b487da702bdb1f0bbacf3be0f103} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!cbxDomaines\_SelectedIndexChanged@{cbxDomaines\_SelectedIndexChanged}}
+\index{cbxDomaines\_SelectedIndexChanged@{cbxDomaines\_SelectedIndexChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{cbxDomaines\_SelectedIndexChanged()}{cbxDomaines\_SelectedIndexChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+cbx\+Domaines\+\_\+\+Selected\+Index\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Changements de l\textquotesingle{}affichage des revues lors de la selection d\textquotesingle{}un Descripteur. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afb8f71578a117274c0ff7c468df00cc8}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_afb8f71578a117274c0ff7c468df00cc8} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!cbxFiltreCommande\_SelectedIndexChanged@{cbxFiltreCommande\_SelectedIndexChanged}}
+\index{cbxFiltreCommande\_SelectedIndexChanged@{cbxFiltreCommande\_SelectedIndexChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{cbxFiltreCommande\_SelectedIndexChanged()}{cbxFiltreCommande\_SelectedIndexChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+cbx\+Filtre\+Commande\+\_\+\+Selected\+Index\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modification de l\textquotesingle{}affichage du tableau de commandes lors de la séléction de filtre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a63fff34b7e400345be18a04380a46d13}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a63fff34b7e400345be18a04380a46d13} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!cbxTitres\_SelectedIndexChanged@{cbxTitres\_SelectedIndexChanged}}
+\index{cbxTitres\_SelectedIndexChanged@{cbxTitres\_SelectedIndexChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{cbxTitres\_SelectedIndexChanged()}{cbxTitres\_SelectedIndexChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+cbx\+Titres\+\_\+\+Selected\+Index\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Changement de l\textquotesingle{}affichage lors de la selection d\textquotesingle{}un titre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6ac30b18e40b4433413bacef5b91f8c9}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6ac30b18e40b4433413bacef5b91f8c9} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!commandeRemplirDataGrid@{commandeRemplirDataGrid}}
+\index{commandeRemplirDataGrid@{commandeRemplirDataGrid}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{commandeRemplirDataGrid()}{commandeRemplirDataGrid()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+commande\+Remplir\+Data\+Grid (\begin{DoxyParamCaption}\item[{string}]{un\+Statut = {\ttfamily \"{}tout~afficher\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Remplissage du tableau de commande selon le critère choisi, ou affichage complet si aucun critère choisi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Statut} & Filtre séléctionné\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1ff0beb39b88a989bcade112f6aa940a}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a1ff0beb39b88a989bcade112f6aa940a} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!dataGridAbonne\_CellContentClick@{dataGridAbonne\_CellContentClick}}
+\index{dataGridAbonne\_CellContentClick@{dataGridAbonne\_CellContentClick}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{dataGridAbonne\_CellContentClick()}{dataGridAbonne\_CellContentClick()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+data\+Grid\+Abonne\+\_\+\+Cell\+Content\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fonction des boutons de supression et de mise à jour d\textquotesingle{}abonnés sur le tableau d\textquotesingle{}abonné 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac04564879d6eb83f05f486c8c9ba4e42}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ac04564879d6eb83f05f486c8c9ba4e42} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!dataGridCommandes\_CellContentClick@{dataGridCommandes\_CellContentClick}}
+\index{dataGridCommandes\_CellContentClick@{dataGridCommandes\_CellContentClick}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{dataGridCommandes\_CellContentClick()}{dataGridCommandes\_CellContentClick()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+data\+Grid\+Commandes\+\_\+\+Cell\+Content\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affichage de la commande séléctionné via le bouton Modifier correspondant. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4ad1ec2bb18e03c98700851bebf5b39e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a4ad1ec2bb18e03c98700851bebf5b39e} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!dataGridDVD\_CellContentClick@{dataGridDVD\_CellContentClick}}
+\index{dataGridDVD\_CellContentClick@{dataGridDVD\_CellContentClick}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{dataGridDVD\_CellContentClick()}{dataGridDVD\_CellContentClick()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+data\+Grid\+DVD\+\_\+\+Cell\+Content\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fonction des boutons de suppression du tableau de DVD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae283c1ed42e5b06837358d21bbfdc238}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae283c1ed42e5b06837358d21bbfdc238} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!dgvLivre\_CellContentClick@{dgvLivre\_CellContentClick}}
+\index{dgvLivre\_CellContentClick@{dgvLivre\_CellContentClick}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{dgvLivre\_CellContentClick()}{dgvLivre\_CellContentClick()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+dgv\+Livre\+\_\+\+Cell\+Content\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Data\+Grid\+View\+Cell\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fonction du bouton supprimer présent sur le tableau des Livres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a306284f0ed1846a75a3d48f1d05ae29a}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a306284f0ed1846a75a3d48f1d05ae29a} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Nettoyage des ressources utilisées. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & true si les ressources managées doivent être supprimées ; sinon, false.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9b0c53a7c476adafcd9e3b62fd90407}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad9b0c53a7c476adafcd9e3b62fd90407} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!FrmMediateq\_FormClosed@{FrmMediateq\_FormClosed}}
+\index{FrmMediateq\_FormClosed@{FrmMediateq\_FormClosed}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{FrmMediateq\_FormClosed()}{FrmMediateq\_FormClosed()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+Frm\+Mediateq\+\_\+\+Form\+Closed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Form\+Closed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fermeture de l\textquotesingle{}application entière lorsque la fênêtre principale est fermée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6a3af12aa4d58d895ce7f1479d9b31a3}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a6a3af12aa4d58d895ce7f1479d9b31a3} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!FrmMediateq\_Load@{FrmMediateq\_Load}}
+\index{FrmMediateq\_Load@{FrmMediateq\_Load}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{FrmMediateq\_Load()}{FrmMediateq\_Load()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+Frm\+Mediateq\+\_\+\+Load (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fermeture des pages selon le role utilisateur et récupération de certaines données. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aecd3b5a914ceb2f5b5766f73ec127b84}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aecd3b5a914ceb2f5b5766f73ec127b84} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!rechercherAbonneParId@{rechercherAbonneParId}}
+\index{rechercherAbonneParId@{rechercherAbonneParId}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{rechercherAbonneParId()}{rechercherAbonneParId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_abonne}{Abonne}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+rechercher\+Abonne\+Par\+Id (\begin{DoxyParamCaption}\item[{string}]{id\+Abonne }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recherche d\textquotesingle{}abonné par Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Abonne} & Id d\textquotesingle{}Abonné\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet abonné correspondant
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcc3d416f784f2c9f7d2cf4ab62dbf94}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_abcc3d416f784f2c9f7d2cf4ab62dbf94} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!rechercherCommandeParId@{rechercherCommandeParId}}
+\index{rechercherCommandeParId@{rechercherCommandeParId}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{rechercherCommandeParId()}{rechercherCommandeParId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+rechercher\+Commande\+Par\+Id (\begin{DoxyParamCaption}\item[{string}]{un\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recherche commande par Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Id} & Id de commande\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet Commande correspondant
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af1ee31613a7461db2be2a3c81a547234}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_af1ee31613a7461db2be2a3c81a547234} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!rechercherDVDparId@{rechercherDVDparId}}
+\index{rechercherDVDparId@{rechercherDVDparId}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{rechercherDVDparId()}{rechercherDVDparId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_d_v_d}{DVD}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+rechercher\+DVDpar\+Id (\begin{DoxyParamCaption}\item[{string}]{un\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recherche d\textquotesingle{}objet DVD par Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Id} & Id de DVD\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet DVD correspondant
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0108c754f42446065c0e942f3c33b021}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0108c754f42446065c0e942f3c33b021} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!rechercherLivreParId@{rechercherLivreParId}}
+\index{rechercherLivreParId@{rechercherLivreParId}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{rechercherLivreParId()}{rechercherLivreParId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_livre}{Livre}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+rechercher\+Livre\+Par\+Id (\begin{DoxyParamCaption}\item[{string}]{un\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recherche un objet Livre avec un Id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Id} & Id du Livre\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet Livre correspondant
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aef4affba638e1920013dfabf9ce0d3f0}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aef4affba638e1920013dfabf9ce0d3f0} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!rechercherStatusParLibelle@{rechercherStatusParLibelle}}
+\index{rechercherStatusParLibelle@{rechercherStatusParLibelle}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{rechercherStatusParLibelle()}{rechercherStatusParLibelle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_etat_suivi}{Etat\+Suivi}} Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+rechercher\+Status\+Par\+Libelle (\begin{DoxyParamCaption}\item[{string}]{un\+Libelle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Recherche de status par libelle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em un\+Libelle} & Libelle de status\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Objet Etat\+Suivi correspondant
+\end{DoxyReturn}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad346666989bfb37f97f533d5eaae6885}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad346666989bfb37f97f533d5eaae6885} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!setInfosCommande@{setInfosCommande}}
+\index{setInfosCommande@{setInfosCommande}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{setInfosCommande()}{setInfosCommande()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+set\+Infos\+Commande (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mediateq___a_p___s_i_o2_1_1metier_1_1_commande}{Commande}}}]{une\+Commande }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affichage des informations et du status correspondant, et des status possibles pour la modification. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em une\+Commande} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae441f538b152c0e1e3e6756b4f7ef9bf}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ae441f538b152c0e1e3e6756b4f7ef9bf} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!tabAbonne\_Enter@{tabAbonne\_Enter}}
+\index{tabAbonne\_Enter@{tabAbonne\_Enter}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{tabAbonne\_Enter()}{tabAbonne\_Enter()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+tab\+Abonne\+\_\+\+Enter (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupération des objets abonnée. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa0fa567e800be91f77500992a0a092bd}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_aa0fa567e800be91f77500992a0a092bd} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!tabCommandes\_Enter@{tabCommandes\_Enter}}
+\index{tabCommandes\_Enter@{tabCommandes\_Enter}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{tabCommandes\_Enter()}{tabCommandes\_Enter()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+tab\+Commandes\+\_\+\+Enter (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupération des données des Commandes et des Status de suivi et remplissage des tableaux et comboboxs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a97b46f830aceb6fd9c82dc9d1829ce9e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a97b46f830aceb6fd9c82dc9d1829ce9e} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!tabDVD\_Enter@{tabDVD\_Enter}}
+\index{tabDVD\_Enter@{tabDVD\_Enter}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{tabDVD\_Enter()}{tabDVD\_Enter()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+tab\+DVD\+\_\+\+Enter (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupération des données Catégorie,Descripteurs et DVD et alimentation du tableau et des comboboxs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a49dc3dd52ed215b14300786f697d657e}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a49dc3dd52ed215b14300786f697d657e} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!tabLivres\_Enter@{tabLivres\_Enter}}
+\index{tabLivres\_Enter@{tabLivres\_Enter}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{tabLivres\_Enter()}{tabLivres\_Enter()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+tab\+Livres\+\_\+\+Enter (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Récupérations des données Categories, Descripteurs et Livres de la BDD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a45e14c44e60ce4e5c149b32354b08a0f}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a45e14c44e60ce4e5c149b32354b08a0f} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!tabParutions\_Enter@{tabParutions\_Enter}}
+\index{tabParutions\_Enter@{tabParutions\_Enter}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{tabParutions\_Enter()}{tabParutions\_Enter()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+tab\+Parutions\+\_\+\+Enter (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mise en places des données dans le combobox Titres. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69b36787516bebc68034ad1524788c58}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a69b36787516bebc68034ad1524788c58} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!tabTitres\_Enter@{tabTitres\_Enter}}
+\index{tabTitres\_Enter@{tabTitres\_Enter}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{tabTitres\_Enter()}{tabTitres\_Enter()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+tab\+Titres\+\_\+\+Enter (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Mise en place des données dans le combobox Descripteurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd67af362ad8e97e6a7260b0a7dacd4c}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_acd67af362ad8e97e6a7260b0a7dacd4c} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!txbAbonne\_TextChanged@{txbAbonne\_TextChanged}}
+\index{txbAbonne\_TextChanged@{txbAbonne\_TextChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{txbAbonne\_TextChanged()}{txbAbonne\_TextChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+txb\+Abonne\+\_\+\+Text\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Modification de l\textquotesingle{}affichage du tableau d\textquotesingle{}abonnés lorsque l\textquotesingle{}utilisateur écrit sur la barre de recherche par Nom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0959493cf9327387451888922bed9e86}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_a0959493cf9327387451888922bed9e86} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!txbTitre\_TextChanged@{txbTitre\_TextChanged}}
+\index{txbTitre\_TextChanged@{txbTitre\_TextChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{txbTitre\_TextChanged()}{txbTitre\_TextChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+txb\+Titre\+\_\+\+Text\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Changement de l\textquotesingle{}affichage lorsque l\textquotesingle{}utilisateur écrit un titre dans le champs de recherche par Titre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad7b922164dc895a334e9a91c03cd8227}\label{class_mediateq___a_p___s_i_o2_1_1_frm_mediateq_ad7b922164dc895a334e9a91c03cd8227} 
+\index{Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}!txtDVDRechercheParTitre\_TextChanged@{txtDVDRechercheParTitre\_TextChanged}}
+\index{txtDVDRechercheParTitre\_TextChanged@{txtDVDRechercheParTitre\_TextChanged}!Mediateq\_AP\_SIO2.FrmMediateq@{Mediateq\_AP\_SIO2.FrmMediateq}}
+\doxysubsubsection{\texorpdfstring{txtDVDRechercheParTitre\_TextChanged()}{txtDVDRechercheParTitre\_TextChanged()}}
+{\footnotesize\ttfamily void Mediateq\+\_\+\+AP\+\_\+\+SIO2.\+Frm\+Mediateq.\+txt\+DVDRecherche\+Par\+Titre\+\_\+\+Text\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Affichage du tableau lorsque l\textquotesingle{}utilisateur écris sur la barre de recherche par Titre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Frm\+Mediateq.\+cs\item 
+Frm\+Mediateq.\+designer.\+cs\end{DoxyCompactItemize}
